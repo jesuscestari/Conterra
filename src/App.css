@@ -39,7 +39,7 @@ body {
 }
 
 .navbar.scrolled .nav-logo img {
-  height: 45px;
+  height: 50px;
 }
 
 .nav-container {
@@ -53,7 +53,7 @@ body {
 }
 
 .nav-logo img {
-  height: 50px;
+  height: 70px;
   width: auto;
   transition: transform 0.3s ease;
 }
@@ -63,7 +63,8 @@ body {
 }
 
 .navbar:not(.scrolled) .nav-logo img {
-height: 70px;
+  height: 65px;
+
   transition: filter 0.3s ease;
 }
 
@@ -303,12 +304,32 @@ height: 70px;
   box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
   transition: all 0.3s ease;
   z-index: 1000;
+  opacity: 0;
+  transform: translateY(100px);
+  visibility: hidden;
+}
+
+.whatsapp-button.visible {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
   animation: pulse 2s infinite;
+}
+
+.whatsapp-button.hidden {
+  opacity: 0;
+  transform: translateY(100px);
+  visibility: hidden;
+  animation: none;
 }
 
 .whatsapp-button:hover {
   transform: scale(1.1);
   box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-button.visible:hover {
+  transform: scale(1.1);
   animation: none;
 }
 
@@ -328,7 +349,7 @@ height: 70px;
   }
 }
 
-/* Pilará Section */
+/* Conterra Section */
 .pilara-section {
   background-color: #f8f9fa;
   padding: 6rem 2rem;
@@ -616,7 +637,7 @@ height: 70px;
   }
   
   .nav-logo img {
-    height: 45px;
+    height: 60px;
   }
   
   .hero-title {
@@ -685,7 +706,7 @@ height: 70px;
 
 @media (max-width: 480px) {
   .nav-logo img {
-    height: 40px;
+    height: 50px;
   }
   
   .hero-title {
@@ -744,6 +765,10 @@ height: 70px;
     height: 55px;
   }
   
+  .whatsapp-button.visible:hover {
+    transform: scale(1.1);
+  }
+  
   .projects-header h1 {
     font-size: 2rem;
   }
@@ -791,6 +816,10 @@ height: 70px;
     right: 1rem;
     width: 50px;
     height: 50px;
+  }
+  
+  .whatsapp-button.visible:hover {
+    transform: scale(1.1);
   }
   
   .projects-header h1 {

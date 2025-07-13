@@ -1,7 +1,19 @@
-import { MessageCircle } from 'lucide-react'
+import { useState, useEffect } from 'react'
 import { FaWhatsapp } from "react-icons/fa";
 
 const WhatsAppButton = () => {
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY
+      setIsVisible(scrollTop > 200) // Aparece después de 200px de scroll
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   const handleWhatsAppClick = () => {
     // Número de teléfono - reemplaza con el número real
     const phoneNumber = "549" // Ejemplo: Argentina
@@ -12,7 +24,7 @@ const WhatsAppButton = () => {
 
   return (
     <button 
-      className="whatsapp-button"
+      className={`whatsapp-button ${isVisible ? 'visible' : 'hidden'}`}
       onClick={handleWhatsAppClick}
       aria-label="Contactar por WhatsApp"
     >
