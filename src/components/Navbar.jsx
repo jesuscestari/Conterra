@@ -29,7 +29,9 @@ const Navbar = () => {
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
         <div className="nav-logo">
+          <a href="/">
           <img src={logo} alt="Conterra Desarrollos" />
+          </a>
         </div>
         
         {/* Desktop Navigation */}

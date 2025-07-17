@@ -63,7 +63,7 @@ const Footer = () => {
         <div className="footer-bottom">
           <div className="footer-bottom-content">
             <p className="footer-copyright">
-              © 2024 Conterra Desarrollos. Todos los derechos reservados.
+              © 2025 Conterra Desarrollos. Todos los derechos reservados.
             </p>
             <div className="footer-legal">
               <a href="#">Términos y Condiciones</a>

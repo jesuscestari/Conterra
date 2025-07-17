@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
+import example from '../assets/example.jpg'
 
 const Proyectos = () => {
   const sectionRef = useRef(null)
@@ -92,7 +93,7 @@ const Proyectos = () => {
               style={{ transitionDelay: `${index * 0.1}s` }}
             >
               <div className="proyecto-image">
-                <img src="https://via.placeholder.com/600x400" alt={proyecto.nombre} />
+                <img src={example} alt={proyecto.nombre} />
                 <div className="proyecto-overlay">
                   <span className="ver-mas">Ver más</span>
                 </div>
