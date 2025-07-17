@@ -44,42 +44,46 @@ const Inicio = () => {
 
           <div className="inicio-features">
             <div className="feature-card animate-fade-in">
+              <div className="feature-icon">
+                <i className="fas fa-drafting-compass"></i>
+              </div>
               <h4>Especialistas en desarrollo de lotes</h4>
               <p>
-                Desde nuestros inicios en Conterra, nos enfocamos en crear soluciones inmobiliarias
-                que respondan a las verdaderas necesidades de quienes buscan un lugar para crecer.
-                Nuestra especialidad es el desarrollo integral de lotes, planeados y diseñados para
-                brindar calidad de vida, seguridad y tranquilidad.
+                Desde nuestros inicios, nos enfocamos en crear soluciones inmobiliarias que respondan 
+                a las verdaderas necesidades de quienes buscan un lugar para crecer y desarrollarse.
               </p>
             </div>
 
             <div className="feature-card animate-fade-in">
+              <div className="feature-icon">
+                <i className="fas fa-home"></i>
+              </div>
               <h4>Más de 1000 terrenos entregados</h4>
               <p>
                 A lo largo de nuestra historia, más de 1000 terrenos han sido entregados a familias
-                que confiaron en Conterra para dar el primer paso hacia un nuevo comienzo. Cada
-                entrega representa un proyecto de vida y la satisfacción de ver materializados los
-                sueños de quienes nos eligen.
+                que confiaron en Conterra para dar el primer paso hacia un nuevo comienzo.
               </p>
             </div>
 
             <div className="feature-card animate-fade-in">
+              <div className="feature-icon">
+                <i className="fas fa-handshake"></i>
+              </div>
               <h4>Compromiso, confianza y transparencia</h4>
               <p>
-                Nos enorgullece mantener una relación cercana y transparente con cada persona que
-                deposita su confianza en Conterra. Trabajamos de la mano de profesionales que
-                garantizan procesos ágiles, claros y personalizados, acompañándote en cada etapa,
-                desde la elección del lote hasta la entrega final.
+                Mantenemos una relación cercana y transparente, trabajando con profesionales que
+                garantizan procesos ágiles y personalizados en cada etapa del proyecto.
               </p>
             </div>
 
             <div className="feature-card animate-fade-in">
+              <div className="feature-icon">
+                <i className="fas fa-leaf"></i>
+              </div>
               <h4>Desarrollos que se adaptan a tu vida</h4>
               <p>
-                Nuestras propuestas abarcan ubicaciones estratégicas, servicios esenciales y
-                entornos pensados para el bienestar. Cada lote que desarrollamos en Conterra es
-                parte de un proyecto que prioriza la calidad urbana, el acceso a espacios verdes y la
-                integración a comunidades vibrantes.
+                Ubicaciones estratégicas, servicios esenciales y entornos pensados para el bienestar.
+                Priorizamos la calidad urbana y el acceso a espacios verdes.
               </p>
             </div>
           </div>

@@ -7,14 +7,7 @@ const Loader = () => {
         <div className="loader-logo">
           <img src={logo} alt="Conterra" />
         </div>
-        <div className="loader-text">
-          <p>Cargando...</p>
-          <div className="loading-dots">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
+        
       </div>
     </div>
   )
