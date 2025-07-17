@@ -1,11 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import Navbar from '../components/Navbar'
-import Hero from '../components/Hero'
-import Footer from '../components/Footer'
-import WhatsAppButton from '../components/WhatsAppButton'
 
-const Projects = () => {
+const Proyectos = () => {
   const sectionRef = useRef(null)
   
   useEffect(() => {
@@ -80,65 +76,58 @@ const Projects = () => {
   ]
 
   return (
-    <div className="projects">
-      <Navbar />
-      <Hero 
-        title="NUESTROS PROYECTOS"
-        subtitle="Desarrollos pensados para tu futuro"
-        showButton={false}
-        height="50vh"
-      />
-      
-      <section ref={sectionRef} className="all-proyectos-section">
-        <div className="proyectos-container">
-          <div className="proyectos-header animate-fade-in">
-            <h2>Todos nuestros desarrollos</h2>
-            <p>Encontrá el lugar perfecto para construir tu hogar entre nuestros exclusivos proyectos</p>
-          </div>
+    <section ref={sectionRef} className="proyectos-section">
+      <div className="proyectos-container">
+        <div className="proyectos-header animate-fade-in">
+          <h2>Nuestros Desarrollos</h2>
+          <p>Conocé cada uno de nuestros proyectos pensados para vos y tu familia</p>
+        </div>
 
-          <div className="proyectos-grid">
-            {proyectos.map((proyecto, index) => (
-              <Link 
-                to={`/proyectos/${proyecto.id}`} 
-                key={proyecto.id}
-                className="proyecto-card animate-fade-in"
-                style={{ transitionDelay: `${index * 0.1}s` }}
-              >
-                <div className="proyecto-image">
-                  <img src="https://via.placeholder.com/600x400" alt={proyecto.nombre} />
-                  <div className="proyecto-overlay">
-                    <span className="ver-mas">Ver más</span>
-                  </div>
+        <div className="proyectos-grid">
+          {proyectos.map((proyecto, index) => (
+            <Link 
+              to={`/proyectos/${proyecto.id}`} 
+              key={proyecto.id}
+              className="proyecto-card animate-fade-in"
+              style={{ transitionDelay: `${index * 0.1}s` }}
+            >
+              <div className="proyecto-image">
+                <img src="https://via.placeholder.com/600x400" alt={proyecto.nombre} />
+                <div className="proyecto-overlay">
+                  <span className="ver-mas">Ver más</span>
+                </div>
+              </div>
+              
+              <div className="proyecto-content">
+                <h3>{proyecto.nombre}</h3>
+                <h4>{proyecto.subtitulo}</h4>
+                <p>{proyecto.descripcion}</p>
+                
+                <div className="proyecto-destacados">
+                  {proyecto.destacados.map((item, idx) => (
+                    <span key={idx} className="destacado">{item}</span>
+                  ))}
                 </div>
                 
-                <div className="proyecto-content">
-                  <h3>{proyecto.nombre}</h3>
-                  <h4>{proyecto.subtitulo}</h4>
-                  <p>{proyecto.descripcion}</p>
-                  
-                  <div className="proyecto-destacados">
-                    {proyecto.destacados.map((item, idx) => (
-                      <span key={idx} className="destacado">{item}</span>
-                    ))}
-                  </div>
-                  
-                  <div className="proyecto-footer">
-                    <span className="ubicacion">
-                      <i className="fas fa-map-marker-alt"></i> {proyecto.ubicacion}
-                    </span>
-                    <span className="arrow">→</span>
-                  </div>
+                <div className="proyecto-footer">
+                  <span className="ubicacion">
+                    <i className="fas fa-map-marker-alt"></i> {proyecto.ubicacion}
+                  </span>
+                  <span className="arrow">→</span>
                 </div>
-              </Link>
-            ))}
-          </div>
+              </div>
+            </Link>
+          ))}
         </div>
-      </section>
-      
-      <Footer />
-      <WhatsAppButton />
-    </div>
+
+        <div className="proyectos-cta animate-fade-in">
+          <Link to="/proyectos" className="ver-todos-btn">
+            Ver todos los proyectos
+          </Link>
+        </div>
+      </div>
+    </section>
   )
 }
 
-export default Projects 
+export default Proyectos 
