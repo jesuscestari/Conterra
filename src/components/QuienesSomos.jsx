@@ -52,7 +52,7 @@ const QuienesSomos = () => {
         <div className="equipo-layout">
           {/* Imagen del equipo */}
           <div className="equipo-imagen animate-fade-in">
-            <img src="https://via.placeholder.com/600x400" alt="Equipo Conterra" />
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80" alt="Equipo Conterra" />
             <div className="image-overlay"></div>
           </div>
 
