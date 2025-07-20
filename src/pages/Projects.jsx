@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
 import Footer from '../components/Footer'
 import WhatsAppButton from '../components/WhatsAppButton'
+import example from '../assets/example.jpg'
 
 const Projects = () => {
   const sectionRef = useRef(null)
@@ -86,7 +87,7 @@ const Projects = () => {
         title="NUESTROS PROYECTOS"
         subtitle="Desarrollos pensados para tu futuro"
         showButton={false}
-        height="50vh"
+        height="40vh"
       />
       
       <section ref={sectionRef} className="all-proyectos-section">
@@ -105,7 +106,7 @@ const Projects = () => {
                 style={{ transitionDelay: `${index * 0.1}s` }}
               >
                 <div className="proyecto-image">
-                  <img src="https://via.placeholder.com/600x400" alt={proyecto.nombre} />
+                  <img src={example} alt={proyecto.nombre} />
                   <div className="proyecto-overlay">
                     <span className="ver-mas">Ver más</span>
                   </div>

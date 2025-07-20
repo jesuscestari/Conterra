@@ -168,25 +168,6 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-
-            <div className="quick-contact-card">
-              <div className="quick-contact-content">
-                <h4>¿Necesitás respuesta inmediata?</h4>
-                <p>Contactanos directamente por WhatsApp y te atenderemos al instante</p>
-                
-                <div className="quick-whatsapp-buttons">
-                  <a 
-                    href="https://wa.me/5491234567890?text=Hola,%20me%20interesa%20obtener%20información%20sobre%20los%20proyectos%20de%20Conterra" 
-                    className="quick-whatsapp-btn"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="fab fa-whatsapp"></i>
-                    Chatear ahora
-                  </a>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

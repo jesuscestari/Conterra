@@ -4,11 +4,26 @@ import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
 import Footer from '../components/Footer'
 import WhatsAppButton from '../components/WhatsAppButton'
+import Lightbox from 'yet-another-react-lightbox'
+import 'yet-another-react-lightbox/styles.css'
+import example from '../assets/example.jpg'
 
 const ProyectoDetalle = () => {
   const { id } = useParams()
   const navigate = useNavigate()
   const [proyecto, setProyecto] = useState(null)
+  const [lightboxOpen, setLightboxOpen] = useState(false)
+  const [lightboxIndex, setLightboxIndex] = useState(0)
+
+  // Imágenes de la galería (usando la misma imagen de ejemplo por ahora)
+  const galleryImages = [
+    { src: example, alt: 'Vista del desarrollo 1' },
+    { src: example, alt: 'Vista del desarrollo 2' },
+    { src: example, alt: 'Vista del desarrollo 3' },
+    { src: example, alt: 'Amenities del barrio 1' },
+    { src: example, alt: 'Amenities del barrio 2' },
+    { src: example, alt: 'Áreas verdes' }
+  ]
 
   const proyectosData = {
     'saint-francis': {
@@ -31,7 +46,7 @@ El barrio cuenta con más de 23.000 m² de áreas verdes forestadas con álamos,
         'A 5 minutos del centro histórico'
       ],
       ubicacion: 'Capilla del Señor, Buenos Aires',
-      imagen: 'https://via.placeholder.com/1200x600'
+      imagen: example
     },
     'fincas-florida': {
       nombre: 'Fincas de la Florida',
@@ -51,7 +66,7 @@ Ideal para familias y para quienes valoran la tranquilidad, Fincas de la Florida
         'Entorno natural privilegiado'
       ],
       ubicacion: 'Zárate, Buenos Aires',
-      imagen: 'https://via.placeholder.com/1200x600'
+      imagen: example
     },
     'praderas-cardales-i': {
       nombre: 'Praderas de Cardales I',
@@ -71,7 +86,7 @@ La característica esencial que distingue a Praderas de Cardales I es su atmósf
         'Atmósfera de paz y tranquilidad'
       ],
       ubicacion: 'Cardales, Buenos Aires',
-      imagen: 'https://via.placeholder.com/1200x600'
+      imagen: example
     },
     'praderas-cardales-ii': {
       nombre: 'Praderas de Cardales II',
@@ -94,7 +109,7 @@ Pensando en el bienestar de toda la comunidad, el barrio cuenta con una plaza de
         'Paisaje ondulado con vistas únicas'
       ],
       ubicacion: 'Cardales, Buenos Aires',
-      imagen: 'https://via.placeholder.com/1200x600'
+      imagen: example
     },
     'praderas-cardales-iii': {
       nombre: 'Praderas de Cardales III',
@@ -118,7 +133,7 @@ Aquí, cada detalle está diseñado para fomentar el bienestar, la convivencia y
         'Sector con fogoneros'
       ],
       ubicacion: 'Cardales, Buenos Aires',
-      imagen: 'https://via.placeholder.com/1200x600'
+      imagen: example
     },
     'el-lazo': {
       nombre: 'El Lazo',
@@ -142,7 +157,7 @@ El barrio ofrece una excelente plaza con juegos para niñas y niños, cuatro can
         'Vistas panorámicas'
       ],
       ubicacion: 'Capilla del Señor, Buenos Aires',
-      imagen: 'https://via.placeholder.com/1200x600'
+      imagen: example
     }
   }
 
@@ -155,6 +170,11 @@ El barrio ofrece una excelente plaza con juegos para niñas y niños, cuatro can
     }
   }, [id, navigate])
 
+  const openLightbox = (index) => {
+    setLightboxIndex(index)
+    setLightboxOpen(true)
+  }
+
   if (!proyecto) {
     return <div>Cargando...</div>
   }
@@ -166,7 +186,7 @@ El barrio ofrece una excelente plaza con juegos para niñas y niños, cuatro can
         title={proyecto.heroTitle}
         subtitle={proyecto.heroSubtitle}
         showButton={false}
-        height="70vh"
+        height="40vh"
         overlayOpacity={0.5}
       />
       
@@ -221,16 +241,25 @@ El barrio ofrece una excelente plaza con juegos para niñas y niños, cuatro can
           <div className="proyecto-gallery">
             <h3>Galería de imágenes</h3>
             <div className="gallery-grid">
-              <img src="https://via.placeholder.com/400x300" alt="Galería 1" />
-              <img src="https://via.placeholder.com/400x300" alt="Galería 2" />
-              <img src="https://via.placeholder.com/400x300" alt="Galería 3" />
-              <img src="https://via.placeholder.com/400x300" alt="Galería 4" />
-              <img src="https://via.placeholder.com/400x300" alt="Galería 5" />
-              <img src="https://via.placeholder.com/400x300" alt="Galería 6" />
+              {galleryImages.map((image, index) => (
+                <div key={index} className="gallery-item" onClick={() => openLightbox(index)}>
+                  <img src={image.src} alt={image.alt} />
+                  <div className="gallery-overlay">
+                    <i className="fas fa-search-plus"></i>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
+
+      <Lightbox
+        open={lightboxOpen}
+        close={() => setLightboxOpen(false)}
+        index={lightboxIndex}
+        slides={galleryImages}
+      />
 
       <Footer />
       <WhatsAppButton />
