@@ -1,3 +1,5 @@
+import logo from '../assets/logo.png'
+
 const Footer = () => {
   return (
     <footer className="footer">
@@ -5,7 +7,7 @@ const Footer = () => {
         <div className="footer-content">
           <div className="footer-section footer-brand">
             <div className="footer-logo">
-              <img src="/src/assets/logo.png" alt="Conterra" />
+              <img src={logo} alt="Conterra" />
             </div>
             <p className="footer-tagline">
               15 años creando espacios para la vida. Construimos más que lotes, 
