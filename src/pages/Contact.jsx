@@ -112,7 +112,7 @@ const Contact = () => {
                   </div>
                   <div className="method-content">
                     <h4>Teléfono</h4>
-                   
+                    <p>+54 11 6141-5555 <br />+54 11 5635-5890</p>
                   </div>
                 </div>
 
@@ -134,7 +134,7 @@ const Contact = () => {
                     <h4>WhatsApp</h4>
                     <div className="whatsapp-contacts">
                       <a 
-                        href="https://wa.me/5491234567890?text=Hola,%20me%20interesa%20obtener%20información%20sobre%20Conterra" 
+                        href="https://wa.me/5491161415555?text=Hola,%20me%20interesa%20obtener%20información%20sobre%20Conterra" 
                         className="whatsapp-contact"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -143,13 +143,13 @@ const Contact = () => {
                         Consultas Generales
                       </a>
                       <a 
-                        href="https://wa.me/5491234567891?text=Hola,%20me%20interesa%20obtener%20información%20comercial" 
+                        href="https://wa.me/5491156355890?text=Hola,%20me%20interesa%20obtener%20información%20comercial" 
                         className="whatsapp-contact"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
                         <i className="fab fa-whatsapp"></i>
-                        Información Comercial
+                        Consultas Generales
                       </a>
                     </div>
                   </div>
