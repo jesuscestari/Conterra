@@ -25,6 +25,8 @@ const CallToAction = () => {
     }
   }, [])
 
+  const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
+  
   return (
     <section ref={sectionRef} className="cta-section">
       <div 
@@ -33,7 +35,7 @@ const CallToAction = () => {
           backgroundImage: `url(${heroImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
+          backgroundAttachment: isMobile ? 'scroll' : 'fixed'
         }}
       >
         <div className="cta-overlay"></div>

@@ -26,6 +26,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #ffffff !important;
+  background: #ffffff !important;
 }
 
 /* Clases para tipografías */
@@ -76,6 +78,7 @@ p, span, div {
 
 .App {
   min-height: 100vh;
+  background-color: #ffffff;
 }
 
 /* Navbar */
@@ -3603,6 +3606,18 @@ p, span, div {
   background-attachment: fixed;
   filter: blur(2px);
   z-index: -1;
+}
+
+/* Arreglar background-attachment fixed en mobile */
+@media (max-width: 768px) {
+  .cta-background {
+    background-attachment: scroll;
+  }
+  
+  .cta-background::before {
+    background-attachment: scroll;
+    filter: none;
+  }
 }
 
 .cta-overlay {
