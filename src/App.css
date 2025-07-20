@@ -4494,9 +4494,15 @@ p, span, div {
   }
   
   .stats-new {
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .stat-item-new {
+    text-align: center;
+    min-width: 120px;
   }
   
   .equipo-grid-new {
@@ -4526,7 +4532,43 @@ p, span, div {
     font-size: 1.4rem;
   }
   
+  .stats-new {
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+  
+  .stat-item-new {
+    text-align: center;
+    min-width: auto;
+    flex: 1;
+    max-width: 150px;
+  }
+  
   .stat-number-new {
     font-size: 2rem;
+  }
+  
+  .stat-label-new {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .stats-new {
+    gap: 0.5rem;
+  }
+  
+  .stat-item-new {
+    max-width: 120px;
+  }
+  
+  .stat-number-new {
+    font-size: 1.8rem;
+  }
+  
+  .stat-label-new {
+    font-size: 0.75rem;
   }
 }
