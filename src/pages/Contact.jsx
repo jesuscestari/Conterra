@@ -112,7 +112,7 @@ const Contact = () => {
                   </div>
                   <div className="method-content">
                     <h4>Teléfono</h4>
-                    <p>+54 11 6141-5555<br />Lunes a Viernes: 9:00 - 18:00</p>
+                   
                   </div>
                 </div>
 

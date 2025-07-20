@@ -308,23 +308,24 @@ p, span, div {
 }
 
 .hero-button {
-  background: linear-gradient(135deg, #AB9368 0%, #84684A 100%);
+  background: linear-gradient(135deg, #AB9368 0%, #8B7355 100%);
   color: white;
   border: none;
   padding: 1rem 2.5rem;
   font-size: 1.1rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  border-radius: 50px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(218, 165, 32, 0.3);
+  box-shadow: 0 4px 15px rgba(171, 147, 104, 0.3);
   text-transform: uppercase;
   position: relative;
   overflow: hidden;
-  animation: fadeInUp 1s ease-out 0.9s both;
+  animation: fadeInUp 1s ease-out 0.3s both;
   text-decoration: none;
   display: inline-block;
+
 }
 
 .hero-button::before {
@@ -334,14 +335,16 @@ p, span, div {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  transition: left 0.5s;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
 }
 
 .hero-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(218, 165, 32, 0.4);
-  background: linear-gradient(135deg, #84684A 0%, #6B513D 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(171, 147, 104, 0.4);
+  background: linear-gradient(135deg, #8B7355 0%, #AB9368 100%);
+  color: white !important;
+  text-decoration: none !important;
 }
 
 .hero-button:hover::before {
@@ -1649,11 +1652,13 @@ p, span, div {
 }
 
 .proyecto-cta {
-  background: linear-gradient(135deg, rgba(218, 165, 32, 0.1) 0%, rgba(184, 134, 11, 0.1) 100%);
+  background: linear-gradient(135deg, rgba(218, 165, 32, 0.4) 0%, rgba(184, 134, 11, 0.6) 100%);
   padding: 2rem;
   border-radius: 20px;
-  border: 1px solid rgba(218, 165, 32, 0.2);
+  border: 1px solid rgba(218, 165, 32, 0.5);
   text-align: center;
+  backdrop-filter: blur(10px);
+  position: relative;
 }
 
 .proyecto-cta h3 {
@@ -3228,23 +3233,45 @@ p, span, div {
 }
 
 .ver-proyecto-btn {
-  background: linear-gradient(135deg, #AB9368 0%, #84684A 100%);
+  background: linear-gradient(135deg, #AB9368 0%, #8B7355 100%);
   color: white;
   text-decoration: none;
   padding: 1rem 2rem;
-  border-radius: 50px;
-  font-weight: 600;
+  border-radius: 8px;
+  font-weight: 500;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 20px rgba(218, 165, 32, 0.3);
+  box-shadow: 0 4px 15px rgba(171, 147, 104, 0.3);
   width: fit-content;
+  letter-spacing: 0.5px;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.ver-proyecto-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
 }
 
 .ver-proyecto-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(218, 165, 32, 0.4);
+  box-shadow: 0 8px 25px rgba(171, 147, 104, 0.4);
+  background: linear-gradient(135deg, #8B7355 0%, #AB9368 100%);
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.ver-proyecto-btn:hover::before {
+  left: 100%;
 }
 
 .proyecto-imagenes {
@@ -3281,28 +3308,52 @@ p, span, div {
 }
 
 .proyecto-cta {
+  background: linear-gradient(135deg, rgba(218, 165, 32, 0.1) 0%, rgba(184, 134, 11, 0.1) 100%);
+  padding: 2rem;
+  border-radius: 20px;
+  border: 1px solid rgba(218, 165, 32, 0.2);
   text-align: center;
 }
 
 .ver-todos-proyectos-btn {
-  background: linear-gradient(135deg, #AB9368 0%, #84684A 100%);
+  background: linear-gradient(135deg, #AB9368 0%, #8B7355 100%);
   color: white;
   text-decoration: none;
-  padding: 1.2rem 3rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  border-radius: 60px;
-  transition: all 0.4s ease;
-  box-shadow: 0 8px 30px rgba(218, 165, 32, 0.25);
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(171, 147, 104, 0.3);
   text-transform: uppercase;
   display: inline-block;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.ver-todos-proyectos-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
 }
 
 .ver-todos-proyectos-btn:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 15px 45px rgba(218, 165, 32, 0.35);
-  background: linear-gradient(135deg, #84684A 0%, #6B513D 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(171, 147, 104, 0.4);
+  background: linear-gradient(135deg, #8B7355 0%, #AB9368 100%);
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.ver-todos-proyectos-btn:hover::before {
+  left: 100%;
 }
 
 /* Call to Action Section */
@@ -3341,7 +3392,7 @@ p, span, div {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.45);
   z-index: 1;
 }
 
@@ -3385,7 +3436,7 @@ p, span, div {
 
 .cta-btn {
   padding: 1rem 2rem;
-  border-radius: 50px;
+  border-radius: 8px;
   font-weight: 600;
   text-decoration: none;
   display: inline-flex;
