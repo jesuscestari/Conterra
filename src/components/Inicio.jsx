@@ -1,14 +1,34 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import especialistasIcon from '../assets/especialistas.png'
+import masdeIcon from '../assets/masde.png'
+import compromisoIcon from '../assets/compromiso.png'
+import desarrollosIcon from '../assets/desarrollos.png'
 
 const Inicio = () => {
   const sectionRef = useRef(null)
+  const [isMobile, setIsMobile] = useState(false)
   
   useEffect(() => {
+    // Detectar si es móvil
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible')
+            
+            // Si es móvil y es una feature card, añadir hover automático
+            if (isMobile && entry.target.classList.contains('feature-card')) {
+              setTimeout(() => {
+                entry.target.classList.add('mobile-hover')
+              }, 200) // Pequeño delay para el efecto
+            }
           }
         })
       },
@@ -20,14 +40,15 @@ const Inicio = () => {
 
     return () => {
       elements?.forEach((el) => observer.unobserve(el))
+      window.removeEventListener('resize', checkMobile)
     }
-  }, [])
+  }, [isMobile])
 
   return (
     <section ref={sectionRef} className="inicio-section">
       <div className="inicio-container">
         <div className="inicio-content">
-          <h2 className="inicio-title animate-fade-in">
+          <h2 className="inicio-title animate-fade-in title-underline">
             Bienvenidos a Conterra
           </h2>
           <h3 className="inicio-subtitle animate-fade-in">
@@ -43,9 +64,9 @@ const Inicio = () => {
           </div>
 
           <div className="inicio-features">
-            <div className="feature-card animate-fade-in">
+            <div className="feature-card first-card animate-fade-in">
               <div className="feature-icon">
-                <i className="fas fa-drafting-compass"></i>
+                <img src={especialistasIcon} alt="Especialistas" />
               </div>
               <h4>Especialistas en desarrollo de lotes</h4>
               <p>
@@ -56,7 +77,7 @@ const Inicio = () => {
 
             <div className="feature-card animate-fade-in">
               <div className="feature-icon">
-                <i className="fas fa-home"></i>
+                <img src={masdeIcon} alt="Más de 1000" />
               </div>
               <h4>Más de 1000 terrenos entregados</h4>
               <p>
@@ -67,7 +88,7 @@ const Inicio = () => {
 
             <div className="feature-card animate-fade-in">
               <div className="feature-icon">
-                <i className="fas fa-handshake"></i>
+                <img src={compromisoIcon} alt="Compromiso" />
               </div>
               <h4>Compromiso, confianza y transparencia</h4>
               <p>
@@ -78,7 +99,7 @@ const Inicio = () => {
 
             <div className="feature-card animate-fade-in">
               <div className="feature-icon">
-                <i className="fas fa-leaf"></i>
+                <img src={desarrollosIcon} alt="Desarrollos" />
               </div>
               <h4>Desarrollos que se adaptan a tu vida</h4>
               <p>

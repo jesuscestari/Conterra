@@ -29,15 +29,15 @@ const Navbar = () => {
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
         <div className="nav-logo">
-          <a href="/">
+          <Link to="/">
           <img src={logo} alt="Conterra Desarrollos" />
-          </a>
+          </Link>
         </div>
         
         {/* Desktop Navigation */}
         <div className="nav-links desktop-nav">
           <Link to="/" className="nav-link">INICIO</Link>
-          <Link to="/Proyectos" className="nav-link">PROYECTOS</Link>
+          <Link to="/proyectos" className="nav-link">PROYECTOS</Link>
           <Link to="/contacto" className="nav-link">CONTACTO</Link>
         </div>
 
@@ -49,7 +49,7 @@ const Navbar = () => {
         {/* Mobile Navigation */}
         <div className={`nav-links mobile-nav ${isMenuOpen ? 'active' : ''}`}>
           <Link to="/" className="nav-link" onClick={closeMenu}>INICIO</Link>
-          <Link to="/Proyectos" className="nav-link" onClick={closeMenu}>PROYECTOS</Link>
+          <Link to="/proyectos" className="nav-link" onClick={closeMenu}>PROYECTOS</Link>
           <Link to="/contacto" className="nav-link" onClick={closeMenu}>CONTACTO</Link>
         </div>
       </div>

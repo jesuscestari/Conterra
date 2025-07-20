@@ -64,23 +64,11 @@ const Contact = () => {
                     type="tel" 
                     id="phone" 
                     name="phone" 
-                    placeholder="+54 11 1234-5678"
+                    placeholder="+54 11 6141-5555"
                   />
                 </div>
 
-                <div className="form-group">
-                  <label htmlFor="project">Proyecto de interés</label>
-                  <select id="project" name="project">
-                    <option value="">Seleccionar proyecto</option>
-                    <option value="saint-francis">Saint Francis</option>
-                    <option value="fincas-florida">Fincas de la Florida</option>
-                    <option value="praderas-cardales-i">Praderas de Cardales I</option>
-                    <option value="praderas-cardales-ii">Praderas de Cardales II</option>
-                    <option value="praderas-cardales-iii">Praderas de Cardales III</option>
-                    <option value="el-lazo">El Lazo</option>
-                    <option value="otro">Otro</option>
-                  </select>
-                </div>
+             
 
                 <div className="form-group">
                   <label htmlFor="message">Mensaje</label>
@@ -124,7 +112,7 @@ const Contact = () => {
                   </div>
                   <div className="method-content">
                     <h4>Teléfono</h4>
-                    <p>+54 11 1234-5678<br />Lunes a Viernes: 9:00 - 18:00</p>
+                    <p>+54 11 6141-5555<br />Lunes a Viernes: 9:00 - 18:00</p>
                   </div>
                 </div>
 
@@ -134,7 +122,7 @@ const Contact = () => {
                   </div>
                   <div className="method-content">
                     <h4>Email</h4>
-                    <p>info@conterra.com.ar<br />consultas@conterra.com.ar</p>
+                    <p>info@conterradesarrollos.com<br /></p>
                   </div>
                 </div>
 

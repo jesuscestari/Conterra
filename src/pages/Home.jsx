@@ -1,8 +1,9 @@
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
 import Inicio from '../components/Inicio'
-import Proyectos from '../components/Proyectos'
+import ProyectoDestacado from '../components/ProyectoDestacado'
 import QuienesSomos from '../components/QuienesSomos'
+import CallToAction from '../components/CallToAction'
 import Footer from '../components/Footer'
 import WhatsAppButton from '../components/WhatsAppButton'
 
@@ -12,8 +13,9 @@ const Home = () => {
       <Navbar />
       <Hero />
       <Inicio />
-      <Proyectos />
+      <ProyectoDestacado />
       <QuienesSomos />
+      <CallToAction />
       <Footer />
       <WhatsAppButton />
     </div>

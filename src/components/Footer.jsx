@@ -47,13 +47,13 @@ const Footer = () => {
               <div className="contact-item">
                 <i className="fas fa-phone"></i>
                 <div>
-                  <p>+54 11 1234-5678</p>
+                  <p>+54 11 6141-5555</p>
                 </div>
               </div>
               <div className="contact-item">
                 <i className="fas fa-envelope"></i>
                 <div>
-                  <p>info@conterra.com.ar</p>
+                  <p>info@conterradesarrollos.com</p>
                 </div>
               </div>
             </div>
@@ -66,9 +66,7 @@ const Footer = () => {
               © 2025 Conterra Desarrollos. Todos los derechos reservados.
             </p>
             <div className="footer-legal">
-              <a href="#">Términos y Condiciones</a>
-              <span>|</span>
-              <a href="#">Política de Privacidad</a>
+              <a href="/politicas-privacidad">Política de Privacidad</a>
             </div>
           </div>
         </div>
