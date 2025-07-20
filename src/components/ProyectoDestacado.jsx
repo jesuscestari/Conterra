@@ -59,26 +59,6 @@ const ProyectoDestacado = () => {
         </div>
 
         <div className="proyecto-destacado-content">
-          {/* Características principales */}
-          <div 
-            className="caracteristicas-grid animate-fade-in"
-            onContextMenu={(e) => e.preventDefault()}
-            onDragStart={(e) => e.preventDefault()}
-            onSelectStart={(e) => e.preventDefault()}
-          >
-            {desarrollosInfo.caracteristicas.map((caracteristica, index) => (
-              <div key={index} className="caracteristica-item">
-                <div className="caracteristica-icon">
-                  <caracteristica.IconComponent size={32} />
-                </div>
-                <div className="caracteristica-content">
-                  <h4>{caracteristica.titulo}</h4>
-                  <p>{caracteristica.descripcion}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
           {/* Información principal de desarrollos */}
           <div className="proyecto-principal">
             <div className="proyecto-info animate-fade-in">
@@ -97,28 +77,58 @@ const ProyectoDestacado = () => {
               
               
               <Link to={`/proyectos`} className="ver-proyecto-btn">
-                Ver desarrollos
+                Ver todos los desarrollos
                 <i className="fas fa-arrow-right"></i>
               </Link>
             </div>
 
             <div className="proyecto-imagenes animate-fade-in">
               <div className="imagen-principal">
-                <img src={example} alt="Desarrollos Conterra" />
+                <Link to="/proyectos" className="imagen-link">
+                  <img src={example} alt="Desarrollos Conterra" />
+                  <div className="imagen-overlay">
+                    <span className="ver-mas-text">Ver más</span>
+                    <i className="fas fa-arrow-right"></i>
+                  </div>
+                </Link>
               </div>
               <div className="imagenes-secundarias">
-                <img src={example} alt="Lotes para barrios cerrados" />
-                <img src={example} alt="Terrenos con espacios verdes" />
+                <Link to="/proyectos" className="imagen-link">
+                  <img src={example} alt="Lotes para barrios cerrados" />
+                  <div className="imagen-overlay">
+                    <span className="ver-mas-text">Ver más</span>
+                    <i className="fas fa-arrow-right"></i>
+                  </div>
+                </Link>
+                <Link to="/proyectos" className="imagen-link">
+                  <img src={example} alt="Terrenos con espacios verdes" />
+                  <div className="imagen-overlay">
+                    <span className="ver-mas-text">Ver más</span>
+                    <i className="fas fa-arrow-right"></i>
+                  </div>
+                </Link>
               </div>
             </div>
           </div>
 
-          {/* CTA final */}
-          <div className="proyecto-cta animate-fade-in">
-            
-            <Link to="/proyectos" className="ver-todos-proyectos-btn">
-              Ver todos los desarrollos
-            </Link>
+          {/* Características principales */}
+          <div 
+            className="caracteristicas-grid animate-fade-in"
+            onContextMenu={(e) => e.preventDefault()}
+            onDragStart={(e) => e.preventDefault()}
+            onSelectStart={(e) => e.preventDefault()}
+          >
+            {desarrollosInfo.caracteristicas.map((caracteristica, index) => (
+              <div key={index} className="caracteristica-item">
+                <div className="caracteristica-icon">
+                  <caracteristica.IconComponent size={32} />
+                </div>
+                <div className="caracteristica-content">
+                  <h4>{caracteristica.titulo}</h4>
+                  <p>{caracteristica.descripcion}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

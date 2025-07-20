@@ -10,7 +10,7 @@ import WhatsAppButton from '../components/WhatsAppButton'
 const Home = () => {
   return (
     <div className="home">
-      <Navbar />
+      <Navbar hideOnInitialLoad={true} />
       <Hero />
       <Inicio />
       <ProyectoDestacado />

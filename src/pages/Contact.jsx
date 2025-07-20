@@ -13,6 +13,7 @@ const Contact = () => {
         subtitle="Estamos aquí para ayudarte"
         showButton={false}
         height="40vh"
+        useImage={true}
       />
       
       <div className="contact-container">

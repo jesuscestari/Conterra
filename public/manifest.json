@@ -1,0 +1,27 @@
+{
+  "name": "Conterra Desarrollos",
+  "short_name": "Conterra",
+  "description": "Especialistas en desarrollo de lotes y barrios cerrados en Argentina",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2c5530",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/fav.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/fav.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "real estate", "finance"],
+  "lang": "es-AR",
+  "dir": "ltr"
+} 

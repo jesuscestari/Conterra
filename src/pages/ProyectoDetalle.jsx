@@ -188,6 +188,7 @@ El barrio ofrece una excelente plaza con juegos para niñas y niños, cuatro can
         showButton={false}
         height="40vh"
         overlayOpacity={0.5}
+        useImage={true}
       />
       
       <section className="proyecto-info-section">

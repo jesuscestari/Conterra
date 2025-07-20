@@ -3,19 +3,26 @@ import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 import logo from '../assets/logo.png'
 
-const Navbar = () => {
+const Navbar = ({ hideOnInitialLoad = false }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
+  const [hasScrolled, setHasScrolled] = useState(false)
 
   useEffect(() => {
+    if (!hideOnInitialLoad) {
+      setHasScrolled(true) // Siempre visible en páginas que no son Home
+      return
+    }
+
     const handleScroll = () => {
       const scrollTop = window.scrollY
-      setIsScrolled(scrollTop > 50)
+      if (scrollTop > 100 && !hasScrolled) {
+        setHasScrolled(true) // Una vez que aparece, se queda visible
+      }
     }
 
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [hideOnInitialLoad, hasScrolled])
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -26,7 +33,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+    <nav className={`navbar ${hasScrolled ? 'visible' : 'hidden'}`}>
       <div className="nav-container">
         <div className="nav-logo">
           <Link to="/">

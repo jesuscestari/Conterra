@@ -88,6 +88,7 @@ const Projects = () => {
         subtitle="Desarrollos pensados para tu futuro"
         showButton={false}
         height="40vh"
+        useImage={true}
       />
       
       <section ref={sectionRef} className="all-proyectos-section">
