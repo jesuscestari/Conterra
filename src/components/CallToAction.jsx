@@ -39,7 +39,7 @@ const CallToAction = () => {
         <div className="cta-overlay"></div>
         <div className="cta-container">
           <div className="cta-content animate-fade-in">
-            <h2>¿Listos para encontrar tu nuevo hogar?</h2>
+            <h2>¿Listo para encontrar tu nuevo hogar?</h2>
             <p>
               Tu futuro hogar te está esperando. Contáctanos y da el primer paso.
             </p>
