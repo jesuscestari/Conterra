@@ -44,7 +44,7 @@ const ProyectoDestacado = () => {
       { 
         IconComponent: SeguridadIcon, 
         titulo: 'Seguridad', 
-        descripcion: 'Barrios cerrados con accesos controlados, vigilancia perimetral y diseño urbano que prioriza la tranquilidad y protección de las familias.' 
+        descripcion: 'Barrios abiertos con accesos controlados, vigilancia perimetral y diseño urbano que prioriza la tranquilidad y protección de las familias.' 
       }
     ],
     destacados: [
@@ -57,7 +57,7 @@ const ProyectoDestacado = () => {
       <div className="proyecto-destacado-container">
         <div className="proyecto-destacado-header animate-fade-in">
           <h2 className="title-underline">Nuestros Desarrollos</h2>
-          <p>Especialistas en lotes para barrios cerrados</p>
+          <p>Especialistas en lotes para barrios abiertos</p>
         </div>
 
         <div className="proyecto-destacado-content">
@@ -67,7 +67,7 @@ const ProyectoDestacado = () => {
               <div className="proyecto-texto">
                 <h3 className="title-underline-left">Desarrollos que se adaptan a tu vida</h3>
                 <p>
-                  Con 15 años de experiencia en el sector, en Conterra nos especializamos en el desarrollo de lotes para barrios cerrados. 
+                  Con 15 años de experiencia en el sector, en Conterra nos especializamos en el desarrollo de lotes para barrios abiertos. 
                   Hemos entregado más de 1000 terrenos a familias que confiaron en nosotros para dar el primer paso hacia un nuevo comienzo.
                 </p>
                 <p>

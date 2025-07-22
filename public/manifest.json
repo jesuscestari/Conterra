@@ -1,7 +1,7 @@
 {
   "name": "Conterra Desarrollos",
   "short_name": "Conterra",
-  "description": "Especialistas en desarrollo de lotes y barrios cerrados en Argentina",
+      "description": "Especialistas en desarrollo de lotes y barrios abiertos en Argentina",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
