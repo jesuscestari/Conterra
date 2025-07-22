@@ -15,9 +15,9 @@ const WhatsAppButton = () => {
   }, [])
 
   const handleWhatsAppClick = () => {
-    // Número de teléfono - reemplaza con el número real
-    const phoneNumber = "5491161415555" // Ejemplo: Argentina
-    const message = "Hola, me interesa obtener más información sobre Pilará y los proyectos de Conterra Desarrollos."
+   
+    const phoneNumber = "5491161415555" 
+    const message = "Hola, me interesa obtener más información sobre el proyecto"
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, '_blank')
   }

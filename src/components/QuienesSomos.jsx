@@ -26,9 +26,9 @@ const QuienesSomos = () => {
 
   const equipo = [
     {
-      nombre: 'Joaquín Tonneller',
+      nombre: 'Joaquín Tonnelier',
       rol: 'Martillero y Corredor Inmobiliario',
-      descripcion: 'Graduado de la Cámara Inmobiliaria Argentina (GDI 2013). Especialista en gestión y desarrollo de negocios inmobiliarios en Udesa, con amplia experiencia en el sector inmobiliario argentino.',
+      descripcion: 'Graduado de la Cámara Inmobiliaria Argentina (2010). Especialista en gestión y desarrollo de negocios inmobiliarios en Udesa (GDI 2013), con amplia experiencia en el sector inmobiliario argentino.',
     },
     {
       nombre: 'Alejandro Aragón',
