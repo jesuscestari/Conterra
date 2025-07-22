@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import videoSrc from '../assets/video.mp4'
+import OptimizedVideo from './OptimizedVideo'
 import heroImage from '../assets/hero.png'
 
 const Hero = ({
@@ -9,7 +9,6 @@ const Hero = ({
   buttonText = 'Solicitar info',
   buttonLink = '/proyectos',
   showButton = true,
-  bgVideo = videoSrc,
   bgImage = heroImage,
   height = '100vh',
   overlayOpacity = 0.4,
@@ -93,29 +92,16 @@ const Hero = ({
       }}
     >
       {!useImage && (
-        <video
+        <OptimizedVideo
           autoPlay
           muted
           loop
           playsInline
-          preload="auto"
           className="hero-video"
-          onLoadedData={handleVideoLoad}
+          onLoad={handleVideoLoad}
           onError={handleVideoError}
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            zIndex: 0,
-            backgroundColor: '#000'
-          }}
-        >
-          <source src={bgVideo} type="video/mp4" />
-          Tu navegador no soporta videos HTML5.
-        </video>
+          fallbackImage={bgImage}
+        />
       )}
       <div 
         className="hero-overlay" 
