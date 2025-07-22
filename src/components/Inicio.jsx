@@ -126,17 +126,7 @@ const Inicio = () => {
               </div>
             </div>
 
-            <div className="inicio-cta" style={{opacity: 1, transform: 'translateY(0)'}}>
-              <h4>Construye tu futuro con Conterra</h4>
-              <p>
-                Si estás buscando el lugar ideal para tu próxima casa o tu inversión, te invitamos a
-                conocer nuestras opciones y sumarte a las más de mil familias que ya han confiado en
-                Conterra.
-              </p>
-              <p className="cta-highlight">
-                ¡Contáctanos y da el primer paso hacia el futuro que imaginás!
-              </p>
-            </div>
+           
           </div>
         </div>
       </section>

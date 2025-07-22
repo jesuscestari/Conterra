@@ -30,18 +30,15 @@ const CallToAction = () => {
       <div 
         className="cta-background"
         style={{
-          backgroundImage: `url(${heroImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
+          backgroundImage: `url(${heroImage})`
         }}
       >
         <div className="cta-overlay"></div>
         <div className="cta-container">
           <div className="cta-content animate-fade-in">
-            <h2>¿Listo para encontrar tu nuevo hogar?</h2>
+            <h2>Construye tu futuro con conterra</h2>
             <p>
-              Tu futuro hogar te está esperando. Contáctanos y da el primer paso.
+              Tu futuro hogar o inversión te está esperando. Contáctanos y da el primer paso.
             </p>
             <div className="cta-buttons">
               <Link to="/contacto" className="cta-btn primary">

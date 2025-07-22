@@ -67,12 +67,11 @@ const ProyectoDestacado = () => {
               <div className="proyecto-texto">
                 <h3 className="title-underline-left">Desarrollos que se adaptan a tu vida</h3>
                 <p>
-                  Con 15 años de experiencia en el sector, en Conterra nos especializamos en el desarrollo de lotes para barrios abiertos. 
-                  Hemos entregado más de 1000 terrenos a familias que confiaron en nosotros para dar el primer paso hacia un nuevo comienzo.
+                Nuestros desarrollos priorizan la calidad urbana y el acceso a espacios verdes, con ubicaciones estratégicas 
+                y servicios esenciales pensados para el bienestar. 
                 </p>
                 <p>
-                  Nuestros desarrollos priorizan la calidad urbana y el acceso a espacios verdes, con ubicaciones estratégicas 
-                  y servicios esenciales pensados para el bienestar. Cada proyecto es planificado con compromiso, confianza y 
+                  Cada proyecto es planificado con compromiso, confianza y 
                   transparencia, manteniendo una relación cercana con nuestros clientes.
                 </p>
               </div>
@@ -114,12 +113,7 @@ const ProyectoDestacado = () => {
           </div>
 
           {/* Características principales */}
-          <div 
-            className="caracteristicas-grid animate-fade-in"
-            onContextMenu={(e) => e.preventDefault()}
-            onDragStart={(e) => e.preventDefault()}
-            onSelectStart={(e) => e.preventDefault()}
-          >
+          <div className="caracteristicas-grid animate-fade-in">
             {desarrollosInfo.caracteristicas.map((caracteristica, index) => (
               <div key={index} className="caracteristica-item">
                 <div className="caracteristica-icon">

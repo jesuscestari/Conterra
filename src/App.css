@@ -2600,6 +2600,18 @@ p, span, div {
 }
 
 @media (max-width: 320px) {
+  .cta-buttons {
+    flex-wrap: nowrap;
+    gap: 0.6rem;
+  }
+  
+  .cta-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+    min-width: 0;
+    flex: 1;
+  }
+  
   .hero-title {
     font-size: 1.8rem;
   }
@@ -2933,6 +2945,10 @@ p, span, div {
     text-align: center;
   }
   
+  .footer-logo img {
+    margin-bottom: 0.8rem;
+  }
+  
   .footer-brand .footer-tagline {
     display: none; /* Ocultar tagline en mobile */
   }
@@ -2970,8 +2986,12 @@ p, span, div {
   }
   
   .footer-content {
-    padding: 2rem 0 1.5rem;
-    gap: 2rem;
+    padding: 1.5rem 0 1rem;
+    gap: 1.5rem;
+  }
+  
+  .footer-logo img {
+    margin-bottom: 0.5rem;
   }
   
   .footer-section h3 {
@@ -3298,6 +3318,8 @@ p, span, div {
   position: relative;
 }
 
+
+
 .caracteristicas-grid::before {
   content: '';
   position: absolute;
@@ -3581,10 +3603,9 @@ p, span, div {
 }
 
 .cta-background {
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 100%);
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-repeat: no-repeat;
   position: relative;
   padding: 8rem 0;
 }
@@ -3596,23 +3617,14 @@ p, span, div {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('../assets/hero.png');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  filter: blur(2px);
-  z-index: -1;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%);
+  z-index: 1;
 }
 
-/* Arreglar background-attachment fixed en mobile */
+/* Optimizaciones para mobile */
 @media (max-width: 768px) {
   .cta-background {
-    background-attachment: scroll;
-  }
-  
-  .cta-background::before {
-    background-attachment: scroll;
-    filter: none;
+    padding: 6rem 0;
   }
 }
 
@@ -3931,17 +3943,20 @@ p, span, div {
     font-size: 2.2rem;
   }
   
+
+  
+  /* Ocultar características en móvil */
   .caracteristicas-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 2rem;
+    display: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
   }
   
-  .caracteristica-item {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
-    align-items: center;
+  /* Reducir espacio entre secciones en móvil */
+  .proyecto-principal {
+    margin-bottom: 2rem;
   }
   
   .proyecto-texto h3 {
@@ -3954,6 +3969,8 @@ p, span, div {
   
   .cta-buttons {
     justify-content: center;
+    flex-wrap: nowrap;
+    gap: 1rem;
   }
   
   .cta-features {
@@ -3976,18 +3993,7 @@ p, span, div {
     padding: 3rem 0;
   }
   
-  .caracteristicas-grid {
-    padding: 1.5rem;
-  }
-  
-  .caracteristica-icon {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .caracteristica-icon i {
-    font-size: 1.2rem;
-  }
+
   
   .proyecto-texto h3 {
     font-size: 1.3rem;
@@ -4001,9 +4007,16 @@ p, span, div {
     font-size: 1rem;
   }
   
+  .cta-buttons {
+    flex-wrap: nowrap;
+    gap: 0.8rem;
+  }
+  
   .cta-btn {
-    padding: 0.8rem 1.5rem;
-    font-size: 0.9rem;
+    padding: 0.7rem 1.2rem;
+    font-size: 0.85rem;
+    min-width: 0;
+    flex: 1;
   }
   
   .feature-number {
