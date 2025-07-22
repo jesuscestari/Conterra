@@ -11,6 +11,12 @@
   to = "/contacto"
   status = 301
 
+# Form success page
+[[redirects]]
+  from = "/success"
+  to = "/form-success.html"
+  status = 200
+
 # SPA routing - all routes go to index.html
 [[redirects]]
   from = "/*"
