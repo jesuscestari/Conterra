@@ -149,24 +149,7 @@ const OptimizedVideo = ({
         </video>
       )}
 
-      {/* Indicador de carga */}
-      {shouldLoadVideo && !isVideoLoaded && !isVideoError && (
-        <div 
-          className="video-loading-indicator"
-          style={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            zIndex: 1,
-            color: 'white',
-            fontSize: '14px',
-            opacity: 0.8
-          }}
-        >
-          Cargando video...
-        </div>
-      )}
+
 
       {/* Fallback final si el video falla */}
       {isVideoError && (
