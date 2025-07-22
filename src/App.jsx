@@ -1,5 +1,6 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import { AnimatePresence } from 'framer-motion'
 import Home from './pages/Home'
 import Contact from './pages/Contact'
 import Projects from './pages/Projects'
@@ -7,7 +8,45 @@ import ProyectoDetalle from './pages/ProyectoDetalle'
 import PoliticasPrivacidad from './pages/PoliticasPrivacidad'
 import Loader from './components/Loader'
 import ScrollToTop from './components/ScrollToTop'
+import PageTransition from './components/PageTransition'
+import ScrollProgress from './components/ScrollProgress'
 import './App.css'
+
+function AnimatedRoutes() {
+  const location = useLocation();
+
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={
+          <PageTransition>
+            <Home />
+          </PageTransition>
+        } />
+        <Route path="/proyectos" element={
+          <PageTransition>
+            <Projects />
+          </PageTransition>
+        } />
+        <Route path="/proyectos/:id" element={
+          <PageTransition>
+            <ProyectoDetalle />
+          </PageTransition>
+        } />
+        <Route path="/contacto" element={
+          <PageTransition>
+            <Contact />
+          </PageTransition>
+        } />
+        <Route path="/politicas-privacidad" element={
+          <PageTransition>
+            <PoliticasPrivacidad />
+          </PageTransition>
+        } />
+      </Routes>
+    </AnimatePresence>
+  );
+}
 
 function App() {
   const [loading, setLoading] = useState(true)
@@ -28,14 +67,9 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
+      <ScrollProgress />
       <div className="App">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/proyectos" element={<Projects />} />
-          <Route path="/proyectos/:id" element={<ProyectoDetalle />} />
-          <Route path="/contacto" element={<Contact />} />
-          <Route path="/politicas-privacidad" element={<PoliticasPrivacidad />} />
-        </Routes>
+        <AnimatedRoutes />
       </div>
     </Router>
   )
