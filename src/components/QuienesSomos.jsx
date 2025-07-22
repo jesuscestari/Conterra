@@ -38,7 +38,7 @@ const QuienesSomos = () => {
     {
       nombre: 'Florencia Aragón',
       rol: 'Arquitecta',
-      descripcion: 'Graduada de la UB Universidad de Belgrano. Especialista en diseño urbano y arquitectura residencial, con enfoque en la integración de espacios naturales en desarrollos inmobiliarios.',
+      descripcion: 'Graduada de la UB Universidad de Belgrano. Posgrado en Patologías en la Construcción. Especialista en diseño urbano y arquitectura residencial, con enfoque en la integración de espacios naturales en desarrollos inmobiliarios.',
     }
   ]
 
