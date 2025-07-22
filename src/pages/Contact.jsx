@@ -42,6 +42,7 @@ const Contact = () => {
                 method="POST" 
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
+                data-netlify-redirect="/success"
                 netlify
               >
                 {/* Netlify hidden input for form handling */}
