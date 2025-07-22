@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import praderas3Image1 from '../assets/Praderas 3/5.webp'
 import praderas3Image2 from '../assets/Praderas 3/DJI_20250718151834_0416_D.webp'
-import praderas3Image3 from '../assets/Praderas 3/1.webp'
+import praderas3Image3 from '../assets/PRADERAS DE CARDALES 1/ANTES.webp'
+import praderas3Image4 from '../assets/Praderas 3/2.webp'
 import { NaturalezaIcon, CalidadIcon, SeguridadIcon } from './icons'
 
 const ProyectoDestacado = () => {
@@ -173,6 +174,18 @@ const ProyectoDestacado = () => {
                 >
                   <Link to="/proyectos" className="imagen-link">
                     <img src={praderas3Image3} alt="Praderas de Cardales III - Lotes del barrio" />
+                    <div className="imagen-overlay">
+                      <span className="ver-mas-text">Ver más</span>
+                      <i className="fas fa-arrow-right"></i>
+                    </div>
+                  </Link>
+                </motion.div>
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Link to="/proyectos" className="imagen-link">
+                    <img src={praderas3Image4} alt="Praderas de Cardales III - Desarrollo del barrio" />
                     <div className="imagen-overlay">
                       <span className="ver-mas-text">Ver más</span>
                       <i className="fas fa-arrow-right"></i>

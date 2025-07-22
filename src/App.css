@@ -3508,6 +3508,7 @@ p, span, div {
   grid-template-columns: 2fr 1fr;
   gap: 1rem;
   height: 400px;
+  align-items: stretch;
 }
 
 .imagen-principal {
@@ -3525,7 +3526,8 @@ p, span, div {
 .imagenes-secundarias {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.33rem;
+  height: 100%;
 }
 
 .imagenes-secundarias img {
@@ -3534,12 +3536,14 @@ p, span, div {
   object-fit: cover;
   border-radius: 15px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  flex: 1;
 }
 
 /* Estilos para imágenes clickeables con hover */
 .imagen-link {
   position: relative;
-  display: block;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   border-radius: inherit;
   cursor: pointer;
@@ -3601,8 +3605,11 @@ p, span, div {
 
 /* Ajustar altura para imágenes secundarias en links */
 .imagenes-secundarias .imagen-link {
-  height: calc(50% - 0.5rem);
   border-radius: 15px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
 }
 
 .imagen-principal .imagen-link {
@@ -3991,6 +3998,16 @@ p, span, div {
     height: 200px;
   }
   
+  .imagenes-secundarias .imagen-link {
+    height: 100%;
+    flex: 1;
+  }
+  
+  /* Ocultar tercera imagen en tablets */
+  .imagenes-secundarias .imagen-link:nth-child(3) {
+    display: none;
+  }
+  
   .cta-container {
     grid-template-columns: 1fr;
     gap: 3rem;
@@ -4047,6 +4064,21 @@ p, span, div {
   .politicas-content {
     padding: 2rem;
   }
+  
+  /* Ajustes para imágenes secundarias en móvil */
+  .imagenes-secundarias {
+    height: auto;
+  }
+  
+  .imagenes-secundarias .imagen-link {
+    height: 150px;
+    flex: none;
+  }
+  
+  /* Ocultar tercera imagen en móvil */
+  .imagenes-secundarias .imagen-link:nth-child(3) {
+    display: none;
+  }
 }
 
 @media (max-width: 480px) {
@@ -4096,6 +4128,16 @@ p, span, div {
   
   .politicas-intro {
     padding: 1.5rem;
+  }
+  
+  /* Ajustes para imágenes secundarias en pantallas muy pequeñas */
+  .imagenes-secundarias .imagen-link {
+    height: 120px;
+  }
+  
+  /* Ocultar tercera imagen en pantallas muy pequeñas */
+  .imagenes-secundarias .imagen-link:nth-child(3) {
+    display: none;
   }
 }
 
