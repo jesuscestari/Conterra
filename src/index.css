@@ -75,3 +75,53 @@ a {
 a:hover {
   color: #747bff;
 }
+
+/* Scrollbar elegante */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(241, 241, 241, 0.3);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 108, 255, 0.4);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 100, 100, 0.6);
+  transform: scale(1.05);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Para Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(100, 100, 100, 0.4) rgba(241, 241, 241, 0.3);
+}
+
+/* Scrollbar para elementos con overflow específico */
+.scrollable-content::-webkit-scrollbar {
+  width: 3px;
+}
+
+.scrollable-content::-webkit-scrollbar-track {
+  background: rgba(241, 241, 241, 0.2);
+}
+
+.scrollable-content::-webkit-scrollbar-thumb {
+  background: rgba(100, 108, 255, 0.3);
+  border-radius: 4px;
+}
+
+.scrollable-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 100, 100, 0.5);
+}
