@@ -3,8 +3,21 @@ import Footer from '../components/Footer'
 import WhatsAppButton from '../components/WhatsAppButton'
 import Hero from '../components/Hero'
 import { FaWhatsapp, FaEnvelope, FaMapMarkerAlt, FaClock, FaPhone } from 'react-icons/fa'
+import { useEffect } from 'react'
 
 const Contact = () => {
+  useEffect(() => {
+    // Handle form submission with JavaScript
+    const form = document.querySelector('form[name="contact"]')
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        // Let Netlify handle the form submission
+        // The redirect will be handled by data-netlify-redirect
+        console.log('Form submitted, redirecting to success page...')
+      })
+    }
+  }, [])
+
   return (
     <div className="contact">
       <Navbar />
@@ -42,7 +55,7 @@ const Contact = () => {
                 method="POST" 
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
-                data-netlify-redirect="/success"
+                data-netlify-redirect="/form-success.html"
                 netlify
               >
                 {/* Netlify hidden input for form handling */}
