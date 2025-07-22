@@ -4,6 +4,23 @@ import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
 import Footer from '../components/Footer'
 import WhatsAppButton from '../components/WhatsAppButton'
+
+// Importar imágenes de Saint Francis
+import saintImage1 from '../assets/SAINT/dji_fly_20250701_172212_0146_1751418034982_photo.webp'
+
+// Importar imágenes de Fincas de la Florida
+import fincasImage1 from '../assets/FINCAS DE LA FLORIDA/IMG_20201012_171607_464.webp'
+
+// Importar imágenes de Praderas de Cardales I
+import praderas1Image1 from '../assets/PRADERAS DE CARDALES 1/20220318_134641.webp'
+
+// Importar imágenes de El Lazo
+import elLazoImage1 from '../assets/EL LAZO/20220325_123731.webp'
+
+// Importar imágenes de Praderas 3
+import praderas3Image1 from '../assets/Praderas 3/5.webp'
+
+// Imagen de ejemplo para Praderas de Cardales II (que falta)
 import example from '../assets/example.jpg'
 
 const Projects = () => {
@@ -36,7 +53,8 @@ const Projects = () => {
       subtitulo: 'Un barrio distinguido con historia y naturaleza',
       descripcion: 'Barrio abierto único en Capilla del Señor, con 290 lotes de amplias dimensiones entre 1500 m² y 8700 m². Elegancia y ambiente sereno con más de 23.000 m² de áreas verdes.',
       destacados: ['290 lotes premium', '23.000 m² áreas verdes', 'Instalaciones históricas'],
-      ubicacion: 'Capilla del Señor'
+      ubicacion: 'Capilla del Señor',
+      imagen: saintImage1
     },
     {
       id: 'fincas-florida',
@@ -44,7 +62,8 @@ const Projects = () => {
       subtitulo: 'Tu espacio de tranquilidad en Zárate',
       descripcion: 'Barrio abierto con 144 lotes de 600 m² en Zárate. Entorno natural privilegiado con gran arboleda perimetral y atardeceres únicos.',
       destacados: ['144 lotes de 600 m²', 'Arboleda perimetral', 'A 15 min del centro'],
-      ubicacion: 'Zárate'
+      ubicacion: 'Zárate',
+      imagen: fincasImage1
     },
     {
       id: 'praderas-cardales-i',
@@ -52,7 +71,8 @@ const Projects = () => {
       subtitulo: 'Lotes y atardeceres generosos',
       descripcion: 'Barrio abierto de 128 lotes de 2000 m² cada uno. Ubicación estratégica con atmósfera de paz y naturaleza exuberante.',
       destacados: ['128 lotes de 2000 m²', 'Amplios horizontes', 'Naturaleza incomparable'],
-      ubicacion: 'Cardales'
+      ubicacion: 'Cardales',
+      imagen: praderas1Image1
     },
     {
       id: 'praderas-cardales-ii',
@@ -60,7 +80,8 @@ const Projects = () => {
       subtitulo: 'Un nuevo horizonte en Cardales',
       descripcion: 'Barrio abierto sin expensas con 200 lotes desde 1000 m² hasta 1600 m². Naturaleza, tranquilidad y equipamiento deportivo completo.',
       destacados: ['200 lotes sin expensas', 'Plaza y deportes', 'SUM con parrillas'],
-      ubicacion: 'Cardales'
+      ubicacion: 'Cardales',
+      imagen: example // Imagen de ejemplo hasta que tengas las fotos
     },
     {
       id: 'praderas-cardales-iii',
@@ -68,7 +89,8 @@ const Projects = () => {
       subtitulo: 'Viví el deporte todos los días',
       descripcion: 'Barrio abierto sin expensas con 130 lotes desde 1000 m² hasta 1500 m². Énfasis en amenities deportivos y espacios comunes.',
       destacados: ['130 lotes', 'Cancha pádel y fútbol', 'Gimnasio al aire libre'],
-      ubicacion: 'Cardales'
+      ubicacion: 'Cardales',
+      imagen: praderas3Image1
     },
     {
       id: 'el-lazo',
@@ -76,7 +98,8 @@ const Projects = () => {
       subtitulo: 'La conexión del campo con el pueblo',
       descripcion: 'Exclusivo barrio abierto con 228 lotes desde 1500 hasta 3000 m². A 5 minutos del centro de Capilla del Señor con más de 30.000 m² de áreas verdes.',
       destacados: ['228 lotes exclusivos', '30.000 m² áreas verdes', '4 canchas fútbol tenis'],
-      ubicacion: 'Capilla del Señor'
+      ubicacion: 'Capilla del Señor',
+      imagen: elLazoImage1
     }
   ]
 
@@ -107,7 +130,7 @@ const Projects = () => {
                 style={{ transitionDelay: `${index * 0.1}s` }}
               >
                 <div className="proyecto-image">
-                  <img src={example} alt={proyecto.nombre} />
+                  <img src={proyecto.imagen} alt={proyecto.nombre} />
                   <div className="proyecto-overlay">
                     <span className="ver-mas">Ver más</span>
                   </div>

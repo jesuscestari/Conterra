@@ -3,7 +3,8 @@ import especialistasIcon from '../assets/especialistas.png'
 import masdeIcon from '../assets/masde.png'
 import compromisoIcon from '../assets/compromiso.png'
 import desarrollosIcon from '../assets/desarrollos.png'
-import exampleImg from '../assets/example.jpg'
+import saintImage1 from '../assets/SAINT/dji_fly_20250701_172212_0146_1751418034982_photo.webp'
+import saintImage2 from '../assets/SAINT/dji_fly_20250701_172332_0154_1751468122332_photo.webp'
 
 const Inicio = () => {
   const newSectionRef = useRef(null)
@@ -49,10 +50,10 @@ const Inicio = () => {
         <div className="inicio-container-new">
           <div className="inicio-images-section">
             <div className="image-large" style={{opacity: 1, transform: 'translateY(0)'}}>
-              <img src={exampleImg} alt="Imagen principal" />
+              <img src={saintImage1} alt="Saint Francis - Vista aérea" />
             </div>
             <div className="image-small" style={{opacity: 1, transform: 'translateY(0)'}}>
-              <img src={exampleImg} alt="Imagen secundaria" />
+              <img src={saintImage2} alt="Saint Francis - Áreas verdes" />
             </div>
           </div>
           

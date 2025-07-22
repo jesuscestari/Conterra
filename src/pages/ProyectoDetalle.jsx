@@ -6,6 +6,63 @@ import Footer from '../components/Footer'
 import WhatsAppButton from '../components/WhatsAppButton'
 import Lightbox from 'yet-another-react-lightbox'
 import 'yet-another-react-lightbox/styles.css'
+
+// Importar imágenes de Saint Francis
+import saintImage1 from '../assets/SAINT/dji_fly_20250701_172212_0146_1751418034982_photo.webp'
+import saintImage2 from '../assets/SAINT/dji_fly_20250701_172326_0152_1751468124029_photo.webp'
+import saintImage3 from '../assets/SAINT/dji_fly_20250701_172332_0154_1751468122332_photo.webp'
+
+// Importar imágenes de Fincas de la Florida
+import fincasImage1 from '../assets/FINCAS DE LA FLORIDA/IMG_20201012_171607_464.webp'
+import fincasImage2 from '../assets/FINCAS DE LA FLORIDA/aerea1.webp'
+import fincasImage3 from '../assets/FINCAS DE LA FLORIDA/Fincas 1.webp'
+import fincasImage4 from '../assets/FINCAS DE LA FLORIDA/Fincas 2.webp'
+import fincasImage5 from '../assets/FINCAS DE LA FLORIDA/IMG_20201012_171607_480.webp'
+import fincasImage6 from '../assets/FINCAS DE LA FLORIDA/IMG_20201012_171607_465.webp'
+import fincasImage7 from '../assets/FINCAS DE LA FLORIDA/IMG_20201012_171607_440.webp'
+import fincasImage8 from '../assets/FINCAS DE LA FLORIDA/IMG_20201012_171607_479.webp'
+import fincasImage9 from '../assets/FINCAS DE LA FLORIDA/FB_IMG_1602533536376.webp'
+import fincasImage10 from '../assets/FINCAS DE LA FLORIDA/FB_IMG_1602533385956.webp'
+import fincasImage11 from '../assets/FINCAS DE LA FLORIDA/FB_IMG_1602533515064.webp'
+import fincasImage12 from '../assets/FINCAS DE LA FLORIDA/FB_IMG_1602533539927.webp'
+
+// Importar imágenes de Praderas de Cardales I
+import praderas1Image1 from '../assets/PRADERAS DE CARDALES 1/20220318_134641.webp'
+import praderas1Image2 from '../assets/PRADERAS DE CARDALES 1/20220318_133926.webp'
+import praderas1Image3 from '../assets/PRADERAS DE CARDALES 1/20220318_132853.webp'
+import praderas1Image4 from '../assets/PRADERAS DE CARDALES 1/20220313_213941.webp'
+import praderas1Image5 from '../assets/PRADERAS DE CARDALES 1/20220308_222434.webp'
+import praderas1Image6 from '../assets/PRADERAS DE CARDALES 1/20220223_171745.webp'
+import praderas1Image7 from '../assets/PRADERAS DE CARDALES 1/20220106_154859.webp'
+import praderas1Image8 from '../assets/PRADERAS DE CARDALES 1/20211128_230250.webp'
+import praderas1Image9 from '../assets/PRADERAS DE CARDALES 1/20211128_225559.webp'
+import praderas1Image10 from '../assets/PRADERAS DE CARDALES 1/dji_export_1647217500946.webp'
+import praderas1Image11 from '../assets/PRADERAS DE CARDALES 1/DESPUES.webp'
+import praderas1Image12 from '../assets/PRADERAS DE CARDALES 1/DESPUES 2.webp'
+
+// Importar imágenes de El Lazo
+import elLazoImage1 from '../assets/EL LAZO/20220325_123731.webp'
+import elLazoImage2 from '../assets/EL LAZO/20220325_124216.webp'
+import elLazoImage3 from '../assets/EL LAZO/20220325_124011.webp'
+import elLazoImage4 from '../assets/EL LAZO/20220325_123413.webp'
+import elLazoImage5 from '../assets/EL LAZO/20220324_205232.webp'
+import elLazoImage6 from '../assets/EL LAZO/20220324_205038.webp'
+import elLazoImage7 from '../assets/EL LAZO/20220324_204347.webp'
+
+// Importar imágenes de Praderas 3
+import praderas3Image1 from '../assets/Praderas 3/5.webp'
+import praderas3Image2 from '../assets/Praderas 3/DJI_20250718151834_0416_D.webp'
+import praderas3Image3 from '../assets/Praderas 3/1.webp'
+import praderas3Image4 from '../assets/Praderas 3/2.webp'
+import praderas3Image5 from '../assets/Praderas 3/3.webp'
+import praderas3Image6 from '../assets/Praderas 3/4.webp'
+import praderas3Image7 from '../assets/Praderas 3/6.webp'
+import praderas3Image8 from '../assets/Praderas 3/7.webp'
+import praderas3Image9 from '../assets/Praderas 3/8.webp'
+import praderas3Image10 from '../assets/Praderas 3/9.webp'
+import praderas3Image11 from '../assets/Praderas 3/10.webp'
+
+// Imagen de ejemplo para Praderas de Cardales II (que falta)
 import example from '../assets/example.jpg'
 
 const ProyectoDetalle = () => {
@@ -14,16 +71,6 @@ const ProyectoDetalle = () => {
   const [proyecto, setProyecto] = useState(null)
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [lightboxIndex, setLightboxIndex] = useState(0)
-
-  // Imágenes de la galería (usando la misma imagen de ejemplo por ahora)
-  const galleryImages = [
-    { src: example, alt: 'Vista del desarrollo 1' },
-    { src: example, alt: 'Vista del desarrollo 2' },
-    { src: example, alt: 'Vista del desarrollo 3' },
-    { src: example, alt: 'Amenities del barrio 1' },
-    { src: example, alt: 'Amenities del barrio 2' },
-    { src: example, alt: 'Áreas verdes' }
-  ]
 
   const proyectosData = {
     'saint-francis': {
@@ -46,7 +93,12 @@ El barrio cuenta con más de 23.000 m² de áreas verdes forestadas con álamos,
         'A 5 minutos del centro histórico'
       ],
       ubicacion: 'Capilla del Señor, Buenos Aires',
-      imagen: example
+      imagen: saintImage1,
+      galleryImages: [
+        { src: saintImage1, alt: 'Vista aérea de Saint Francis' },
+        { src: saintImage2, alt: 'Áreas verdes del barrio' },
+        { src: saintImage3, alt: 'Instalaciones históricas' }
+      ]
     },
     'fincas-florida': {
       nombre: 'Fincas de la Florida',
@@ -66,7 +118,21 @@ Ideal para familias y para quienes valoran la tranquilidad, Fincas de la Florida
         'Entorno natural privilegiado'
       ],
       ubicacion: 'Zárate, Buenos Aires',
-      imagen: example
+      imagen: fincasImage1,
+      galleryImages: [
+        { src: fincasImage1, alt: 'Vista aérea de Fincas de la Florida' },
+        { src: fincasImage2, alt: 'Lotes del barrio' },
+        { src: fincasImage3, alt: 'Arboleda perimetral' },
+        { src: fincasImage4, alt: 'Atardeceres únicos' },
+        { src: fincasImage5, alt: 'Entorno natural' },
+        { src: fincasImage6, alt: 'Vista del desarrollo' },
+        { src: fincasImage7, alt: 'Paisaje del barrio' },
+        { src: fincasImage8, alt: 'Vista panorámica' },
+        { src: fincasImage9, alt: 'Áreas verdes' },
+        { src: fincasImage10, alt: 'Atardeceres espectaculares' },
+        { src: fincasImage11, alt: 'Entorno natural privilegiado' },
+        { src: fincasImage12, alt: 'Vista del desarrollo' }
+      ]
     },
     'praderas-cardales-i': {
       nombre: 'Praderas de Cardales I',
@@ -86,7 +152,21 @@ La característica esencial que distingue a Praderas de Cardales I es su atmósf
         'Atmósfera de paz y tranquilidad'
       ],
       ubicacion: 'Cardales, Buenos Aires',
-      imagen: example
+      imagen: praderas1Image1,
+      galleryImages: [
+        { src: praderas1Image1, alt: 'Vista general de Praderas de Cardales I' },
+        { src: praderas1Image2, alt: 'Lotes del barrio' },
+        { src: praderas1Image3, alt: 'Naturaleza exuberante' },
+        { src: praderas1Image4, alt: 'Amplios horizontes' },
+        { src: praderas1Image5, alt: 'Atardeceres únicos' },
+        { src: praderas1Image6, alt: 'Atmósfera de paz' },
+        { src: praderas1Image7, alt: 'Vista aérea del desarrollo' },
+        { src: praderas1Image8, alt: 'Paisaje natural' },
+        { src: praderas1Image9, alt: 'Horizontes amplios' },
+        { src: praderas1Image10, alt: 'Vista panorámica' },
+        { src: praderas1Image11, alt: 'Transformación del terreno' },
+        { src: praderas1Image12, alt: 'Resultado final' }
+      ]
     },
     'praderas-cardales-ii': {
       nombre: 'Praderas de Cardales II',
@@ -109,7 +189,12 @@ Pensando en el bienestar de toda la comunidad, el barrio cuenta con una plaza de
         'Paisaje ondulado con vistas únicas'
       ],
       ubicacion: 'Cardales, Buenos Aires',
-      imagen: example
+      imagen: example,
+      galleryImages: [
+        { src: example, alt: 'Vista del desarrollo' },
+        { src: example, alt: 'Áreas comunes' },
+        { src: example, alt: 'Amenities del barrio' }
+      ]
     },
     'praderas-cardales-iii': {
       nombre: 'Praderas de Cardales III',
@@ -133,7 +218,20 @@ Aquí, cada detalle está diseñado para fomentar el bienestar, la convivencia y
         'Sector con fogoneros'
       ],
       ubicacion: 'Cardales, Buenos Aires',
-      imagen: example
+      imagen: praderas3Image1,
+      galleryImages: [
+        { src: praderas3Image1, alt: 'Vista aérea de Praderas de Cardales III' },
+        { src: praderas3Image2, alt: 'Lotes del barrio' },
+        { src: praderas3Image3, alt: 'Amenities deportivos' },
+        { src: praderas3Image4, alt: 'Vistas panorámicas' },
+        { src: praderas3Image5, alt: 'Espacios comunes' },
+        { src: praderas3Image6, alt: 'Entorno natural' },
+        { src: praderas3Image7, alt: 'Vista del desarrollo' },
+        { src: praderas3Image8, alt: 'Áreas verdes' },
+        { src: praderas3Image9, alt: 'Paisaje natural' },
+        { src: praderas3Image10, alt: 'Vista panorámica' },
+        { src: praderas3Image11, alt: 'Entorno del barrio' }
+      ]
     },
     'el-lazo': {
       nombre: 'El Lazo',
@@ -157,7 +255,16 @@ El barrio ofrece una excelente plaza con juegos para niñas y niños, cuatro can
         'Vistas panorámicas'
       ],
       ubicacion: 'Capilla del Señor, Buenos Aires',
-      imagen: example
+      imagen: elLazoImage1,
+      galleryImages: [
+        { src: elLazoImage1, alt: 'Vista general de El Lazo' },
+        { src: elLazoImage2, alt: 'Lotes del barrio' },
+        { src: elLazoImage3, alt: 'Boulevard forestado' },
+        { src: elLazoImage4, alt: 'Áreas verdes' },
+        { src: elLazoImage5, alt: 'Amenities deportivos' },
+        { src: elLazoImage6, alt: 'Vistas panorámicas' },
+        { src: elLazoImage7, alt: 'Vista aérea del desarrollo' }
+      ]
     }
   }
 
@@ -242,7 +349,7 @@ El barrio ofrece una excelente plaza con juegos para niñas y niños, cuatro can
           <div className="proyecto-gallery">
             <h3>Galería de imágenes</h3>
             <div className="gallery-grid">
-              {galleryImages.map((image, index) => (
+              {proyecto.galleryImages.map((image, index) => (
                 <div key={index} className="gallery-item" onClick={() => openLightbox(index)}>
                   <img src={image.src} alt={image.alt} />
                   <div className="gallery-overlay">
@@ -259,7 +366,7 @@ El barrio ofrece una excelente plaza con juegos para niñas y niños, cuatro can
         open={lightboxOpen}
         close={() => setLightboxOpen(false)}
         index={lightboxIndex}
-        slides={galleryImages}
+        slides={proyecto.galleryImages}
       />
 
       <Footer />

@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import example from '../assets/example.jpg'
+import praderas3Image1 from '../assets/Praderas 3/5.webp'
+import praderas3Image2 from '../assets/Praderas 3/DJI_20250718151834_0416_D.webp'
+import praderas3Image3 from '../assets/Praderas 3/1.webp'
 import { NaturalezaIcon, CalidadIcon, SeguridadIcon } from './icons'
 
 const ProyectoDestacado = () => {
@@ -85,7 +87,7 @@ const ProyectoDestacado = () => {
             <div className="proyecto-imagenes animate-fade-in">
               <div className="imagen-principal">
                 <Link to="/proyectos" className="imagen-link">
-                  <img src={example} alt="Desarrollos Conterra" />
+                  <img src={praderas3Image1} alt="Praderas de Cardales III - Vista principal" />
                   <div className="imagen-overlay">
                     <span className="ver-mas-text">Ver más</span>
                     <i className="fas fa-arrow-right"></i>
@@ -94,14 +96,14 @@ const ProyectoDestacado = () => {
               </div>
               <div className="imagenes-secundarias">
                 <Link to="/proyectos" className="imagen-link">
-                  <img src={example} alt="Lotes para barrios cerrados" />
+                  <img src={praderas3Image2} alt="Praderas de Cardales III - Vista aérea" />
                   <div className="imagen-overlay">
                     <span className="ver-mas-text">Ver más</span>
                     <i className="fas fa-arrow-right"></i>
                   </div>
                 </Link>
                 <Link to="/proyectos" className="imagen-link">
-                  <img src={example} alt="Terrenos con espacios verdes" />
+                  <img src={praderas3Image3} alt="Praderas de Cardales III - Lotes del barrio" />
                   <div className="imagen-overlay">
                     <span className="ver-mas-text">Ver más</span>
                     <i className="fas fa-arrow-right"></i>
