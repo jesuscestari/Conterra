@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import exampleImg from '../assets/example.jpg'
+import quienesSomosImg from '../assets/quienes-somos.webp'
 
 const QuienesSomos = () => {
   const sectionRef = useRef(null)
@@ -57,7 +57,7 @@ const QuienesSomos = () => {
         {/* Sección principal con imagen y contenido */}
         <div className="content-section-new">
           <div className="imagen-principal-new" style={{opacity: 1, transform: 'translateY(0)'}}>
-            <img src={exampleImg} alt="Equipo Conterra" />
+            <img src={quienesSomosImg} alt="Equipo Conterra" />
             <div className="image-overlay-new">
               <div className="overlay-content-new">
                 <h3>15 años de experiencia</h3>
