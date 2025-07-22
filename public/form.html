@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contacto - Conterra Desarrollos</title>
+</head>
+<body>
+    <!-- Netlify Form - This file is required for Netlify to detect the form -->
+    <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" netlify>
+        <input type="hidden" name="form-name" value="contact" />
+        
+        <!-- Honeypot field to prevent spam -->
+        <div class="hidden">
+            <input name="bot-field" />
+        </div>
+
+        <div class="form-group">
+            <label for="name">Nombre completo</label>
+            <input type="text" id="name" name="name" required placeholder="Tu nombre y apellido" />
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="tu@email.com" />
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Teléfono</label>
+            <input type="tel" id="phone" name="phone" placeholder="+54 11 6141-5555" />
+        </div>
+
+        <div class="form-group">
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" rows="5" placeholder="Contanos en qué podemos ayudarte..."></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">
+            <i class="fas fa-paper-plane"></i>
+            Enviar consulta
+        </button>
+    </form>
+
+    <style>
+        .hidden {
+            display: none;
+        }
+        
+        /* Basic styling for the form */
+        form {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        button {
+            background: #AB9368;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        button:hover {
+            background: #8B7355;
+        }
+    </style>
+</body>
+</html> 

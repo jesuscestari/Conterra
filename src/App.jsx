@@ -11,7 +11,7 @@ import ScrollToTop from './components/ScrollToTop'
 import PageTransition from './components/PageTransition'
 import ScrollProgress from './components/ScrollProgress'
 import VideoPreloader from './components/VideoPreloader'
-import VideoMetrics from './components/VideoMetrics'
+
 import './App.css'
 
 function AnimatedRoutes() {
@@ -71,7 +71,6 @@ function App() {
       <ScrollToTop />
       <ScrollProgress />
       <VideoPreloader />
-      <VideoMetrics />
       <div className="App">
         <AnimatedRoutes />
       </div>

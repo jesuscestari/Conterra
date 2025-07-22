@@ -1,0 +1,5 @@
+# Netlify redirects for SPA routing
+/*    /index.html   200
+
+# Redirect form submissions to the main site
+/form.html    /contacto    301 

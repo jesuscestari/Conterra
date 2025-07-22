@@ -2078,6 +2078,11 @@ p, span, div {
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
+/* Netlify form configuration */
+.hidden {
+  display: none;
+}
+
 .contact-container {
   padding: 4rem 2rem 6rem;
   max-width: 1400px;

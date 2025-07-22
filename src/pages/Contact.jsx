@@ -36,7 +36,22 @@ const Contact = () => {
                 <p>Completá el formulario y te responderemos a la brevedad</p>
               </div>
 
-              <form className="contact-form">
+              <form 
+                className="contact-form" 
+                name="contact" 
+                method="POST" 
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                netlify
+              >
+                {/* Netlify hidden input for form handling */}
+                <input type="hidden" name="form-name" value="contact" />
+                
+                {/* Honeypot field to prevent spam */}
+                <div className="hidden">
+                  <input name="bot-field" />
+                </div>
+
                 <div className="form-group">
                   <label htmlFor="name">Nombre completo</label>
                   <input 
@@ -68,8 +83,6 @@ const Contact = () => {
                     placeholder="+54 11 6141-5555"
                   />
                 </div>
-
-             
 
                 <div className="form-group">
                   <label htmlFor="message">Mensaje</label>
