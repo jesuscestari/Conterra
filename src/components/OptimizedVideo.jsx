@@ -14,7 +14,7 @@ const OptimizedVideo = ({
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const [isVideoError, setIsVideoError] = useState(false);
   const [isIntersecting, setIsIntersecting] = useState(false);
-  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(true); // Always start with true
   const videoRef = useRef(null);
   const containerRef = useRef(null);
   
@@ -28,18 +28,13 @@ const OptimizedVideo = ({
 
   // Intersection Observer para lazy loading
   useEffect(() => {
-    // Si la optimización sugiere no cargar video, usar solo imagen
-    if (!optimizationShouldLoad) {
-      setIsVideoError(true);
-      return;
-    }
-
+    // Siempre cargar el video, ignorar las optimizaciones que lo deshabilitan
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsIntersecting(true);
-          // Retrasar la carga del video para mejorar el rendimiento inicial
-          setTimeout(() => setShouldLoadVideo(true), 100);
+          // Cargar el video inmediatamente sin retraso
+          setShouldLoadVideo(true);
         }
       },
       {
@@ -57,7 +52,7 @@ const OptimizedVideo = ({
         observer.unobserve(containerRef.current);
       }
     };
-  }, [optimizationShouldLoad]);
+  }, []);
 
   const handleVideoLoad = () => {
     setIsVideoLoaded(true);
@@ -93,27 +88,8 @@ const OptimizedVideo = ({
 
   return (
     <div ref={containerRef} className={`video-container ${className}`}>
-      {/* Fallback con imagen mientras el video carga */}
-      {!isVideoLoaded && !isVideoError && (
-        <div 
-          className="video-fallback"
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            backgroundImage: `url(${fallbackImage})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            zIndex: 0
-          }}
-        />
-      )}
-
-      {/* Video optimizado */}
-      {shouldLoadVideo && !isVideoError && (
+      {/* Video optimizado - siempre cargar primero */}
+      {shouldLoadVideo && (
         <video
           ref={videoRef}
           preload={preload || getOptimalPreload()}
@@ -128,7 +104,7 @@ const OptimizedVideo = ({
             width: '100%',
             height: '100%',
             objectFit: 'cover',
-            zIndex: isVideoLoaded ? 0 : -1,
+            zIndex: 0,
             opacity: isVideoLoaded ? 1 : 0,
             transition: 'opacity 0.5s ease-in-out',
             backgroundColor: '#000'
@@ -149,9 +125,7 @@ const OptimizedVideo = ({
         </video>
       )}
 
-
-
-      {/* Fallback final si el video falla */}
+      {/* Fallback final solo si el video falla */}
       {isVideoError && (
         <div 
           className="video-error-fallback"

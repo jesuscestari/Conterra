@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 export const useVideoOptimization = () => {
   const [connectionType, setConnectionType] = useState('unknown');
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
-  const [shouldLoadVideo, setShouldLoadVideo] = useState(true);
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(true); // Siempre true
 
   useEffect(() => {
     // Detectar tipo de conexión
@@ -12,10 +12,8 @@ export const useVideoOptimization = () => {
         const connection = navigator.connection;
         setConnectionType(connection.effectiveType || 'unknown');
         
-        // No cargar video en conexiones lentas
-        if (connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g') {
-          setShouldLoadVideo(false);
-        }
+        // Siempre cargar video, ignorar conexiones lentas
+        setShouldLoadVideo(true);
       }
     };
 
@@ -24,13 +22,12 @@ export const useVideoOptimization = () => {
       const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
       setPrefersReducedMotion(mediaQuery.matches);
       
-      if (mediaQuery.matches) {
-        setShouldLoadVideo(false);
-      }
+      // Siempre cargar video, ignorar preferencias de movimiento
+      setShouldLoadVideo(true);
 
       mediaQuery.addEventListener('change', (e) => {
         setPrefersReducedMotion(e.matches);
-        setShouldLoadVideo(!e.matches);
+        setShouldLoadVideo(true); // Siempre true
       });
     };
 
@@ -38,10 +35,8 @@ export const useVideoOptimization = () => {
     const detectMobile = () => {
       const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
       if (isMobile) {
-        // En móviles, considerar la conexión antes de cargar video
-        if (connectionType === 'slow-2g' || connectionType === '2g') {
-          setShouldLoadVideo(false);
-        }
+        // En móviles, siempre cargar video
+        setShouldLoadVideo(true);
       }
     };
 
@@ -81,7 +76,7 @@ export const useVideoOptimization = () => {
   return {
     connectionType,
     prefersReducedMotion,
-    shouldLoadVideo,
+    shouldLoadVideo: true, // Siempre retornar true
     getOptimalPreload,
     getVideoQuality
   };
