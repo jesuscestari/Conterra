@@ -4701,3 +4701,78 @@ p, span, div {
     font-size: 0.75rem;
   }
 }
+
+/* Estilos para el botón de WhatsApp específico del proyecto */
+.proyecto-contacto {
+  margin-top: 2rem;
+  padding: 0;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  transition: all 0.3s ease;
+}
+
+.proyecto-contacto:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.proyecto-whatsapp-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: none;
+  border: 2px solid #25D366;
+  border-radius: 8px;
+  color: #25D366;
+  font-family: 'TexGyre Adventor', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.proyecto-whatsapp-button:hover {
+  background: #25D366;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+.proyecto-whatsapp-button:active {
+  transform: translateY(0);
+}
+
+.proyecto-whatsapp-button span {
+  font-weight: 600;
+}
+
+/* Responsive para el botón de WhatsApp del proyecto */
+@media (max-width: 768px) {
+  .proyecto-contacto {
+    margin-top: 1.5rem;
+    padding: 0;
+  }
+
+  .proyecto-whatsapp-button {
+    padding: 0.875rem 1.25rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .proyecto-contacto {
+    margin-top: 1rem;
+    padding: 0;
+  }
+
+  .proyecto-whatsapp-button {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    gap: 0.5rem;
+  }
+}

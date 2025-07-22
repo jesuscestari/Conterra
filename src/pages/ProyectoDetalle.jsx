@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
 import Footer from '../components/Footer'
 import WhatsAppButton from '../components/WhatsAppButton'
+import ProyectoWhatsAppButton from '../components/ProyectoWhatsAppButton'
 import Lightbox from 'yet-another-react-lightbox'
 import 'yet-another-react-lightbox/styles.css'
 
@@ -340,6 +341,10 @@ El barrio ofrece una excelente plaza con juegos para niñas y niños, cuatro can
               <div className="proyecto-ubicacion">
                 <h3>Ubicación</h3>
                 <p><i className="fas fa-map-marker-alt"></i> {proyecto.ubicacion}</p>
+              </div>
+
+              <div className="proyecto-contacto">
+                <ProyectoWhatsAppButton proyectoNombre={proyecto.nombre} />
               </div>
 
             
