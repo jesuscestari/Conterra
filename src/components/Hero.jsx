@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import OptimizedVideo from './OptimizedVideo'
+import ScrollIndicator from './ScrollIndicator'
 import heroImage from '../assets/hero.png'
 
 const Hero = ({
@@ -151,6 +152,9 @@ const Hero = ({
           </motion.div>
         )}
       </motion.div>
+      
+      {/* Scroll Indicator */}
+      <ScrollIndicator text="Desliza para ver más" />
     </section>
   )
 }

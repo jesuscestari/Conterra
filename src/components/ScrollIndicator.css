@@ -1,0 +1,87 @@
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  z-index: 10;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: auto;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.scroll-arrow {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  margin: 0 auto;
+}
+
+.scroll-indicator span {
+  font-weight: 300;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  text-align: center;
+  display: block;
+  white-space: nowrap;
+}
+
+/* Eliminamos la animación de rebote */
+
+/* Estados hover */
+.scroll-indicator:hover {
+  color: white;
+}
+
+.scroll-indicator:hover .scroll-arrow {
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .scroll-indicator {
+    bottom: 20px;
+    font-size: 12px;
+  }
+  
+  .scroll-arrow {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+/* Versión para fondos claros */
+.scroll-indicator.light {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.scroll-indicator.light .scroll-arrow {
+  border-color: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.scroll-indicator.light:hover {
+  color: black;
+}
+
+.scroll-indicator.light:hover .scroll-arrow {
+  border-color: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.1);
+} 

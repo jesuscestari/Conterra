@@ -6,6 +6,7 @@ import Contact from './pages/Contact'
 import Projects from './pages/Projects'
 import ProyectoDetalle from './pages/ProyectoDetalle'
 import PoliticasPrivacidad from './pages/PoliticasPrivacidad'
+
 import Loader from './components/Loader'
 import ScrollToTop from './components/ScrollToTop'
 import PageTransition from './components/PageTransition'
@@ -46,6 +47,7 @@ function AnimatedRoutes() {
             <PoliticasPrivacidad />
           </PageTransition>
         } />
+
       </Routes>
     </AnimatePresence>
   );
