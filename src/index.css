@@ -1,3 +1,6 @@
+/* Importar estilos de Lenis */
+@import 'lenis/dist/lenis.css';
+
 /* Tipografías personalizadas */
 @font-face {
   font-family: 'TexGyre Adventor';
@@ -26,6 +29,16 @@
 html {
   color-scheme: light;
   background-color: #ffffff;
+  /* Configuración para Lenis smooth scroll */
+  scroll-behavior: auto !important;
+}
+
+html.lenis {
+  height: auto;
+}
+
+html.lenis body {
+  height: auto;
 }
 
 body {

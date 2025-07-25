@@ -11,6 +11,7 @@ import ScrollToTop from './components/ScrollToTop'
 import PageTransition from './components/PageTransition'
 import ScrollProgress from './components/ScrollProgress'
 import VideoPreloader from './components/VideoPreloader'
+import { useLenis } from './hooks/useLenis'
 
 import './App.css'
 
@@ -52,6 +53,9 @@ function AnimatedRoutes() {
 
 function App() {
   const [loading, setLoading] = useState(true)
+
+  // Inicializar Lenis smooth scroll
+  useLenis()
 
   useEffect(() => {
     // Simular carga inicial
