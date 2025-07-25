@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <div className="home">
       <Navbar hideOnInitialLoad={true} />
-      <Hero />
+      <Hero showScrollIndicator={true} />
       <Inicio />
       <ProyectoDestacado />
       <QuienesSomos />

@@ -13,7 +13,8 @@ const Hero = ({
   bgImage = heroImage,
   height = '100vh',
   overlayOpacity = 0.4,
-  useImage = false
+  useImage = false,
+  showScrollIndicator = false
 }) => {
   const handleVideoLoad = () => {
     console.log('Video cargado correctamente');
@@ -153,8 +154,8 @@ const Hero = ({
         )}
       </motion.div>
       
-      {/* Scroll Indicator */}
-      <ScrollIndicator text="Desliza para ver más" />
+      {/* Scroll Indicator - solo se muestra si showScrollIndicator es true */}
+      {showScrollIndicator && <ScrollIndicator text="Desliza para ver más" />}
     </section>
   )
 }
