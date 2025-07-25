@@ -4058,6 +4058,11 @@ p, span, div {
     gap: 1.5rem;
   }
   
+  /* Fix para navbar overlapping en móvil */
+  .politicas-section {
+    padding: 8rem 0 6rem 0;
+  }
+  
   .politicas-header h1 {
     font-size: 2.2rem;
   }
@@ -4084,9 +4089,13 @@ p, span, div {
 
 @media (max-width: 480px) {
   .proyecto-destacado-section,
-  .cta-section .cta-background,
-  .politicas-section {
+  .cta-section .cta-background {
     padding: 3rem 0;
+  }
+  
+  /* Fix para navbar overlapping en pantallas pequeñas */
+  .politicas-section {
+    padding: 7rem 0 3rem 0;
   }
   
 
