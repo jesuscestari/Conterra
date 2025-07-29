@@ -1,7 +1,7 @@
 .scroll-indicator {
   position: absolute;
   bottom: 30px;
-  left: 50%;
+  left: 49%;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
@@ -13,9 +13,6 @@
   z-index: 10;
   cursor: pointer;
   transition: all 0.3s ease;
-  width: auto;
-  text-align: center;
-  margin: 0 auto;
 }
 
 .scroll-arrow {
@@ -29,7 +26,6 @@
   backdrop-filter: blur(10px);
   background: rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
-  margin: 0 auto;
 }
 
 .scroll-indicator span {
@@ -37,8 +33,6 @@
   letter-spacing: 1px;
   transition: all 0.3s ease;
   text-align: center;
-  display: block;
-  white-space: nowrap;
 }
 
 /* Eliminamos la animación de rebote */

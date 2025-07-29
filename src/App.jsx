@@ -11,7 +11,7 @@ import Loader from './components/Loader'
 import ScrollToTop from './components/ScrollToTop'
 import PageTransition from './components/PageTransition'
 import ScrollProgress from './components/ScrollProgress'
-import VideoPreloader from './components/VideoPreloader'
+
 import { useLenis } from './hooks/useLenis'
 
 import './App.css'
@@ -76,7 +76,6 @@ function App() {
     <Router>
       <ScrollToTop />
       <ScrollProgress />
-      <VideoPreloader />
       <div className="App">
         <AnimatedRoutes />
       </div>

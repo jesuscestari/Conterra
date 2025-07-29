@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import OptimizedVideo from './OptimizedVideo'
 import ScrollIndicator from './ScrollIndicator'
 import heroImage from '../assets/hero.png'
+import videoSrc from '../assets/video.mp4'
 
 const Hero = ({
   title = 'CREA TU HOGAR\nDESDE LA RAÍZ',
@@ -16,13 +16,7 @@ const Hero = ({
   useImage = false,
   showScrollIndicator = false
 }) => {
-  const handleVideoLoad = () => {
-    console.log('Video cargado correctamente');
-  };
 
-  const handleVideoError = (e) => {
-    console.error('Error cargando el video:', e);
-  };
 
   const titleVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -94,16 +88,24 @@ const Hero = ({
       }}
     >
       {!useImage && (
-        <OptimizedVideo
+        <video
           autoPlay
           muted
           loop
           playsInline
           className="hero-video"
-          onLoad={handleVideoLoad}
-          onError={handleVideoError}
-          fallbackImage={bgImage}
-        />
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            zIndex: 0
+          }}
+        >
+          <source src={videoSrc} type="video/mp4" />
+        </video>
       )}
       <div 
         className="hero-overlay" 
