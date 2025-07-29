@@ -41,6 +41,17 @@ import praderas1Image10 from '../assets/PRADERAS DE CARDALES 1/dji_export_164721
 import praderas1Image11 from '../assets/PRADERAS DE CARDALES 1/DESPUES.webp'
 import praderas1Image12 from '../assets/PRADERAS DE CARDALES 1/DESPUES 2.webp'
 
+// Importar imágenes de Praderas de Cardales II
+import praderas2Image1 from '../assets/PRADERAS DE CARDALES 2/DJI_0642.webp'
+import praderas2Image2 from '../assets/PRADERAS DE CARDALES 2/DJI_0659.webp'
+import praderas2Image3 from '../assets/PRADERAS DE CARDALES 2/DJI_0660.webp'
+import praderas2Image4 from '../assets/PRADERAS DE CARDALES 2/DJI_0661.webp'
+import praderas2Image5 from '../assets/PRADERAS DE CARDALES 2/DJI_0662.webp'
+import praderas2Image6 from '../assets/PRADERAS DE CARDALES 2/DJI_0663.webp'
+import praderas2Image7 from '../assets/PRADERAS DE CARDALES 2/DJI_0664.webp'
+import praderas2Image8 from '../assets/PRADERAS DE CARDALES 2/DJI_0665.webp'
+import praderas2Image9 from '../assets/PRADERAS DE CARDALES 2/DJI_0666.webp'
+
 // Importar imágenes de El Lazo
 import elLazoImage1 from '../assets/EL LAZO/20220325_123731.webp'
 import elLazoImage2 from '../assets/EL LAZO/20220325_124216.webp'
@@ -63,7 +74,7 @@ import praderas3Image9 from '../assets/Praderas 3/8.webp'
 import praderas3Image10 from '../assets/Praderas 3/9.webp'
 import praderas3Image11 from '../assets/Praderas 3/10.webp'
 
-// Imagen de ejemplo para Praderas de Cardales II (que falta)
+// Imagen de ejemplo para proyectos sin imágenes
 import example from '../assets/example.jpg'
 
 const ProyectoDetalle = () => {
@@ -153,18 +164,18 @@ La característica esencial que distingue a Praderas de Cardales I es su atmósf
         'Atmósfera de paz y tranquilidad'
       ],
       ubicacion: 'Cardales, Buenos Aires',
-      imagen: praderas1Image1,
+      imagen: praderas1Image10,
       galleryImages: [
-        { src: praderas1Image1, alt: 'Vista general de Praderas de Cardales I' },
-        { src: praderas1Image2, alt: 'Lotes del barrio' },
-        { src: praderas1Image3, alt: 'Naturaleza exuberante' },
-        { src: praderas1Image4, alt: 'Amplios horizontes' },
-        { src: praderas1Image5, alt: 'Atardeceres únicos' },
-        { src: praderas1Image6, alt: 'Atmósfera de paz' },
-        { src: praderas1Image7, alt: 'Vista aérea del desarrollo' },
-        { src: praderas1Image8, alt: 'Paisaje natural' },
-        { src: praderas1Image9, alt: 'Horizontes amplios' },
-        { src: praderas1Image10, alt: 'Vista panorámica' },
+        { src: praderas1Image10, alt: 'Vista general de Praderas de Cardales I' },
+        { src: praderas1Image1, alt: 'Lotes del barrio' },
+        { src: praderas1Image2, alt: 'Naturaleza exuberante' },
+        { src: praderas1Image3, alt: 'Amplios horizontes' },
+        { src: praderas1Image4, alt: 'Atardeceres únicos' },
+        { src: praderas1Image5, alt: 'Atmósfera de paz' },
+        { src: praderas1Image6, alt: 'Vista aérea del desarrollo' },
+        { src: praderas1Image7, alt: 'Paisaje natural' },
+        { src: praderas1Image8, alt: 'Horizontes amplios' },
+        { src: praderas1Image9, alt: 'Vista panorámica' },
         { src: praderas1Image11, alt: 'Transformación del terreno' },
         { src: praderas1Image12, alt: 'Resultado final' }
       ]
@@ -190,11 +201,17 @@ Pensando en el bienestar de toda la comunidad, el barrio cuenta con una plaza de
         'Paisaje ondulado con vistas únicas'
       ],
       ubicacion: 'Cardales, Buenos Aires',
-      imagen: example,
+      imagen: praderas2Image1,
       galleryImages: [
-        { src: example, alt: 'Vista del desarrollo' },
-        { src: example, alt: 'Áreas comunes' },
-        { src: example, alt: 'Amenities del barrio' }
+        { src: praderas2Image1, alt: 'Vista del desarrollo' },
+        { src: praderas2Image2, alt: 'Áreas comunes' },
+        { src: praderas2Image3, alt: 'Amenities del barrio' },
+        { src: praderas2Image4, alt: 'Vista aérea' },
+        { src: praderas2Image5, alt: 'Entorno natural' },
+        { src: praderas2Image6, alt: 'Plaza de juegos' },
+        { src: praderas2Image7, alt: 'Gimnasio al aire libre' },
+        { src: praderas2Image8, alt: 'Cancha de fútbol' },
+        { src: praderas2Image9, alt: 'SUM con parrillas' }
       ]
     },
     'praderas-cardales-iii': {
@@ -380,4 +397,4 @@ El barrio ofrece una excelente plaza con juegos para niñas y niños, cuatro can
   )
 }
 
-export default ProyectoDetalle 
+export default ProyectoDetalle

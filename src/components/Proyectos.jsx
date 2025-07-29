@@ -15,18 +15,24 @@ import fincasImage3 from '../assets/FINCAS DE LA FLORIDA/Fincas 1.webp'
 import praderas1Image1 from '../assets/PRADERAS DE CARDALES 1/20220318_134641.webp'
 import praderas1Image2 from '../assets/PRADERAS DE CARDALES 1/20220318_133926.webp'
 import praderas1Image3 from '../assets/PRADERAS DE CARDALES 1/20220318_132853.webp'
+import praderas1Image10 from '../assets/PRADERAS DE CARDALES 1/dji_export_1647217500946.webp'
 
 // Importar imágenes de El Lazo
 import elLazoImage1 from '../assets/EL LAZO/20220325_123731.webp'
 import elLazoImage2 from '../assets/EL LAZO/20220325_124216.webp'
 import elLazoImage3 from '../assets/EL LAZO/20220325_124011.webp'
 
+// Importar imágenes de Praderas de Cardales II
+import praderas2Image1 from '../assets/PRADERAS DE CARDALES 2/DJI_0642.webp'
+import praderas2Image2 from '../assets/PRADERAS DE CARDALES 2/DJI_0659.webp'
+import praderas2Image3 from '../assets/PRADERAS DE CARDALES 2/DJI_0660.webp'
+
 // Importar imágenes de Praderas 3
 import praderas3Image1 from '../assets/Praderas 3/5.webp'
 import praderas3Image2 from '../assets/Praderas 3/DJI_20250718151834_0416_D.webp'
 import praderas3Image3 from '../assets/Praderas 3/1.webp'
 
-// Imagen de ejemplo para Praderas de Cardales II (que falta)
+// Imagen de ejemplo para proyectos sin imágenes
 import example from '../assets/example.jpg'
 
 const Proyectos = () => {
@@ -80,8 +86,8 @@ const Proyectos = () => {
       descripcion: 'Barrio abierto de 128 lotes de 2000 m² cada uno. Ubicación estratégica con atmósfera de paz y naturaleza exuberante.',
       destacados: ['128 lotes de 2000 m²', 'Amplios horizontes', 'Naturaleza incomparable'],
       ubicacion: 'Cardales',
-      imagen: praderas1Image1,
-      imagenes: [praderas1Image1, praderas1Image2, praderas1Image3]
+      imagen: praderas1Image10,
+      imagenes: [praderas1Image10, praderas1Image1, praderas1Image2, praderas1Image3]
     },
     {
       id: 'praderas-cardales-ii',
@@ -90,8 +96,8 @@ const Proyectos = () => {
       descripcion: 'Barrio abierto sin expensas con 200 lotes desde 1000 m² hasta 1600 m². Naturaleza, tranquilidad y equipamiento deportivo completo.',
       destacados: ['200 lotes sin expensas', 'Plaza y deportes', 'SUM con parrillas'],
       ubicacion: 'Cardales',
-      imagen: example, // Imagen de ejemplo hasta que tengas las fotos
-      imagenes: [example]
+      imagen: praderas2Image1,
+      imagenes: [praderas2Image1, praderas2Image2, praderas2Image3]
     },
     {
       id: 'praderas-cardales-iii',
@@ -170,4 +176,4 @@ const Proyectos = () => {
   )
 }
 
-export default Proyectos 
+export default Proyectos

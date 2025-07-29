@@ -13,14 +13,18 @@ import fincasImage1 from '../assets/FINCAS DE LA FLORIDA/IMG_20201012_171607_464
 
 // Importar imágenes de Praderas de Cardales I
 import praderas1Image1 from '../assets/PRADERAS DE CARDALES 1/20220318_134641.webp'
+import praderas1Image10 from '../assets/PRADERAS DE CARDALES 1/dji_export_1647217500946.webp'
 
 // Importar imágenes de El Lazo
 import elLazoImage1 from '../assets/EL LAZO/20220325_123731.webp'
 
+// Importar imágenes de Praderas de Cardales II
+import praderas2Image1 from '../assets/PRADERAS DE CARDALES 2/DJI_0642.webp'
+
 // Importar imágenes de Praderas 3
 import praderas3Image1 from '../assets/Praderas 3/5.webp'
 
-// Imagen de ejemplo para Praderas de Cardales II (que falta)
+// Imagen de ejemplo para proyectos sin imágenes
 import example from '../assets/example.jpg'
 
 const Projects = () => {
@@ -72,7 +76,7 @@ const Projects = () => {
       descripcion: 'Barrio abierto de 128 lotes de 2000 m² cada uno. Ubicación estratégica con atmósfera de paz y naturaleza exuberante.',
       destacados: ['128 lotes de 2000 m²', 'Amplios horizontes', 'Naturaleza incomparable'],
       ubicacion: 'Cardales',
-      imagen: praderas1Image1
+      imagen: praderas1Image10
     },
     {
       id: 'praderas-cardales-ii',
@@ -81,7 +85,7 @@ const Projects = () => {
       descripcion: 'Barrio abierto sin expensas con 200 lotes desde 1000 m² hasta 1600 m². Naturaleza, tranquilidad y equipamiento deportivo completo.',
       destacados: ['200 lotes sin expensas', 'Plaza y deportes', 'SUM con parrillas'],
       ubicacion: 'Cardales',
-      imagen: example // Imagen de ejemplo hasta que tengas las fotos
+      imagen: praderas2Image1
     },
     {
       id: 'praderas-cardales-iii',
@@ -166,4 +170,4 @@ const Projects = () => {
   )
 }
 
-export default Projects 
+export default Projects
