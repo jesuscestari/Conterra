@@ -2942,6 +2942,29 @@ p, span, div {
   color: rgba(0, 0, 0, 0.3);
 }
 
+.footer-developer {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+}
+
+.footer-developer p {
+  color: #666;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.footer-developer a {
+  color: #AB9368;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-developer a:hover {
+  color: #333;
+}
+
 /* Responsive Footer */
 @media (max-width: 1024px) {
   .footer-content {
@@ -2994,6 +3017,15 @@ p, span, div {
   
   .footer-copyright {
     font-size: 0.8rem;
+  }
+  
+  .footer-developer {
+    padding-top: 0.8rem;
+    margin-top: 0.8rem;
+  }
+  
+  .footer-developer p {
+    font-size: 0.75rem;
   }
 }
 
@@ -3051,6 +3083,15 @@ p, span, div {
   
   .footer-legal span {
     display: none;
+  }
+  
+  .footer-developer {
+    padding-top: 0.6rem;
+    margin-top: 0.6rem;
+  }
+  
+  .footer-developer p {
+    font-size: 0.7rem;
   }
 }
 

@@ -71,6 +71,9 @@ const Footer = () => {
               <a href="/politicas-privacidad">Política de Privacidad</a>
             </div>
           </div>
+          <div className="footer-developer">
+            <p>Desarrollado por <a href="https://bellumsoftware.com/" target="_blank" rel="noopener noreferrer">Bellum</a></p>
+          </div>
         </div>
       </div>
     </footer>
