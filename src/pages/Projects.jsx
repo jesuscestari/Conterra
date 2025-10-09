@@ -14,6 +14,7 @@ import fincasImage1 from '../assets/FINCAS DE LA FLORIDA/IMG_20201012_171607_464
 // Importar imágenes de Praderas de Cardales I
 import praderas1Image1 from '../assets/PRADERAS DE CARDALES 1/20220318_134641.webp'
 import praderas1Image10 from '../assets/PRADERAS DE CARDALES 1/dji_export_1647217500946.webp'
+import praderas1ImageNew from '../assets/PRADERAS DE CARDALES 1/DJI_20251007161824_0321_D.webp'
 
 // Importar imágenes de El Lazo
 import elLazoImage1 from '../assets/EL LAZO/20220325_123731.webp'
@@ -76,7 +77,7 @@ const Projects = () => {
       descripcion: 'Barrio abierto de 128 lotes de 2000 m² cada uno. Ubicación estratégica con atmósfera de paz y naturaleza exuberante.',
       destacados: ['128 lotes de 2000 m²', 'Amplios horizontes', 'Naturaleza incomparable'],
       ubicacion: 'Cardales',
-      imagen: praderas1Image10
+      imagen: praderas1ImageNew
     },
     {
       id: 'praderas-cardales-ii',

@@ -40,6 +40,10 @@ import praderas1Image9 from '../assets/PRADERAS DE CARDALES 1/20211128_225559.we
 import praderas1Image10 from '../assets/PRADERAS DE CARDALES 1/dji_export_1647217500946.webp'
 import praderas1Image11 from '../assets/PRADERAS DE CARDALES 1/DESPUES.webp'
 import praderas1Image12 from '../assets/PRADERAS DE CARDALES 1/DESPUES 2.webp'
+import praderas1Image13 from '../assets/PRADERAS DE CARDALES 1/DJI_20251007161824_0321_D.webp'
+import praderas1Image14 from '../assets/PRADERAS DE CARDALES 1/DJI_20251007161841_0322_D.webp'
+import praderas1Image15 from '../assets/PRADERAS DE CARDALES 1/DJI_20251007161921_0326_D.webp'
+import praderas1Image16 from '../assets/PRADERAS DE CARDALES 1/DJI_20251007161924_0327_D.webp'
 
 // Importar imágenes de Praderas de Cardales II
 import praderas2Image1 from '../assets/PRADERAS DE CARDALES 2/DJI_0642.webp'
@@ -164,8 +168,12 @@ La característica esencial que distingue a Praderas de Cardales I es su atmósf
         'Atmósfera de paz y tranquilidad'
       ],
       ubicacion: 'Cardales, Buenos Aires',
-      imagen: praderas1Image10,
+      imagen: praderas1Image13,
       galleryImages: [
+        { src: praderas1Image13, alt: 'Vista aérea reciente de Praderas de Cardales I' },
+        { src: praderas1Image14, alt: 'Vista panorámica del desarrollo' },
+        { src: praderas1Image15, alt: 'Vista aérea del barrio' },
+        { src: praderas1Image16, alt: 'Praderas de Cardales I desde el aire' },
         { src: praderas1Image10, alt: 'Vista general de Praderas de Cardales I' },
         { src: praderas1Image1, alt: 'Lotes del barrio' },
         { src: praderas1Image2, alt: 'Naturaleza exuberante' },

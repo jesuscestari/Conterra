@@ -16,6 +16,7 @@ import praderas1Image1 from '../assets/PRADERAS DE CARDALES 1/20220318_134641.we
 import praderas1Image2 from '../assets/PRADERAS DE CARDALES 1/20220318_133926.webp'
 import praderas1Image3 from '../assets/PRADERAS DE CARDALES 1/20220318_132853.webp'
 import praderas1Image10 from '../assets/PRADERAS DE CARDALES 1/dji_export_1647217500946.webp'
+import praderas1ImageNew from '../assets/PRADERAS DE CARDALES 1/DJI_20251007161824_0321_D.webp'
 
 // Importar imágenes de El Lazo
 import elLazoImage1 from '../assets/EL LAZO/20220325_123731.webp'
@@ -86,8 +87,8 @@ const Proyectos = () => {
       descripcion: 'Barrio abierto de 128 lotes de 2000 m² cada uno. Ubicación estratégica con atmósfera de paz y naturaleza exuberante.',
       destacados: ['128 lotes de 2000 m²', 'Amplios horizontes', 'Naturaleza incomparable'],
       ubicacion: 'Cardales',
-      imagen: praderas1Image10,
-      imagenes: [praderas1Image10, praderas1Image1, praderas1Image2, praderas1Image3]
+      imagen: praderas1ImageNew,
+      imagenes: [praderas1ImageNew, praderas1Image10, praderas1Image1, praderas1Image2, praderas1Image3]
     },
     {
       id: 'praderas-cardales-ii',
