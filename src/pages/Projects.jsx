@@ -25,6 +25,9 @@ import praderas2Image1 from '../assets/PRADERAS DE CARDALES 2/DJI_0642.webp'
 // Importar imágenes de Praderas 3
 import praderas3Image1 from '../assets/Praderas 3/5.webp'
 
+// Importar imágenes de El Madrigal
+import madrigalImage1 from '../assets/el madrigal/DJI_20260612143103_0779_D.webp'
+
 // Imagen de ejemplo para proyectos sin imágenes
 import example from '../assets/example.jpg'
 
@@ -52,6 +55,15 @@ const Projects = () => {
   }, [])
 
   const proyectos = [
+    {
+      id: 'el-madrigal',
+      nombre: 'El Madrigal',
+      subtitulo: 'Donde la naturaleza, la educación y la vida en comunidad se encuentran',
+      descripcion: 'Un nuevo barrio abierto sin expensas en Zárate, con 450 lotes de 600 m² a 800 m², acceso asfaltado y más de 20.000 m² de espacios verdes y recreativos.',
+      destacados: ['450 lotes de 600 a 800 m²', '20.000 m² espacios verdes', 'Polo educativo'],
+      ubicacion: 'Zárate',
+      imagen: madrigalImage1
+    },
     {
       id: 'saint-francis',
       nombre: 'Saint Francis',

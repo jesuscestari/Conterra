@@ -78,6 +78,13 @@ import praderas3Image9 from '../assets/Praderas 3/8.webp'
 import praderas3Image10 from '../assets/Praderas 3/9.webp'
 import praderas3Image11 from '../assets/Praderas 3/10.webp'
 
+// Importar imágenes de El Madrigal
+import madrigalImage1 from '../assets/el madrigal/DJI_20260612143103_0779_D.webp'
+import madrigalImage2 from '../assets/el madrigal/DJI_20260612143236_0784_D.webp'
+import madrigalImage3 from '../assets/el madrigal/DJI_20260612143249_0786_D.webp'
+import madrigalImage4 from '../assets/el madrigal/DJI_20260612143254_0787_D.webp'
+import madrigalImage5 from '../assets/el madrigal/DJI_20260612143303_0789_D.webp'
+
 // Imagen de ejemplo para proyectos sin imágenes
 import example from '../assets/example.jpg'
 
@@ -89,6 +96,40 @@ const ProyectoDetalle = () => {
   const [lightboxIndex, setLightboxIndex] = useState(0)
 
   const proyectosData = {
+    'el-madrigal': {
+      nombre: 'El Madrigal',
+      heroTitle: 'EL MADRIGAL',
+      heroSubtitle: 'Donde la naturaleza, la educación y la vida en comunidad se encuentran',
+      descripcionCorta: 'Un nuevo barrio abierto sin expensas en Zárate',
+      descripcionCompleta: `El Madrigal es un nuevo barrio abierto sin expensas, compuesto por 450 lotes de 600 m² a 800 m², ubicado estratégicamente sobre la Ruta Provincial 193. Su salida directa a la ruta y el acceso totalmente asfaltado permiten disfrutar de la tranquilidad de un entorno natural sin resignar conectividad: se encuentra a solo 5 minutos de Zárate, 10 minutos de Campana y 10 minutos de Capilla del Señor.
+
+Uno de sus principales atractivos será su gran parque recreativo de más de 20.000 m², con más de 200 metros de costa sobre un arroyo natural. Allí se desarrollará un paseo pensado para disfrutar del paisaje, caminar y compartir momentos al aire libre. El proyecto también contará con una gran plaza con juegos infantiles y un completo sector deportivo, equipado con canchas de fútbol 5, playón de básquet, mesas de ping pong y circuito calisténico.
+
+Además, El Madrigal tendrá un área especialmente destinada al desarrollo de un polo educativo, ubicada en el frente del barrio. Este espacio ha sido proyectado para promover la futura instalación de una institución educativa de primer nivel, con niveles inicial, primario y secundario, contribuyendo al crecimiento y la consolidación de toda la zona.
+
+El barrio contará con energía eléctrica, red de agua, asfalto en sus arterias principales, luminarias LED, instalaciones destinadas a seguridad y una cuidada forestación de sus parques y espacios comunes. El Madrigal nace como una propuesta integral para quienes buscan construir su hogar en un entorno conectado, natural y pensado para el futuro.`,
+      caracteristicas: [
+        '450 lotes de 600 m² a 800 m²',
+        'Barrio abierto sin expensas',
+        'Salida directa y acceso asfaltado sobre Ruta Provincial 193',
+        'A solo 5 min de Zárate, 10 min de Campana y 10 min de Capilla del Señor',
+        'Parque recreativo de más de 20.000 m² con 200m de costa sobre arroyo natural',
+        'Plaza con juegos infantiles',
+        'Sector deportivo con canchas de fútbol 5, playón de básquet, ping pong y calistenia',
+        'Área para polo educativo (niveles inicial, primario y secundario)',
+        'Energía eléctrica, red de agua, asfalto en arterias principales y luminarias LED',
+        'Instalaciones destinadas a seguridad y cuidada forestación'
+      ],
+      ubicacion: 'Zárate, Buenos Aires',
+      imagen: madrigalImage1,
+      galleryImages: [
+        { src: madrigalImage1, alt: 'Vista aérea de El Madrigal' },
+        { src: madrigalImage2, alt: 'Vista panorámica de El Madrigal' },
+        { src: madrigalImage3, alt: 'Entorno natural y terrenos' },
+        { src: madrigalImage4, alt: 'Espacios verdes de El Madrigal' },
+        { src: madrigalImage5, alt: 'Vista del proyecto El Madrigal' }
+      ]
+    },
     'saint-francis': {
       nombre: 'Saint Francis',
       heroTitle: 'SAINT FRANCIS',

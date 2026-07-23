@@ -18,6 +18,7 @@ const Footer = () => {
           <div className="footer-section">
             <h3>Desarrollos</h3>
             <ul className="footer-links">
+              <li><a href="/proyectos/el-madrigal">El Madrigal</a></li>
               <li><a href="/proyectos/saint-francis">Saint Francis</a></li>
               <li><a href="/proyectos/fincas-florida">Fincas de la Florida</a></li>
               <li><a href="/proyectos/praderas-cardales-i">Praderas de Cardales I</a></li>
