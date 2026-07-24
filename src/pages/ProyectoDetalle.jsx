@@ -79,11 +79,11 @@ import praderas3Image10 from '../assets/Praderas 3/9.webp'
 import praderas3Image11 from '../assets/Praderas 3/10.webp'
 
 // Importar imágenes de El Madrigal
-import madrigalImage1 from '../assets/el madrigal/DJI_20260612143103_0779_D.webp'
-import madrigalImage2 from '../assets/el madrigal/DJI_20260612143236_0784_D.webp'
-import madrigalImage3 from '../assets/el madrigal/DJI_20260612143249_0786_D.webp'
-import madrigalImage4 from '../assets/el madrigal/DJI_20260612143254_0787_D.webp'
-import madrigalImage5 from '../assets/el madrigal/DJI_20260612143303_0789_D.webp'
+import madrigalImage1 from '../assets/el madrigal/1000641974.webp'
+import madrigalImage2 from '../assets/el madrigal/1000641992.webp'
+import madrigalImage3 from '../assets/el madrigal/1000641999.webp'
+import madrigalImage4 from '../assets/el madrigal/1000642004.webp'
+import madrigalImage5 from '../assets/el madrigal/1000642006.webp'
 
 // Imagen de ejemplo para proyectos sin imágenes
 import example from '../assets/example.jpg'

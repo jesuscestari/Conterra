@@ -26,7 +26,7 @@ import praderas2Image1 from '../assets/PRADERAS DE CARDALES 2/DJI_0642.webp'
 import praderas3Image1 from '../assets/Praderas 3/5.webp'
 
 // Importar imágenes de El Madrigal
-import madrigalImage1 from '../assets/el madrigal/DJI_20260612143103_0779_D.webp'
+import madrigalImage1 from '../assets/el madrigal/1000641974.webp'
 
 // Imagen de ejemplo para proyectos sin imágenes
 import example from '../assets/example.jpg'
