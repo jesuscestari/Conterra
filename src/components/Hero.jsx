@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import ScrollIndicator from './ScrollIndicator'
-import heroImage from '../assets/hero.png'
+import heroImage from '../assets/hero.webp'
 import videoSrc from '../assets/video.mp4'
 
 const Hero = ({

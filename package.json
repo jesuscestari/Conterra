@@ -8,7 +8,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "optimize-video": "node scripts/optimize-video.js"
+    "optimize-video": "node scripts/optimize-video.js",
+    "optimize-images": "node scripts/optimize-images.js"
   },
   "dependencies": {
     "framer-motion": "^12.23.6",
