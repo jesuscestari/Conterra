@@ -1,0 +1,78 @@
+// Esquema de la base local del plano de lotes.
+// Docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+/// Datos comerciales de cada parcela. La geometria del poligono NO vive aca:
+/// se genera a partir del plano y se sirve como archivo estatico cacheable.
+///
+/// El estado se guarda como texto y no como enum de Postgres a proposito: la
+/// lista de estados vive en `src/lib/plano/estado.ts` y agregar uno no deberia
+/// costar una migracion. La lectura lo normaliza (ver `lotes/repositorio.ts`).
+model Lote {
+  /// Clave contra la que se une el poligono del archivo estatico de geometria.
+  ///
+  /// Se deriva del numero al generar la geometria ("L315" es el lote 315), asi
+  /// que al mirar la base los dos valores coinciden. Pero el id NO sigue al
+  /// numero cuando se lo edita desde el panel: renombrarlo dejaria huerfano al
+  /// poligono, que se genera en build y no se puede reescribir en caliente. Es
+  /// decir que coinciden siempre, salvo en los lotes renumerados a mano.
+  id           String   @id
+  /// Numero oficial del lote, tomado del plano de mensura. Es editable: el
+  /// emparejamiento automatico entre la mensura y el plano de marketing no es
+  /// perfecto y hay lotes que hay que corregir a mano.
+  ///
+  /// A proposito NO lleva restriccion de unicidad: al corregir dos lotes que
+  /// quedaron intercambiados haria falta un valor intermedio, y la restriccion
+  /// lo impediria. Los duplicados se avisan en la interfaz.
+  numero       Int
+  superficieM2 Float
+  precioUsd    Int?
+  estado       String   @default("DISPONIBLE")
+  observacion  String?
+  creadoEn     DateTime @default(now())
+  editadoEn    DateTime @updatedAt
+
+  editadoPorId String?
+  editadoPor   AdminUser? @relation(fields: [editadoPorId], references: [id], onDelete: SetNull)
+
+  @@index([estado])
+  @@index([numero])
+}
+
+/// Usuarios con permiso de edicion. La contrasena se guarda hasheada con bcrypt.
+model AdminUser {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  nombre       String
+  passwordHash String
+  activo       Boolean  @default(true)
+  creadoEn     DateTime @default(now())
+
+  lotesEditados Lote[]
+}
+
+/// Contador de intentos fallidos por cliente, para frenar la fuerza bruta en el
+/// login.
+///
+/// Vive en la base y no en memoria del proceso porque la aplicacion puede
+/// correr en mas de una instancia, o en instancias efimeras que se recrean por
+/// pedido. Un contador en memoria arrancaria en cero cada vez y no frenaria
+/// nada.
+model IntentoAcceso {
+  /// Identifica al cliente y la accion, p. ej. "login:203.0.113.7".
+  clave      String   @id
+  intentos   Int      @default(0)
+  /// Momento en que la ventana vence y el contador vuelve a cero.
+  reiniciaEn DateTime
+
+  /// Las filas vencidas se borran al registrar el siguiente intento.
+  @@index([reiniciaEn])
+}

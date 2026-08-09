@@ -3,7 +3,18 @@
   command = "npm run build"
 
 [build.environment]
-  NODE_VERSION = "18"
+  # 22 es lo que pide el cliente de Prisma. En 18 el build falla.
+  NODE_VERSION = "22"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+  # El cliente de Prisma se genera fuera de la carpeta de funciones, asi que hay
+  # que incluirlo a mano en el paquete que se despliega.
+  included_files = ["src/generated/prisma/**"]
+
+# Las rutas /api las declara cada funcion con `config.path`, que Netlify resuelve
+# antes que los redirects de este archivo. No hace falta mapearlas a mano.
 
 # SPA routing - all routes go to index.html
 [[redirects]]

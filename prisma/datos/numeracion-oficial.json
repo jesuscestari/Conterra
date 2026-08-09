@@ -1,0 +1,2316 @@
+{
+ "generadoEn": "2026-07-29T01:32:40",
+ "origen": "Plano de Mensura RN56, Desarrollos Urbanos El Madrigal S.A., 07/2025",
+ "lotes": [
+  {
+   "id": "L234",
+   "numero": 1,
+   "superficieM2": 740.54
+  },
+  {
+   "id": "L233",
+   "numero": 2,
+   "superficieM2": 716.11
+  },
+  {
+   "id": "L232",
+   "numero": 3,
+   "superficieM2": 766.57
+  },
+  {
+   "id": "L230",
+   "numero": 4,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L228",
+   "numero": 5,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L226",
+   "numero": 6,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L224",
+   "numero": 7,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L222",
+   "numero": 8,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L220",
+   "numero": 9,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L218",
+   "numero": 10,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L216",
+   "numero": 11,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L214",
+   "numero": 12,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L212",
+   "numero": 13,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L210",
+   "numero": 14,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L208",
+   "numero": 15,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L206",
+   "numero": 16,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L204",
+   "numero": 17,
+   "superficieM2": 645.5
+  },
+  {
+   "id": "L205",
+   "numero": 18,
+   "superficieM2": 645.5
+  },
+  {
+   "id": "L207",
+   "numero": 19,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L209",
+   "numero": 20,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L211",
+   "numero": 21,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L213",
+   "numero": 22,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L215",
+   "numero": 23,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L217",
+   "numero": 24,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L219",
+   "numero": 25,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L221",
+   "numero": 26,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L223",
+   "numero": 27,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L225",
+   "numero": 28,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L227",
+   "numero": 29,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L229",
+   "numero": 30,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L231",
+   "numero": 31,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L295",
+   "numero": 32,
+   "superficieM2": 658.2
+  },
+  {
+   "id": "L294",
+   "numero": 33,
+   "superficieM2": 601.46
+  },
+  {
+   "id": "L293",
+   "numero": 34,
+   "superficieM2": 679.08
+  },
+  {
+   "id": "L291",
+   "numero": 35,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L289",
+   "numero": 36,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L287",
+   "numero": 37,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L285",
+   "numero": 38,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L283",
+   "numero": 39,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L281",
+   "numero": 40,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L279",
+   "numero": 41,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L277",
+   "numero": 42,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L275",
+   "numero": 43,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L273",
+   "numero": 44,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L271",
+   "numero": 45,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L269",
+   "numero": 46,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L267",
+   "numero": 47,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L265",
+   "numero": 48,
+   "superficieM2": 645.5
+  },
+  {
+   "id": "L266",
+   "numero": 49,
+   "superficieM2": 645.5
+  },
+  {
+   "id": "L268",
+   "numero": 50,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L270",
+   "numero": 51,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L272",
+   "numero": 52,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L274",
+   "numero": 53,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L276",
+   "numero": 54,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L278",
+   "numero": 55,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L280",
+   "numero": 56,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L282",
+   "numero": 57,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L284",
+   "numero": 58,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L286",
+   "numero": 59,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L288",
+   "numero": 60,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L290",
+   "numero": 61,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L292",
+   "numero": 62,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L339",
+   "numero": 63,
+   "superficieM2": 817.72
+  },
+  {
+   "id": "L338",
+   "numero": 64,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L337",
+   "numero": 65,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L336",
+   "numero": 66,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L335",
+   "numero": 67,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L334",
+   "numero": 68,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L333",
+   "numero": 69,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L332",
+   "numero": 70,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L331",
+   "numero": 71,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L330",
+   "numero": 72,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L329",
+   "numero": 73,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L328",
+   "numero": 74,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L327",
+   "numero": 75,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L326",
+   "numero": 76,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L325",
+   "numero": 77,
+   "superficieM2": 645.5
+  },
+  {
+   "id": "L340",
+   "numero": 78,
+   "superficieM2": 645.5
+  },
+  {
+   "id": "L341",
+   "numero": 79,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L342",
+   "numero": 80,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L343",
+   "numero": 81,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L344",
+   "numero": 82,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L345",
+   "numero": 83,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L346",
+   "numero": 84,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L347",
+   "numero": 85,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L348",
+   "numero": 86,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L349",
+   "numero": 87,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L350",
+   "numero": 88,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L351",
+   "numero": 89,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L352",
+   "numero": 90,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L353",
+   "numero": 91,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L354",
+   "numero": 92,
+   "superficieM2": 741.45
+  },
+  {
+   "id": "L407",
+   "numero": 93,
+   "superficieM2": 988.86
+  },
+  {
+   "id": "L406",
+   "numero": 94,
+   "superficieM2": 762.11
+  },
+  {
+   "id": "L403",
+   "numero": 95,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L402",
+   "numero": 96,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L400",
+   "numero": 97,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L397",
+   "numero": 98,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L396",
+   "numero": 99,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L394",
+   "numero": 100,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L392",
+   "numero": 101,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L389",
+   "numero": 102,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L387",
+   "numero": 103,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L386",
+   "numero": 104,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L383",
+   "numero": 105,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L381",
+   "numero": 106,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L379",
+   "numero": 107,
+   "superficieM2": 645.5
+  },
+  {
+   "id": "L380",
+   "numero": 108,
+   "superficieM2": 645.5
+  },
+  {
+   "id": "L382",
+   "numero": 109,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L384",
+   "numero": 110,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L385",
+   "numero": 111,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L388",
+   "numero": 112,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L390",
+   "numero": 113,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L391",
+   "numero": 114,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L393",
+   "numero": 115,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L395",
+   "numero": 116,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L398",
+   "numero": 117,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L399",
+   "numero": 118,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L401",
+   "numero": 119,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L404",
+   "numero": 120,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L405",
+   "numero": 121,
+   "superficieM2": 728.67
+  },
+  {
+   "id": "L420",
+   "numero": 122,
+   "superficieM2": 1226.51
+  },
+  {
+   "id": "L419",
+   "numero": 123,
+   "superficieM2": 871.79
+  },
+  {
+   "id": "L418",
+   "numero": 124,
+   "superficieM2": 809.33
+  },
+  {
+   "id": "L417",
+   "numero": 125,
+   "superficieM2": 800.0
+  },
+  {
+   "id": "L416",
+   "numero": 126,
+   "superficieM2": 800.0
+  },
+  {
+   "id": "L415",
+   "numero": 127,
+   "superficieM2": 800.0
+  },
+  {
+   "id": "L414",
+   "numero": 128,
+   "superficieM2": 800.0
+  },
+  {
+   "id": "L413",
+   "numero": 129,
+   "superficieM2": 800.0
+  },
+  {
+   "id": "L412",
+   "numero": 130,
+   "superficieM2": 800.0
+  },
+  {
+   "id": "L411",
+   "numero": 131,
+   "superficieM2": 800.0
+  },
+  {
+   "id": "L410",
+   "numero": 132,
+   "superficieM2": 800.0
+  },
+  {
+   "id": "L409",
+   "numero": 133,
+   "superficieM2": 800.0
+  },
+  {
+   "id": "L408",
+   "numero": 134,
+   "superficieM2": 795.5
+  },
+  {
+   "id": "L421",
+   "numero": 135,
+   "superficieM2": 795.5
+  },
+  {
+   "id": "L422",
+   "numero": 136,
+   "superficieM2": 800.0
+  },
+  {
+   "id": "L423",
+   "numero": 137,
+   "superficieM2": 800.0
+  },
+  {
+   "id": "L424",
+   "numero": 138,
+   "superficieM2": 800.0
+  },
+  {
+   "id": "L425",
+   "numero": 139,
+   "superficieM2": 800.0
+  },
+  {
+   "id": "L426",
+   "numero": 140,
+   "superficieM2": 800.0
+  },
+  {
+   "id": "L427",
+   "numero": 141,
+   "superficieM2": 800.0
+  },
+  {
+   "id": "L428",
+   "numero": 142,
+   "superficieM2": 800.0
+  },
+  {
+   "id": "L429",
+   "numero": 143,
+   "superficieM2": 800.0
+  },
+  {
+   "id": "L430",
+   "numero": 144,
+   "superficieM2": 800.0
+  },
+  {
+   "id": "L431",
+   "numero": 145,
+   "superficieM2": 809.33
+  },
+  {
+   "id": "L432",
+   "numero": 146,
+   "superficieM2": 1103.66
+  },
+  {
+   "id": "L441",
+   "numero": 147,
+   "superficieM2": 1004.55
+  },
+  {
+   "id": "L440",
+   "numero": 148,
+   "superficieM2": 800.0
+  },
+  {
+   "id": "L439",
+   "numero": 149,
+   "superficieM2": 800.0
+  },
+  {
+   "id": "L438",
+   "numero": 150,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L437",
+   "numero": 151,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L436",
+   "numero": 152,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L435",
+   "numero": 153,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L434",
+   "numero": 154,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L433",
+   "numero": 155,
+   "superficieM2": 645.5
+  },
+  {
+   "id": "L442",
+   "numero": 156,
+   "superficieM2": 645.5
+  },
+  {
+   "id": "L443",
+   "numero": 157,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L444",
+   "numero": 158,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L445",
+   "numero": 159,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L446",
+   "numero": 160,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L447",
+   "numero": 161,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L448",
+   "numero": 162,
+   "superficieM2": 911.58
+  },
+  {
+   "id": "L458",
+   "numero": 163,
+   "superficieM2": 885.81
+  },
+  {
+   "id": "L455",
+   "numero": 164,
+   "superficieM2": 750.0
+  },
+  {
+   "id": "L454",
+   "numero": 165,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L452",
+   "numero": 166,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L450",
+   "numero": 167,
+   "superficieM2": 645.5
+  },
+  {
+   "id": "L449",
+   "numero": 168,
+   "superficieM2": 645.5
+  },
+  {
+   "id": "L451",
+   "numero": 169,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L453",
+   "numero": 170,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L457",
+   "numero": 171,
+   "superficieM2": 1021.24
+  },
+  {
+   "id": "L456",
+   "numero": 172,
+   "superficieM2": 779.35
+  },
+  {
+   "id": "L462",
+   "numero": 173,
+   "superficieM2": 1159.75
+  },
+  {
+   "id": "L461",
+   "numero": 174,
+   "superficieM2": null
+  },
+  {
+   "id": "L460",
+   "numero": 175,
+   "superficieM2": null
+  },
+  {
+   "id": "L459",
+   "numero": 176,
+   "superficieM2": 915.52
+  },
+  {
+   "id": "L028",
+   "numero": 177,
+   "superficieM2": 625.7
+  },
+  {
+   "id": "L029",
+   "numero": 178,
+   "superficieM2": 615.52
+  },
+  {
+   "id": "L026",
+   "numero": 179,
+   "superficieM2": 625.0
+  },
+  {
+   "id": "L024",
+   "numero": 180,
+   "superficieM2": 625.0
+  },
+  {
+   "id": "L022",
+   "numero": 181,
+   "superficieM2": 625.0
+  },
+  {
+   "id": "L021",
+   "numero": 182,
+   "superficieM2": 625.0
+  },
+  {
+   "id": "L018",
+   "numero": 183,
+   "superficieM2": 625.0
+  },
+  {
+   "id": "L016",
+   "numero": 184,
+   "superficieM2": 625.0
+  },
+  {
+   "id": "L014",
+   "numero": 185,
+   "superficieM2": 625.0
+  },
+  {
+   "id": "L012",
+   "numero": 186,
+   "superficieM2": 625.0
+  },
+  {
+   "id": "L011",
+   "numero": 187,
+   "superficieM2": 625.0
+  },
+  {
+   "id": "L008",
+   "numero": 188,
+   "superficieM2": 625.0
+  },
+  {
+   "id": "L006",
+   "numero": 189,
+   "superficieM2": 625.0
+  },
+  {
+   "id": "L004",
+   "numero": 190,
+   "superficieM2": 625.0
+  },
+  {
+   "id": "L001",
+   "numero": 191,
+   "superficieM2": 626.25
+  },
+  {
+   "id": "L002",
+   "numero": 192,
+   "superficieM2": 615.37
+  },
+  {
+   "id": "L003",
+   "numero": 193,
+   "superficieM2": 625.65
+  },
+  {
+   "id": "L005",
+   "numero": 194,
+   "superficieM2": 625.0
+  },
+  {
+   "id": "L007",
+   "numero": 195,
+   "superficieM2": 625.0
+  },
+  {
+   "id": "L009",
+   "numero": 196,
+   "superficieM2": 625.0
+  },
+  {
+   "id": "L010",
+   "numero": 197,
+   "superficieM2": 625.0
+  },
+  {
+   "id": "L013",
+   "numero": 198,
+   "superficieM2": 625.0
+  },
+  {
+   "id": "L015",
+   "numero": 199,
+   "superficieM2": 625.0
+  },
+  {
+   "id": "L017",
+   "numero": 200,
+   "superficieM2": 625.0
+  },
+  {
+   "id": "L019",
+   "numero": 201,
+   "superficieM2": 625.0
+  },
+  {
+   "id": "L020",
+   "numero": 202,
+   "superficieM2": 625.0
+  },
+  {
+   "id": "L023",
+   "numero": 203,
+   "superficieM2": 625.0
+  },
+  {
+   "id": "L025",
+   "numero": 204,
+   "superficieM2": 625.0
+  },
+  {
+   "id": "L027",
+   "numero": 205,
+   "superficieM2": null
+  },
+  {
+   "id": "L030",
+   "numero": 206,
+   "superficieM2": 626.38
+  },
+  {
+   "id": "L058",
+   "numero": 207,
+   "superficieM2": 655.68
+  },
+  {
+   "id": "L059",
+   "numero": 208,
+   "superficieM2": 630.5
+  },
+  {
+   "id": "L056",
+   "numero": 209,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L054",
+   "numero": 210,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L052",
+   "numero": 211,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L050",
+   "numero": 212,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L049",
+   "numero": 213,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L046",
+   "numero": 214,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L044",
+   "numero": 215,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L042",
+   "numero": 216,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L040",
+   "numero": 217,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L038",
+   "numero": 218,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L037",
+   "numero": 219,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L034",
+   "numero": 220,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L031",
+   "numero": 221,
+   "superficieM2": 656.7
+  },
+  {
+   "id": "L032",
+   "numero": 222,
+   "superficieM2": 630.51
+  },
+  {
+   "id": "L033",
+   "numero": 223,
+   "superficieM2": 655.71
+  },
+  {
+   "id": "L035",
+   "numero": 224,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L036",
+   "numero": 225,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L039",
+   "numero": 226,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L041",
+   "numero": 227,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L043",
+   "numero": 228,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L045",
+   "numero": 229,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L047",
+   "numero": 230,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L048",
+   "numero": 231,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L051",
+   "numero": 232,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L053",
+   "numero": 233,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L055",
+   "numero": 234,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L057",
+   "numero": 235,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L060",
+   "numero": 236,
+   "superficieM2": 656.38
+  },
+  {
+   "id": "L088",
+   "numero": 237,
+   "superficieM2": 655.68
+  },
+  {
+   "id": "L089",
+   "numero": 238,
+   "superficieM2": 630.5
+  },
+  {
+   "id": "L086",
+   "numero": 239,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L084",
+   "numero": 240,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L082",
+   "numero": 241,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L080",
+   "numero": 242,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L079",
+   "numero": 243,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L076",
+   "numero": 244,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L075",
+   "numero": 245,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L072",
+   "numero": 246,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L070",
+   "numero": 247,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L069",
+   "numero": 248,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L066",
+   "numero": 249,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L064",
+   "numero": 250,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L061",
+   "numero": 251,
+   "superficieM2": 656.7
+  },
+  {
+   "id": "L062",
+   "numero": 252,
+   "superficieM2": 630.51
+  },
+  {
+   "id": "L063",
+   "numero": 253,
+   "superficieM2": 655.71
+  },
+  {
+   "id": "L065",
+   "numero": 254,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L067",
+   "numero": 255,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L068",
+   "numero": 256,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L071",
+   "numero": 257,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L073",
+   "numero": 258,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L074",
+   "numero": 259,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L077",
+   "numero": 260,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L078",
+   "numero": 261,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L081",
+   "numero": 262,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L083",
+   "numero": 263,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L085",
+   "numero": 264,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L087",
+   "numero": 265,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L090",
+   "numero": 266,
+   "superficieM2": 656.38
+  },
+  {
+   "id": "L118",
+   "numero": 267,
+   "superficieM2": 655.68
+  },
+  {
+   "id": "L119",
+   "numero": 268,
+   "superficieM2": 630.5
+  },
+  {
+   "id": "L116",
+   "numero": 269,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L114",
+   "numero": 270,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L112",
+   "numero": 271,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L110",
+   "numero": 272,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L109",
+   "numero": 273,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L106",
+   "numero": 274,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L105",
+   "numero": 275,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L102",
+   "numero": 276,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L101",
+   "numero": 277,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L098",
+   "numero": 278,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L097",
+   "numero": 279,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L094",
+   "numero": 280,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L091",
+   "numero": 281,
+   "superficieM2": 656.7
+  },
+  {
+   "id": "L092",
+   "numero": 282,
+   "superficieM2": 630.51
+  },
+  {
+   "id": "L093",
+   "numero": 283,
+   "superficieM2": 655.71
+  },
+  {
+   "id": "L095",
+   "numero": 284,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L096",
+   "numero": 285,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L099",
+   "numero": 286,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L100",
+   "numero": 287,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L103",
+   "numero": 288,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L104",
+   "numero": 289,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L107",
+   "numero": 290,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L108",
+   "numero": 291,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L111",
+   "numero": 292,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L113",
+   "numero": 293,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L115",
+   "numero": 294,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L117",
+   "numero": 295,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L120",
+   "numero": 296,
+   "superficieM2": 656.38
+  },
+  {
+   "id": "L140",
+   "numero": 297,
+   "superficieM2": null
+  },
+  {
+   "id": "L141",
+   "numero": 298,
+   "superficieM2": null
+  },
+  {
+   "id": "L138",
+   "numero": 299,
+   "superficieM2": 800.0
+  },
+  {
+   "id": "L136",
+   "numero": 300,
+   "superficieM2": 800.0
+  },
+  {
+   "id": "L134",
+   "numero": 301,
+   "superficieM2": null
+  },
+  {
+   "id": "L132",
+   "numero": 302,
+   "superficieM2": 800.0
+  },
+  {
+   "id": "L130",
+   "numero": 303,
+   "superficieM2": 800.0
+  },
+  {
+   "id": "L128",
+   "numero": 304,
+   "superficieM2": 800.0
+  },
+  {
+   "id": "L126",
+   "numero": 305,
+   "superficieM2": 800.0
+  },
+  {
+   "id": "L124",
+   "numero": 306,
+   "superficieM2": 800.0
+  },
+  {
+   "id": "L121",
+   "numero": 307,
+   "superficieM2": 655.37
+  },
+  {
+   "id": "L122",
+   "numero": 308,
+   "superficieM2": 959.61
+  },
+  {
+   "id": "L123",
+   "numero": 309,
+   "superficieM2": 1913.92
+  },
+  {
+   "id": "L125",
+   "numero": 310,
+   "superficieM2": 800.0
+  },
+  {
+   "id": "L127",
+   "numero": 311,
+   "superficieM2": 800.0
+  },
+  {
+   "id": "L129",
+   "numero": 312,
+   "superficieM2": 800.0
+  },
+  {
+   "id": "L131",
+   "numero": 313,
+   "superficieM2": 800.0
+  },
+  {
+   "id": "L133",
+   "numero": 314,
+   "superficieM2": 800.0
+  },
+  {
+   "id": "L135",
+   "numero": 315,
+   "superficieM2": 3534.0
+  },
+  {
+   "id": "L137",
+   "numero": 316,
+   "superficieM2": 800.0
+  },
+  {
+   "id": "L139",
+   "numero": 317,
+   "superficieM2": 800.0
+  },
+  {
+   "id": "L142",
+   "numero": 318,
+   "superficieM2": null
+  },
+  {
+   "id": "L143",
+   "numero": 319,
+   "superficieM2": null
+  },
+  {
+   "id": "L171",
+   "numero": 320,
+   "superficieM2": 655.68
+  },
+  {
+   "id": "L172",
+   "numero": 321,
+   "superficieM2": 630.5
+  },
+  {
+   "id": "L169",
+   "numero": 322,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L167",
+   "numero": 323,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L165",
+   "numero": 324,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L163",
+   "numero": 325,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L161",
+   "numero": 326,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L159",
+   "numero": 327,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L157",
+   "numero": 328,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L155",
+   "numero": 329,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L154",
+   "numero": 330,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L152",
+   "numero": 331,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L150",
+   "numero": 332,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L147",
+   "numero": 333,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L144",
+   "numero": 334,
+   "superficieM2": 656.7
+  },
+  {
+   "id": "L145",
+   "numero": 335,
+   "superficieM2": 630.51
+  },
+  {
+   "id": "L146",
+   "numero": 336,
+   "superficieM2": 655.71
+  },
+  {
+   "id": "L148",
+   "numero": 337,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L149",
+   "numero": 338,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L151",
+   "numero": 339,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L153",
+   "numero": 340,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L156",
+   "numero": 341,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L158",
+   "numero": 342,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L160",
+   "numero": 343,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L162",
+   "numero": 344,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L164",
+   "numero": 345,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L166",
+   "numero": 346,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L168",
+   "numero": 347,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L170",
+   "numero": 348,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L173",
+   "numero": 349,
+   "superficieM2": 656.38
+  },
+  {
+   "id": "L201",
+   "numero": 350,
+   "superficieM2": 655.68
+  },
+  {
+   "id": "L202",
+   "numero": 351,
+   "superficieM2": 630.5
+  },
+  {
+   "id": "L199",
+   "numero": 352,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L198",
+   "numero": 353,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L196",
+   "numero": 354,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L194",
+   "numero": 355,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L191",
+   "numero": 356,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L190",
+   "numero": 357,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L188",
+   "numero": 358,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L186",
+   "numero": 359,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L184",
+   "numero": 360,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L182",
+   "numero": 361,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L180",
+   "numero": 362,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L177",
+   "numero": 363,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L174",
+   "numero": 364,
+   "superficieM2": 656.7
+  },
+  {
+   "id": "L175",
+   "numero": 365,
+   "superficieM2": 630.51
+  },
+  {
+   "id": "L176",
+   "numero": 366,
+   "superficieM2": 655.71
+  },
+  {
+   "id": "L178",
+   "numero": 367,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L179",
+   "numero": 368,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L181",
+   "numero": 369,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L183",
+   "numero": 370,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L185",
+   "numero": 371,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L187",
+   "numero": 372,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L189",
+   "numero": 373,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L192",
+   "numero": 374,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L193",
+   "numero": 375,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L195",
+   "numero": 376,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L197",
+   "numero": 377,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L200",
+   "numero": 378,
+   "superficieM2": 650.0
+  },
+  {
+   "id": "L203",
+   "numero": 379,
+   "superficieM2": 656.38
+  },
+  {
+   "id": "L262",
+   "numero": 380,
+   "superficieM2": 595.64
+  },
+  {
+   "id": "L263",
+   "numero": 381,
+   "superficieM2": 600.55
+  },
+  {
+   "id": "L260",
+   "numero": 382,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L259",
+   "numero": 383,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L257",
+   "numero": 384,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L255",
+   "numero": 385,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L253",
+   "numero": 386,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L250",
+   "numero": 387,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L249",
+   "numero": 388,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L247",
+   "numero": 389,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L245",
+   "numero": 390,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L243",
+   "numero": 391,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L241",
+   "numero": 392,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L238",
+   "numero": 393,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L235",
+   "numero": 394,
+   "superficieM2": 596.3
+  },
+  {
+   "id": "L236",
+   "numero": 395,
+   "superficieM2": 600.52
+  },
+  {
+   "id": "L237",
+   "numero": 396,
+   "superficieM2": 595.75
+  },
+  {
+   "id": "L239",
+   "numero": 397,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L240",
+   "numero": 398,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L242",
+   "numero": 399,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L244",
+   "numero": 400,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L246",
+   "numero": 401,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L248",
+   "numero": 402,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L251",
+   "numero": 403,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L252",
+   "numero": 404,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L254",
+   "numero": 405,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L256",
+   "numero": 406,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L258",
+   "numero": 407,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L261",
+   "numero": 408,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L264",
+   "numero": 409,
+   "superficieM2": 596.36
+  },
+  {
+   "id": "L324",
+   "numero": 410,
+   "superficieM2": 1112.47
+  },
+  {
+   "id": "L322",
+   "numero": 411,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L320",
+   "numero": 412,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L318",
+   "numero": 413,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L316",
+   "numero": 414,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L314",
+   "numero": 415,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L312",
+   "numero": 416,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L310",
+   "numero": 417,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L308",
+   "numero": 418,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L306",
+   "numero": 419,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L304",
+   "numero": 420,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L302",
+   "numero": 421,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L300",
+   "numero": 422,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L298",
+   "numero": 423,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L296",
+   "numero": 424,
+   "superficieM2": 596.59
+  },
+  {
+   "id": "L297",
+   "numero": 425,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L299",
+   "numero": 426,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L301",
+   "numero": 427,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L303",
+   "numero": 428,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L305",
+   "numero": 429,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L307",
+   "numero": 430,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L309",
+   "numero": 431,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L311",
+   "numero": 432,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L313",
+   "numero": 433,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L315",
+   "numero": 434,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L317",
+   "numero": 435,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L319",
+   "numero": 436,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L321",
+   "numero": 437,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L323",
+   "numero": 438,
+   "superficieM2": null
+  },
+  {
+   "id": "L367",
+   "numero": 439,
+   "superficieM2": 657.78
+  },
+  {
+   "id": "L366",
+   "numero": 440,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L365",
+   "numero": 441,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L364",
+   "numero": 442,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L363",
+   "numero": 443,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L362",
+   "numero": 444,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L361",
+   "numero": 445,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L360",
+   "numero": 446,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L359",
+   "numero": 447,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L358",
+   "numero": 448,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L357",
+   "numero": 449,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L356",
+   "numero": 450,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L355",
+   "numero": 451,
+   "superficieM2": 596.59
+  },
+  {
+   "id": "L368",
+   "numero": 452,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L369",
+   "numero": 453,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L370",
+   "numero": 454,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L371",
+   "numero": 455,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L372",
+   "numero": 456,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L373",
+   "numero": 457,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L374",
+   "numero": 458,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L375",
+   "numero": 459,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L376",
+   "numero": 460,
+   "superficieM2": 600.0
+  },
+  {
+   "id": "L377",
+   "numero": 461,
+   "superficieM2": 1073.82
+  },
+  {
+   "id": "L378",
+   "numero": 462,
+   "superficieM2": null
+  }
+ ]
+}

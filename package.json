@@ -4,35 +4,73 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "postinstall": "prisma generate",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "optimize-video": "node scripts/optimize-video.js",
-    "optimize-images": "node scripts/optimize-images.js"
+    "optimize-images": "node scripts/optimize-images.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "vectorizar": "tsx scripts/vectorizar-plano/index.ts",
+    "db:seed": "tsx prisma/seed.ts",
+    "db:deploy": "prisma migrate deploy"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@prisma/client",
+      "@prisma/engines",
+      "esbuild",
+      "prisma"
+    ]
   },
   "dependencies": {
+    "@prisma/adapter-pg": "^7.9.1",
+    "@prisma/client": "^7.9.1",
+    "bcryptjs": "^3.0.3",
     "framer-motion": "^12.23.6",
     "gsap": "^3.13.0",
+    "jose": "^6.2.8",
     "lenis": "^1.3.8",
     "lucide-react": "^0.525.0",
+    "pg": "^8.23.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",
     "react-parallax": "^3.5.2",
     "react-router-dom": "^7.6.3",
     "swiper": "^11.2.10",
-    "yet-another-react-lightbox": "^3.24.0"
+    "yet-another-react-lightbox": "^3.24.0",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "^0.5.4",
+    "@electric-sql/pglite-socket": "^0.2.7",
     "@eslint/js": "^9.30.1",
+    "@netlify/functions": "^5.3.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/node": "^24.13.3",
+    "@types/pg": "^8.21.0",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react": "^4.6.0",
+    "@vitest/coverage-v8": "^4.1.10",
+    "dotenv": "^17.4.2",
     "eslint": "^9.30.1",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.3.0",
-    "vite": "^7.0.4"
+    "jsdom": "^30.0.1",
+    "prisma": "^7.9.1",
+    "sharp": "^0.35.3",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.11",
+    "typescript": "^5.9.3",
+    "vite": "^7.0.4",
+    "vitest": "^4.1.10"
   }
 }

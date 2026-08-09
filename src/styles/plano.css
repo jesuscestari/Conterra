@@ -1,0 +1,26 @@
+/*
+ * Tailwind para los componentes del plano de lotes, que vienen escritos con
+ * utilidades y no con CSS propio.
+ *
+ * Se importan `theme` y `utilities` pero NO `preflight`: el reset global de
+ * Tailwind pisa margenes, tipografias y estilos de formulario, y este sitio
+ * tiene ~4.900 lineas de CSS propio escritas contra los valores por defecto del
+ * navegador. Meter el reset romperia paginas que no tienen nada que ver con el
+ * plano.
+ *
+ * La contrapartida es que los componentes portados no reciben el reset que
+ * asumian. Si alguno se ve raro, la solucion es un reset acotado al contenedor
+ * del plano, no habilitar preflight.
+ */
+
+@layer theme, base, components, utilities;
+
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/utilities.css' layer(utilities);
+
+/* Que clases buscar. Sin esto Tailwind escanea el proyecto entero y genera
+   utilidades por coincidencias casuales con nuestros nombres de clase. */
+@source '../components/plano';
+@source '../components/lote';
+@source '../components/auth';
+@source '../pages/PlanoElMadrigal.jsx';
