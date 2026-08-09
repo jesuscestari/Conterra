@@ -6,6 +6,8 @@ import Contact from './pages/Contact'
 import Projects from './pages/Projects'
 import ProyectoDetalle from './pages/ProyectoDetalle'
 import PoliticasPrivacidad from './pages/PoliticasPrivacidad'
+import PlanoElMadrigal from './pages/PlanoElMadrigal'
+import AdminAcceso from './pages/AdminAcceso'
 
 import Loader from './components/Loader'
 import ScrollToTop from './components/ScrollToTop'
@@ -32,9 +34,21 @@ function AnimatedRoutes() {
             <Projects />
           </PageTransition>
         } />
+        {/* Va antes de /proyectos/:id para que no lo tome como un proyecto
+            llamado "el-madrigal/plano". */}
+        <Route path="/proyectos/el-madrigal/plano" element={
+          <PageTransition>
+            <PlanoElMadrigal />
+          </PageTransition>
+        } />
         <Route path="/proyectos/:id" element={
           <PageTransition>
             <ProyectoDetalle />
+          </PageTransition>
+        } />
+        <Route path="/admin" element={
+          <PageTransition>
+            <AdminAcceso />
           </PageTransition>
         } />
         <Route path="/contacto" element={

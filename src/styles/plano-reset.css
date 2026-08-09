@@ -1,0 +1,59 @@
+/*
+ * Choque 2: los estilos de elemento del sitio se filtran dentro del plano.
+ *
+ * `index.css` y `App.css` estilan `h1`, `button`, `a` y `p, span, div` de forma
+ * global. Los componentes del plano venian de una app con el preflight de
+ * Tailwind puesto, asi que asumen que esos elementos no traen nada. Sin
+ * neutralizarlos pasan cosas como que `button { padding: 0.6em 1.2em }` se coma
+ * el ancho del boton de zoom y aplaste el icono a 0 px.
+ *
+ * Este reset deshace solo eso, y solo dentro de `.plano`. El resto del sitio no
+ * se toca.
+ *
+ * Sobre la especificidad: `.plano :where(button)` pesa (0,1,0) — lo aporta
+ * `.plano`, porque `:where()` no suma. Eso le gana a `button` (0,0,1) del sitio
+ * y empata con las utilidades de Tailwind, que al importarse DESPUES ganan por
+ * orden. Por eso este archivo va primero.
+ */
+
+.plano :where(h1, h2, h3, h4, h5, h6) {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+/* El sitio fija `font-weight: 400` en estos tres, que anula cualquier negrita. */
+.plano :where(p, span, div) {
+  font-weight: inherit;
+}
+
+.plano :where(button) {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  transition: none;
+}
+
+.plano :where(input, select, textarea) {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+.plano :where(a) {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Igual que el preflight: en línea, el SVG arrastra el espacio del renglón. */
+.plano :where(svg) {
+  display: block;
+}

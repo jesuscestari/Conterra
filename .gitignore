@@ -36,3 +36,6 @@ src/generated
 .claude/
 # Lo genera netlify-cli al correr netlify dev
 deno.lock
+
+# Base local de desarrollo (PGlite)
+.pglite

@@ -1726,6 +1726,57 @@ p, span, div {
   margin-bottom: 1.5rem;
 }
 
+/* Acceso al plano interactivo, dentro de la descripción del proyecto. */
+.proyecto-plano-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  margin-top: 0.5rem;
+  border: 1px solid #AB9368;
+  border-radius: 12px;
+  background-color: #fdfcfa;
+  text-decoration: none;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.proyecto-plano-cta:hover {
+  background-color: #AB9368;
+  transform: translateY(-2px);
+}
+
+.proyecto-plano-cta__texto {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.proyecto-plano-cta__texto strong {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #84684A;
+}
+
+.proyecto-plano-cta__flecha {
+  flex-shrink: 0;
+  font-size: 1.5rem;
+  color: #AB9368;
+  transition: transform 0.25s ease;
+}
+
+.proyecto-plano-cta:hover .proyecto-plano-cta__texto,
+.proyecto-plano-cta:hover .proyecto-plano-cta__texto strong,
+.proyecto-plano-cta:hover .proyecto-plano-cta__flecha {
+  color: #ffffff;
+}
+
+.proyecto-plano-cta:hover .proyecto-plano-cta__flecha {
+  transform: translateX(4px);
+}
+
 .proyecto-sidebar {
   position: sticky;
   top: 100px;

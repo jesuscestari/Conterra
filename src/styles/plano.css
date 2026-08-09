@@ -8,15 +8,51 @@
  * navegador. Meter el reset romperia paginas que no tienen nada que ver con el
  * plano.
  *
- * La contrapartida es que los componentes portados no reciben el reset que
- * asumian. Si alguno se ve raro, la solucion es un reset acotado al contenedor
- * del plano, no habilitar preflight.
+ * A cambio hay que resolver dos choques con el CSS del sitio, abajo.
  */
 
-@layer theme, base, components, utilities;
+@layer theme;
 
 @import 'tailwindcss/theme.css' layer(theme);
-@import 'tailwindcss/utilities.css' layer(utilities);
+
+/* Antes que las utilidades a propósito: ver la nota de especificidad adentro. */
+@import './plano-reset.css';
+
+/*
+ * Choque 1: la cascada por capas.
+ *
+ * El CSS del sitio no esta en ninguna capa, y en CSS lo que no tiene capa le
+ * gana SIEMPRE a lo que si la tiene, sin importar la especificidad. Con las
+ * utilidades dentro de `@layer utilities`, una regla como `h1 { font-size:
+ * 3.2em }` de index.css le ganaba a `text-base` y el titulo del plano salia a
+ * 51 px.
+ *
+ * Por eso las utilidades van sin capa: ahi manda la especificidad normal, y un
+ * selector de clase (0,1,0) le gana a uno de elemento (0,0,1).
+ */
+@import 'tailwindcss/utilities.css';
+
+/* Escala construida alrededor del marrón tierra #917654, que es el color del
+   camino y los troncos del propio plano. El 500 es el valor exacto; el resto
+   sale de mezclarlo con blanco y con negro para tener estados de hover, bordes
+   y fondos suaves sin desentonar. */
+@theme {
+  --color-tierra-50: #f4f2ee;
+  --color-tierra-100: #e7e2da;
+  --color-tierra-200: #d3c8ba;
+  --color-tierra-300: #bdad98;
+  --color-tierra-400: #a79176;
+  --color-tierra-500: #917654;
+  --color-tierra-600: #7b6447;
+  --color-tierra-700: #66533b;
+  --color-tierra-800: #50412e;
+  --color-tierra-900: #3d3223;
+
+  /* Upstream usaba Geist. Acá el plano es una sección más del sitio, así que
+     `font-sans` tiene que resolver a la tipografía de Conterra y no meter una
+     segunda familia en la misma página. */
+  --font-sans: 'TexGyre Adventor', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
 
 /* Que clases buscar. Sin esto Tailwind escanea el proyecto entero y genera
    utilidades por coincidencias casuales con nuestros nombres de clase. */

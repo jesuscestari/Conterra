@@ -1,5 +1,6 @@
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate, Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import { RUTA_PLANO } from '../lib/rutas'
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
 import Footer from '../components/Footer'
@@ -121,6 +122,9 @@ El barrio contará con energía eléctrica, red de agua, asfalto en sus arterias
         'Instalaciones destinadas a seguridad y cuidada forestación'
       ],
       ubicacion: 'Zárate, Buenos Aires',
+      // Único proyecto con plano interactivo por ahora. Los demás no definen
+      // esta clave y la ficha no muestra el acceso.
+      plano: RUTA_PLANO,
       imagen: madrigalImage1,
       galleryImages: [
         { src: madrigalImage1, alt: 'Vista aérea de El Madrigal' },
@@ -385,6 +389,19 @@ El barrio ofrece una excelente plaza con juegos para niñas y niños, cuatro can
                   <p key={index}>{parrafo}</p>
                 ))}
               </div>
+
+              {/* El plano es una pantalla aparte y no una sección de esta página:
+                  necesita alto completo y se maneja arrastrando, gesto que pelea
+                  con el scroll suavizado del sitio. */}
+              {proyecto.plano && (
+                <Link to={proyecto.plano} className="proyecto-plano-cta">
+                  <span className="proyecto-plano-cta__texto">
+                    <strong>Ver el plano de lotes</strong>
+                    Disponibilidad, superficie y precio, lote por lote
+                  </span>
+                  <span className="proyecto-plano-cta__flecha" aria-hidden>→</span>
+                </Link>
+              )}
             </div>
 
             <div className="proyecto-sidebar">
