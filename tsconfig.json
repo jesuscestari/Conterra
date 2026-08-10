@@ -13,6 +13,9 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    // Los tests importan las funciones de Netlify por su ruta con extensión
+    // (`lote.mts`). Es válido porque no emitimos JS: solo se typechequea.
+    "allowImportingTsExtensions": true,
     "jsx": "react-jsx",
     "paths": {
       "@/*": ["./src/*"]

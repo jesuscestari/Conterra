@@ -8,6 +8,7 @@ Sitemap: https://conterra.com.ar/sitemap.xml
 Crawl-delay: 1
 
 # Disallow admin or private areas (if any)
-Disallow: /admin/
+# Sin barra final: la ruta real es /admin, y "/admin/" no la cubre.
+Disallow: /admin
 Disallow: /private/
 Disallow: /api/ 

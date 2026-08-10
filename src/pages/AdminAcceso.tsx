@@ -10,12 +10,27 @@ import '@/styles/plano.css'
 /**
  * Marca la página como no indexable mientras está montada.
  *
- * Upstream lo resolvía con el `metadata` de Next. En un SPA el HTML es uno
- * solo, así que la etiqueta se agrega al entrar y se quita al salir; si no,
- * quedaría puesta para el resto de la navegación.
+ * Upstream lo resolvía con el `metadata` de Next. Acá el HTML es uno solo para
+ * todo el sitio, así que se cambia al entrar y se restaura al salir.
+ *
+ * Se pisa la etiqueta que ya trae `index.html` en vez de agregar otra: dos
+ * `meta name="robots"` con directivas opuestas dejan el resultado en manos de
+ * cómo las combine cada buscador, y esto no es algo para dejar librado a eso.
  */
 const useNoIndexar = (): void => {
   useEffect(() => {
+    const existente = document.head.querySelector<HTMLMetaElement>('meta[name="robots"]')
+
+    if (existente) {
+      const anterior = existente.content
+
+      existente.content = 'noindex, nofollow'
+
+      return () => {
+        existente.content = anterior
+      }
+    }
+
     const etiqueta = document.createElement('meta')
 
     etiqueta.name = 'robots'
