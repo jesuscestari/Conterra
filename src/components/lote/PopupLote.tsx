@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 
+import type { CategoriaDatos } from '@/lib/categorias/tipos'
 import type { ActualizacionLote } from '@/lib/lotes/esquemas'
 import type { LoteCompleto } from '@/lib/lotes/tipos'
 import { formatearFecha, formatearPrecio, formatearSuperficie } from '@/lib/formato'
@@ -24,6 +25,7 @@ export interface AnclajePopup {
 
 interface Props {
   readonly lote: LoteCompleto
+  readonly categorias: readonly CategoriaDatos[]
   readonly esAdmin: boolean
   readonly anclaje: AnclajePopup | null
   readonly onGuardar: (cambios: ActualizacionLote) => Promise<void>
@@ -43,7 +45,14 @@ const CLASES_HOJA =
 const CLASES_ANCLADO =
   'absolute z-20 w-72 -translate-x-1/2 overflow-hidden rounded-xl border border-tierra-200 shadow-xl'
 
-export const PopupLote = ({ lote, esAdmin, anclaje, onGuardar, onCerrar }: Props) => {
+export const PopupLote = ({
+  lote,
+  categorias,
+  esAdmin,
+  anclaje,
+  onGuardar,
+  onCerrar,
+}: Props) => {
   // Quien lo monta le pasa el id del lote como `key`, asi que al saltar de un
   // lote a otro este estado se reinicia solo y vuelve la vista de lectura.
   const [editando, setEditando] = useState(false)
@@ -123,6 +132,9 @@ export const PopupLote = ({ lote, esAdmin, anclaje, onGuardar, onCerrar }: Props
           </button>
         </div>
 
+        {/* El chip se pinta con el mismo relleno que el lote en el mapa, asi la
+            relacion entre el popup y el poligono es directa. Con once estados,
+            mantener una clase de Tailwind por cada uno no escalaba. */}
         <span
           style={{
             backgroundColor: presentacion.relleno,
@@ -142,6 +154,7 @@ export const PopupLote = ({ lote, esAdmin, anclaje, onGuardar, onCerrar }: Props
                 await onGuardar(cambios)
                 setEditando(false)
               }}
+              categorias={categorias}
               onCancelar={() => setEditando(false)}
             />
           </div>
@@ -150,7 +163,10 @@ export const PopupLote = ({ lote, esAdmin, anclaje, onGuardar, onCerrar }: Props
             <dl className={`mt-4 grid gap-3 ${mostrarPrecio ? 'grid-cols-2' : 'grid-cols-1'}`}>
               <Dato etiqueta="Superficie" valor={formatearSuperficie(lote.superficieM2)} />
               {mostrarPrecio ? (
-                <Dato etiqueta="Precio" valor={formatearPrecio(lote.categoria?.precioUsd ?? null)} />
+                <Dato
+                  etiqueta="Precio"
+                  valor={formatearPrecio(lote.categoria?.precioUsd ?? null)}
+                />
               ) : null}
             </dl>
 

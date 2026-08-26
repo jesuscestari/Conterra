@@ -16,7 +16,8 @@
     "vectorizar": "tsx scripts/vectorizar-plano/index.ts",
     "db:seed": "tsx prisma/seed.ts",
     "db:deploy": "prisma migrate deploy",
-    "db:local": "tsx scripts/base-local.ts"
+    "db:local": "tsx scripts/base-local.ts",
+    "admins": "tsx scripts/admins.ts"
   },
   "pnpm": {
     "onlyBuiltDependencies": [

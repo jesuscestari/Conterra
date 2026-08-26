@@ -21,6 +21,15 @@ import { PGLiteSocketServer } from '@electric-sql/pglite-socket'
 
 const HOST = '127.0.0.1'
 const PUERTO = 55432
+
+/**
+ * Alto a proposito. `netlify dev` corre cada funcion en su propio proceso, y
+ * cada uno abre su pool de Prisma (10 conexiones por defecto). Con cinco
+ * funciones el limite de 10 que trae PGlite se agota enseguida y la base cierra
+ * la conexion en medio de una peticion, con un 500 que parece un bug del codigo
+ * y no lo es.
+ */
+const MAXIMO_CONEXIONES = 80
 const DATOS = join(process.cwd(), '.pglite')
 const MIGRACIONES = join(process.cwd(), 'prisma', 'migrations')
 
@@ -33,7 +42,7 @@ const migracionesEnOrden = (): readonly string[] =>
 
 const arrancar = async (): Promise<void> => {
   const db = await PGlite.create({ dataDir: DATOS })
-  const servidor = new PGLiteSocketServer({ db, port: PUERTO, host: HOST, maxConnections: 10 })
+  const servidor = new PGLiteSocketServer({ db, port: PUERTO, host: HOST, maxConnections: MAXIMO_CONEXIONES })
 
   await servidor.start()
 

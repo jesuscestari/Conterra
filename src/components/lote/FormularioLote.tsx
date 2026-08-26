@@ -1,18 +1,23 @@
 import { useId, useState, type FormEvent } from 'react'
 
 import { formatearPrecio } from '@/lib/formato'
+
+import type { CategoriaDatos } from '@/lib/categorias/tipos'
 import type { ActualizacionLote } from '@/lib/lotes/esquemas'
 import type { LoteCompleto } from '@/lib/lotes/tipos'
 import { ESTADOS_LOTE, PRESENTACION_ESTADO, type EstadoLote } from '@/lib/plano/estado'
 
 interface Props {
   readonly lote: LoteCompleto
+  readonly categorias: readonly CategoriaDatos[]
   readonly onGuardar: (cambios: ActualizacionLote) => Promise<void>
   readonly onCancelar: () => void
 }
 
 interface Borrador {
   readonly estado: EstadoLote
+  /** Cadena vacía cuando el lote no tiene categoría asignada. */
+  readonly categoriaId: string
   readonly superficieM2: string
   readonly numero: string
   readonly observacion: string
@@ -20,6 +25,7 @@ interface Borrador {
 
 const aBorrador = (lote: LoteCompleto): Borrador => ({
   estado: lote.estado,
+  categoriaId: lote.categoria?.id ?? '',
   superficieM2: String(lote.superficieM2),
   numero: String(lote.numero),
   observacion: lote.observacion ?? '',
@@ -30,7 +36,7 @@ const aBorrador = (lote: LoteCompleto): Borrador => ({
 const claseCampo =
   'w-full rounded-lg border border-tierra-200 bg-white px-3 py-3 text-base text-tierra-900 outline-none focus:border-tierra-500 focus:ring-2 focus:ring-tierra-500/20 sm:py-2 sm:text-sm'
 
-export const FormularioLote = ({ lote, onGuardar, onCancelar }: Props) => {
+export const FormularioLote = ({ lote, categorias, onGuardar, onCancelar }: Props) => {
   const idBase = useId()
   const [borrador, setBorrador] = useState<Borrador>(() => aBorrador(lote))
   const [guardando, setGuardando] = useState(false)
@@ -63,6 +69,7 @@ export const FormularioLote = ({ lote, onGuardar, onCancelar }: Props) => {
       await onGuardar({
         numero,
         estado: borrador.estado,
+        categoriaId: borrador.categoriaId === '' ? null : borrador.categoriaId,
         superficieM2: superficie,
         observacion: borrador.observacion.trim() === '' ? null : borrador.observacion.trim(),
       })
@@ -111,28 +118,30 @@ export const FormularioLote = ({ lote, onGuardar, onCancelar }: Props) => {
         </select>
       </div>
 
+      <div className="space-y-1">
+        <label htmlFor={`${idBase}-categoria`} className="text-xs font-medium text-tierra-600">
+          Categoría
+        </label>
+        <select
+          id={`${idBase}-categoria`}
+          value={borrador.categoriaId}
+          onChange={(evento) => actualizar('categoriaId', evento.target.value)}
+          className={claseCampo}
+        >
+          <option value="">Sin categoría</option>
+          {categorias.map((categoria) => (
+            <option key={categoria.id} value={categoria.id}>
+              {categoria.nombre}
+              {categoria.precioUsd === null ? '' : ` · ${formatearPrecio(categoria.precioUsd)}`}
+            </option>
+          ))}
+        </select>
+        <p className="text-[11px] text-tierra-600">
+          De acá sale el precio y el color del lote. Para cambiar un precio, editá la categoría.
+        </p>
+      </div>
+
       <div className="grid grid-cols-2 gap-2">
-        {/* El precio dejo de editarse por lote: ahora sale del tramo comercial.
-            Se muestra en solo lectura hasta que exista el selector de categoria. */}
-        <div className="space-y-1">
-          <span className="text-xs font-medium text-tierra-600">Categoría</span>
-          <div className={`${claseCampo} flex items-center gap-2`}>
-            {lote.categoria ? (
-              <>
-                <span
-                  className="size-3 shrink-0 rounded-full ring-1 ring-tierra-300"
-                  style={{ backgroundColor: lote.categoria.color }}
-                  aria-hidden
-                />
-                <span className="truncate">
-                  {lote.categoria.nombre} · {formatearPrecio(lote.categoria.precioUsd)}
-                </span>
-              </>
-            ) : (
-              <span className="text-tierra-600">Sin categoría</span>
-            )}
-          </div>
-        </div>
 
         <div className="space-y-1">
           <label htmlFor={`${idBase}-superficie`} className="text-xs font-medium text-tierra-600">

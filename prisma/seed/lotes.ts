@@ -18,14 +18,6 @@ export interface OpcionesSiembra {
   readonly limpiarHuerfanos: boolean
 }
 
-const precioSugerido = (superficieM2: number): number | null => {
-  const porMetro = Number(process.env.SEED_PRECIO_USD_POR_M2)
-
-  if (!Number.isFinite(porMetro) || porMetro <= 0) return null
-
-  return Math.round((superficieM2 * porMetro) / 100) * 100
-}
-
 /**
  * Sincroniza la tabla de lotes con la geometria del plano.
  *
@@ -49,11 +41,12 @@ export const sembrarLotes = async (
     // El numero y la superficie ya vienen resueltos desde el vectorizador, que
     // es quien aplica la numeracion de la mensura.
     await prisma.lote.createMany({
+      // Sin categoria: el precio sale de ahi y no hay forma de adivinar en que
+      // tramo va un lote nuevo. Se asigna desde el panel.
       data: nuevos.map((lote) => ({
         id: lote.id,
         numero: lote.numero,
         superficieM2: lote.superficieM2,
-        precioUsd: precioSugerido(lote.superficieM2),
         estado: ESTADO_POR_DEFECTO,
       })),
     })

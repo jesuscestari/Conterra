@@ -14,3 +14,15 @@ export const contarPorEstado = (
     (conteos, lote) => ({ ...conteos, [lote.estado]: conteos[lote.estado] + 1 }),
     { ...VACIO },
   )
+
+/** Cuantos lotes usa cada categoria, para mostrarlo en el panel. */
+export const contarPorCategoria = (
+  lotes: readonly LoteDatos[],
+): Readonly<Record<string, number>> =>
+  lotes.reduce<Record<string, number>>(
+    (conteos, lote) =>
+      lote.categoria === null
+        ? conteos
+        : { ...conteos, [lote.categoria.id]: (conteos[lote.categoria.id] ?? 0) + 1 },
+    {},
+  )

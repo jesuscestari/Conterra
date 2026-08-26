@@ -5,7 +5,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { usePlano } from '@/hooks/usePlano'
 
 import { unPlano, unaParcela } from '../ayuda/geometria'
-import { unLote } from '../ayuda/lotes'
+import { unLote, unaCategoria } from '../ayuda/lotes'
 
 const GEOMETRIA = unPlano([unaParcela('a', 1, [0, 0]), unaParcela('b', 2, [20, 0])])
 
@@ -17,8 +17,17 @@ const json = (cuerpo: unknown, estado = 200): Response =>
     headers: { 'Content-Type': 'application/json' },
   })
 
-const respuestasNormales = async (url: string | URL | Request): Promise<Response> =>
-  String(url).includes('plano-geometria') ? json(GEOMETRIA) : json({ lotes: DATOS })
+const CATEGORIAS = [unaCategoria()]
+
+/** El hook pide tres cosas al montarse: geometría, lotes y categorías. */
+const respuestasNormales = async (url: string | URL | Request): Promise<Response> => {
+  const ruta = String(url)
+
+  if (ruta.includes('plano-geometria')) return json(GEOMETRIA)
+  if (ruta.includes('/api/categorias')) return json({ categorias: CATEGORIAS })
+
+  return json({ lotes: DATOS })
+}
 
 const simularFetch = (implementacion: typeof fetch): void => {
   vi.stubGlobal('fetch', vi.fn(implementacion))
@@ -60,10 +69,12 @@ describe('usePlano', () => {
    * dibujar un poligono sin datos o un lote sin ubicacion.
    */
   it('descarta los polígonos que no tienen datos en la base', async () => {
-    simularFetch((async (url) =>
-      String(url).includes('plano-geometria')
-        ? json(GEOMETRIA)
-        : json({ lotes: [DATOS[0]] })) as typeof fetch)
+    simularFetch((async (url) => {
+      const ruta = String(url)
+      if (ruta.includes('plano-geometria')) return json(GEOMETRIA)
+      if (ruta.includes('/api/categorias')) return json({ categorias: CATEGORIAS })
+      return json({ lotes: [DATOS[0]] })
+    }) as typeof fetch)
 
     const { result } = renderHook(() => usePlano())
 
@@ -73,10 +84,12 @@ describe('usePlano', () => {
   })
 
   it('descarta los lotes de la base que no están en el plano', async () => {
-    simularFetch((async (url) =>
-      String(url).includes('plano-geometria')
-        ? json({ ...GEOMETRIA, lotes: [GEOMETRIA.lotes[0]] })
-        : json({ lotes: DATOS })) as typeof fetch)
+    simularFetch((async (url) => {
+      const ruta = String(url)
+      if (ruta.includes('plano-geometria')) return json({ ...GEOMETRIA, lotes: [GEOMETRIA.lotes[0]] })
+      if (ruta.includes('/api/categorias')) return json({ categorias: CATEGORIAS })
+      return json({ lotes: DATOS })
+    }) as typeof fetch)
 
     const { result } = renderHook(() => usePlano())
 
@@ -86,10 +99,12 @@ describe('usePlano', () => {
   })
 
   it('deja de cargar y muestra el error si falla una de las dos peticiones', async () => {
-    simularFetch((async (url) =>
-      String(url).includes('plano-geometria')
-        ? json(GEOMETRIA)
-        : json({ error: 'La base no responde.' }, 500)) as typeof fetch)
+    simularFetch((async (url) => {
+      const ruta = String(url)
+      if (ruta.includes('plano-geometria')) return json(GEOMETRIA)
+      if (ruta.includes('/api/categorias')) return json({ categorias: CATEGORIAS })
+      return json({ error: 'La base no responde.' }, 500)
+    }) as typeof fetch)
 
     const { result } = renderHook(() => usePlano())
 
@@ -97,6 +112,14 @@ describe('usePlano', () => {
 
     expect(result.current.error).toBe('La base no responde.')
     expect(result.current.lotes).toEqual([])
+  })
+
+  it('expone las categorías, que son de donde sale el precio y el color', async () => {
+    const { result } = renderHook(() => usePlano())
+
+    await waitFor(() => expect(result.current.cargando).toBe(false))
+
+    expect(result.current.categorias).toEqual(CATEGORIAS)
   })
 
   describe('guardarLote', () => {
@@ -165,6 +188,114 @@ describe('usePlano', () => {
       await expect(result.current.guardarLote('z', { estado: 'VENDIDO' })).rejects.toThrow(
         'No existe el lote.',
       )
+    })
+  })
+
+  describe('crearCategoria', () => {
+    it('agrega la categoría que devolvió el servidor', async () => {
+      const { result } = renderHook(() => usePlano())
+      await waitFor(() => expect(result.current.cargando).toBe(false))
+
+      const nueva = unaCategoria({ id: 'cat-nueva', nombre: 'Premium', orden: 9 })
+      simularFetch((async () => json({ categoria: nueva }, 201)) as typeof fetch)
+
+      await result.current.crearCategoria({
+        nombre: 'Premium',
+        color: '#99e5c0',
+        precioUsd: null,
+        orden: 9,
+      })
+
+      await waitFor(() => {
+        expect(result.current.categorias.map((c) => c.id)).toEqual(['cat-16000', 'cat-nueva'])
+      })
+    })
+
+    it('las deja ordenadas por orden', async () => {
+      const { result } = renderHook(() => usePlano())
+      await waitFor(() => expect(result.current.cargando).toBe(false))
+
+      const primera = unaCategoria({ id: 'cat-cero', nombre: 'Base', orden: 0 })
+      simularFetch((async () => json({ categoria: primera }, 201)) as typeof fetch)
+
+      await result.current.crearCategoria({
+        nombre: 'Base',
+        color: '#99e5c0',
+        precioUsd: null,
+        orden: 0,
+      })
+
+      await waitFor(() => {
+        expect(result.current.categorias.map((c) => c.id)).toEqual(['cat-cero', 'cat-16000'])
+      })
+    })
+  })
+
+  describe('guardarCategoria', () => {
+    /**
+     * El precio y el color de cada lote salen de su categoria, asi que tocarla
+     * cambia lo que muestran todos sus lotes: hay que releerlos.
+     */
+    it('vuelve a pedir los lotes, porque su precio salía de la categoría', async () => {
+      const { result } = renderHook(() => usePlano())
+      await waitFor(() => expect(result.current.cargando).toBe(false))
+
+      const cara = unaCategoria({ precioUsd: 26_000 })
+      const espia = vi.fn(async (url: string | URL | Request) =>
+        String(url).includes('/api/lotes')
+          ? json({ lotes: DATOS.map((lote) => ({ ...lote, categoria: cara })) })
+          : json({ categoria: cara }),
+      )
+      vi.stubGlobal('fetch', espia)
+
+      await result.current.guardarCategoria('cat-16000', { precioUsd: 26_000 })
+
+      await waitFor(() => {
+        expect(result.current.lotes[0].categoria?.precioUsd).toBe(26_000)
+      })
+      expect(espia.mock.calls.some(([url]) => String(url).includes('/api/lotes'))).toBe(true)
+    })
+
+    it('actualiza la categoría en la lista', async () => {
+      const { result } = renderHook(() => usePlano())
+      await waitFor(() => expect(result.current.cargando).toBe(false))
+
+      const renombrada = unaCategoria({ nombre: 'Vista al arroyo' })
+      simularFetch((async (url) =>
+        String(url).includes('/api/lotes')
+          ? json({ lotes: DATOS })
+          : json({ categoria: renombrada })) as typeof fetch)
+
+      await result.current.guardarCategoria('cat-16000', { nombre: 'Vista al arroyo' })
+
+      await waitFor(() => {
+        expect(result.current.categorias[0].nombre).toBe('Vista al arroyo')
+      })
+    })
+  })
+
+  describe('borrarCategoria', () => {
+    it('la saca de la lista', async () => {
+      const { result } = renderHook(() => usePlano())
+      await waitFor(() => expect(result.current.cargando).toBe(false))
+
+      simularFetch((async () => json({ ok: true })) as typeof fetch)
+
+      await result.current.borrarCategoria('cat-16000')
+
+      await waitFor(() => expect(result.current.categorias).toEqual([]))
+    })
+
+    /** El panel necesita el mensaje que dice cuántos lotes la usan. */
+    it('propaga el error cuando el servidor se niega', async () => {
+      const { result } = renderHook(() => usePlano())
+      await waitFor(() => expect(result.current.cargando).toBe(false))
+
+      simularFetch((async () =>
+        json({ error: 'No se puede borrar "CAT1": la usan 28 lotes.' }, 400)) as typeof fetch)
+
+      await expect(result.current.borrarCategoria('cat-16000')).rejects.toThrow(/28 lotes/)
+      expect(result.current.categorias).toHaveLength(1)
     })
   })
 })

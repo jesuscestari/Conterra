@@ -62,6 +62,22 @@ netlify dev                    # sitio + funciones en :8888
 `npm run dev` sirve el sitio pero no las funciones, así que el plano se ve sin
 estados ni precios. Para trabajar sobre el plano hay que usar `netlify dev`.
 
+### Quién entra al panel
+
+La tabla de administradores es nuestra, así que las cuentas se manejan desde acá
+y no se le piden a nadie. La contraseña se toma del entorno y nunca se imprime.
+
+```bash
+npm run admins                          # lista quién tiene acceso
+npm run admins -- --crear               # crea una cuenta con ADMIN_*
+npm run admins -- --resetear            # le cambia la clave a ADMIN_EMAIL
+npm run admins -- --desactivar a@b.com  # le corta el acceso, sin borrarla
+```
+
+Se desactiva en vez de borrar porque `Lote.editadoPor` apunta a la cuenta:
+borrarla dejaría sin autor los lotes que esa persona editó. El guardia revisa
+`activo` en cada pedido, así que el acceso se corta en la petición siguiente.
+
 ### Tests
 
 ```bash

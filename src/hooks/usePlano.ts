@@ -1,6 +1,10 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 
 import { pedirJson } from '@/lib/api/cliente'
+import type {
+  ActualizacionCategoria,
+  NuevaCategoria,
+} from '@/lib/categorias/esquemas'
 import type { CategoriaDatos } from '@/lib/categorias/tipos'
 import type { ActualizacionLote } from '@/lib/lotes/esquemas'
 import type { LoteCompleto, LoteDatos } from '@/lib/lotes/tipos'
@@ -12,22 +16,28 @@ interface RespuestaLotes {
   readonly lotes: readonly LoteDatos[]
 }
 
+interface RespuestaLote {
+  readonly lote: LoteDatos
+}
+
 interface RespuestaCategorias {
   readonly categorias: readonly CategoriaDatos[]
 }
 
-interface RespuestaLote {
-  readonly lote: LoteDatos
+interface RespuestaCategoria {
+  readonly categoria: CategoriaDatos
 }
 
 export interface EstadoPlano {
   readonly geometria: PlanoGeometria | null
   readonly lotes: readonly LoteCompleto[]
-  /** Tramos comerciales, para la leyenda de precios. */
   readonly categorias: readonly CategoriaDatos[]
   readonly cargando: boolean
   readonly error: string | null
   readonly guardarLote: (id: string, cambios: ActualizacionLote) => Promise<void>
+  readonly crearCategoria: (datos: NuevaCategoria) => Promise<void>
+  readonly guardarCategoria: (id: string, cambios: ActualizacionCategoria) => Promise<void>
+  readonly borrarCategoria: (id: string) => Promise<void>
 }
 
 /**
@@ -103,5 +113,65 @@ export const usePlano = (): EstadoPlano => {
     setDatos((previos) => previos.map((actual) => (actual.id === lote.id ? lote : actual)))
   }, [])
 
-  return { geometria, lotes, categorias, cargando, error, guardarLote }
+  /**
+   * Vuelve a pedir los lotes despues de tocar una categoria.
+   *
+   * El precio y el color de cada lote salen de su categoria, asi que cambiarla
+   * cambia lo que muestran todos sus lotes. Es una lectura de mas a cambio de
+   * no tener que replicar en el cliente la logica de que lote usa que tramo.
+   */
+  const recargarLotes = useCallback(async () => {
+    const { lotes } = await pedirJson<RespuestaLotes>('/api/lotes')
+
+    setDatos(lotes)
+  }, [])
+
+  const crearCategoria = useCallback(async (nueva: NuevaCategoria) => {
+    const { categoria } = await pedirJson<RespuestaCategoria>('/api/categorias', {
+      method: 'POST',
+      body: JSON.stringify(nueva),
+    })
+
+    setCategorias((previas) =>
+      [...previas, categoria].sort(
+        (una, otra) => una.orden - otra.orden || una.nombre.localeCompare(otra.nombre),
+      ),
+    )
+  }, [])
+
+  const guardarCategoria = useCallback(
+    async (id: string, cambios: ActualizacionCategoria) => {
+      const { categoria } = await pedirJson<RespuestaCategoria>(
+        `/api/categorias/${encodeURIComponent(id)}`,
+        { method: 'PATCH', body: JSON.stringify(cambios) },
+      )
+
+      setCategorias((previas) =>
+        previas
+          .map((actual) => (actual.id === categoria.id ? categoria : actual))
+          .sort((una, otra) => una.orden - otra.orden || una.nombre.localeCompare(otra.nombre)),
+      )
+
+      await recargarLotes()
+    },
+    [recargarLotes],
+  )
+
+  const borrarCategoria = useCallback(async (id: string) => {
+    await pedirJson(`/api/categorias/${encodeURIComponent(id)}`, { method: 'DELETE' })
+
+    setCategorias((previas) => previas.filter((actual) => actual.id !== id))
+  }, [])
+
+  return {
+    geometria,
+    lotes,
+    categorias,
+    cargando,
+    error,
+    guardarLote,
+    crearCategoria,
+    guardarCategoria,
+    borrarCategoria,
+  }
 }

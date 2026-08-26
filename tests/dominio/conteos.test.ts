@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'vitest'
 
-import { contarPorEstado } from '@/lib/lotes/conteos'
+import { contarPorCategoria, contarPorEstado } from '@/lib/lotes/conteos'
 import { ESTADOS_LOTE } from '@/lib/plano/estado'
 
-import { unLote } from '../ayuda/lotes'
+import { unLote, unaCategoria } from '../ayuda/lotes'
 
 describe('contarPorEstado', () => {
   it('devuelve todos los estados en cero cuando no hay lotes', () => {
@@ -35,7 +35,7 @@ describe('contarPorEstado', () => {
       Array.from({ length: indice + 1 }, (_, i) => unLote({ id: `${estado}-${i}`, estado })),
     )
 
-    const total = Object.values(contarPorEstado(lotes)).reduce((suma, n) => suma + n, 0)
+    const total = Object.values(contarPorEstado(lotes)).reduce<number>((suma, n) => suma + n, 0)
 
     expect(total).toBe(lotes.length)
   })
@@ -45,5 +45,43 @@ describe('contarPorEstado', () => {
     const lotes = [unLote({ estado: 'VENDIDO' })]
 
     expect(contarPorEstado(lotes)).toEqual(contarPorEstado(lotes))
+  })
+})
+
+describe('contarPorCategoria', () => {
+  it('devuelve vacío cuando no hay lotes', () => {
+    expect(contarPorCategoria([])).toEqual({})
+  })
+
+  it('cuenta los lotes de cada categoría', () => {
+    const cara = unaCategoria({ id: 'cat-24000', nombre: 'CAT6', precioUsd: 24_000 })
+
+    const conteos = contarPorCategoria([
+      unLote({ id: 'a' }),
+      unLote({ id: 'b' }),
+      unLote({ id: 'c', categoria: cara }),
+    ])
+
+    expect(conteos).toEqual({ 'cat-16000': 2, 'cat-24000': 1 })
+  })
+
+  /**
+   * Un lote fuera de comercializacion no necesita tramo. Contarlo en alguna
+   * categoria haria creer que esa categoria esta en uso y bloquearia borrarla.
+   */
+  it('ignora los lotes sin categoría', () => {
+    const conteos = contarPorCategoria([
+      unLote({ id: 'a', categoria: null }),
+      unLote({ id: 'b' }),
+    ])
+
+    expect(conteos).toEqual({ 'cat-16000': 1 })
+  })
+
+  /** El estado no importa: un vendido conserva su categoría y sigue contando. */
+  it('cuenta también los lotes que no están disponibles', () => {
+    const conteos = contarPorCategoria([unLote({ id: 'a', estado: 'VENDIDO' })])
+
+    expect(conteos).toEqual({ 'cat-16000': 1 })
   })
 })
