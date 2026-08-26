@@ -19,8 +19,20 @@ const crearLote = async (
   await prisma.lote.create({ data: { id, numero, superficieM2: 800, ...extra } })
 }
 
+/** Crea un tramo comercial y devuelve su id, para asignarlo a un lote. */
+const crearCategoria = async (nombre: string, precioUsd: number | null): Promise<string> => {
+  const { id } = await prisma.categoria.create({
+    data: { nombre, color: '#99e5c0', precioUsd },
+  })
+
+  return id
+}
+
 beforeEach(async () => {
   await prisma.lote.deleteMany()
+  // Despues de los lotes: la relacion es onDelete Restrict, asi que una
+  // categoria con lotes colgando no se puede borrar.
+  await prisma.categoria.deleteMany()
   await prisma.adminUser.deleteMany()
   await prisma.adminUser.create({ data: ADMIN })
 })
@@ -58,6 +70,7 @@ describe('listarLotes', () => {
     const [lote] = await listarLotes()
 
     expect(lote.estado).toBe('DISPONIBLE')
+    expect(lote.categoria).toBeNull()
     expect(lote.precioUsd).toBeNull()
     expect(lote.observacion).toBeNull()
   })
@@ -92,7 +105,8 @@ describe('listarLotes', () => {
 
 describe('actualizarLote', () => {
   it('cambia solo lo que se le manda', async () => {
-    await crearLote('a', 1, { precioUsd: 25_000, observacion: 'Esquina' })
+    const categoriaId = await crearCategoria('CAT1', 25_000)
+    await crearLote('a', 1, { categoriaId, observacion: 'Esquina' })
 
     const actualizado = await actualizarLote('a', { estado: 'RESERVADO' }, ADMIN.id)
 
@@ -102,11 +116,12 @@ describe('actualizarLote', () => {
   })
 
   it('aplica el formulario completo de una', async () => {
+    const categoriaId = await crearCategoria('CAT2', 31_000)
     await crearLote('a', 1)
 
     const actualizado = await actualizarLote(
       'a',
-      { numero: 42, estado: 'VENDIDO', precioUsd: 31_000, superficieM2: 905, observacion: 'Con arroyo' },
+      { numero: 42, estado: 'VENDIDO', categoriaId, superficieM2: 905, observacion: 'Con arroyo' },
       ADMIN.id,
     )
 
@@ -117,13 +132,17 @@ describe('actualizarLote', () => {
       superficieM2: 905,
       observacion: 'Con arroyo',
     })
+    expect(actualizado.categoria?.nombre).toBe('CAT2')
   })
 
-  it('deja borrar el precio y la observación', async () => {
-    await crearLote('a', 1, { precioUsd: 25_000, observacion: 'Algo' })
+  /** Sacarle la categoria a un lote lo deja sin precio publicado. */
+  it('deja quitar la categoría y la observación', async () => {
+    const categoriaId = await crearCategoria('CAT1', 25_000)
+    await crearLote('a', 1, { categoriaId, observacion: 'Algo' })
 
-    const actualizado = await actualizarLote('a', { precioUsd: null, observacion: null }, ADMIN.id)
+    const actualizado = await actualizarLote('a', { categoriaId: null, observacion: null }, ADMIN.id)
 
+    expect(actualizado.categoria).toBeNull()
     expect(actualizado.precioUsd).toBeNull()
     expect(actualizado.observacion).toBeNull()
   })

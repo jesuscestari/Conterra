@@ -1,5 +1,6 @@
 import { useId, useState, type FormEvent } from 'react'
 
+import { formatearPrecio } from '@/lib/formato'
 import type { ActualizacionLote } from '@/lib/lotes/esquemas'
 import type { LoteCompleto } from '@/lib/lotes/tipos'
 import { ESTADOS_LOTE, PRESENTACION_ESTADO, type EstadoLote } from '@/lib/plano/estado'
@@ -12,7 +13,6 @@ interface Props {
 
 interface Borrador {
   readonly estado: EstadoLote
-  readonly precioUsd: string
   readonly superficieM2: string
   readonly numero: string
   readonly observacion: string
@@ -20,15 +20,10 @@ interface Borrador {
 
 const aBorrador = (lote: LoteCompleto): Borrador => ({
   estado: lote.estado,
-  precioUsd: lote.precioUsd === null ? '' : String(lote.precioUsd),
   superficieM2: String(lote.superficieM2),
   numero: String(lote.numero),
   observacion: lote.observacion ?? '',
 })
-
-/** El campo vacio significa "sin precio publicado", no cero. */
-const aPrecio = (valor: string): number | null =>
-  valor.trim() === '' ? null : Math.round(Number(valor))
 
 // `text-base` en móvil evita que iOS haga zoom solo al enfocar el campo, y el
 // alto extra da un blanco cómodo para el dedo.
@@ -49,7 +44,6 @@ export const FormularioLote = ({ lote, onGuardar, onCancelar }: Props) => {
     evento.preventDefault()
 
     const superficie = Number(borrador.superficieM2)
-    const precio = aPrecio(borrador.precioUsd)
     const numero = Number(borrador.numero)
 
     if (!Number.isInteger(numero) || numero < 1) {
@@ -62,11 +56,6 @@ export const FormularioLote = ({ lote, onGuardar, onCancelar }: Props) => {
       return
     }
 
-    if (precio !== null && (!Number.isFinite(precio) || precio < 0)) {
-      setError('El precio tiene que ser un número positivo, o quedar vacío.')
-      return
-    }
-
     setGuardando(true)
     setError(null)
 
@@ -74,7 +63,6 @@ export const FormularioLote = ({ lote, onGuardar, onCancelar }: Props) => {
       await onGuardar({
         numero,
         estado: borrador.estado,
-        precioUsd: precio,
         superficieM2: superficie,
         observacion: borrador.observacion.trim() === '' ? null : borrador.observacion.trim(),
       })
@@ -124,21 +112,26 @@ export const FormularioLote = ({ lote, onGuardar, onCancelar }: Props) => {
       </div>
 
       <div className="grid grid-cols-2 gap-2">
+        {/* El precio dejo de editarse por lote: ahora sale del tramo comercial.
+            Se muestra en solo lectura hasta que exista el selector de categoria. */}
         <div className="space-y-1">
-          <label htmlFor={`${idBase}-precio`} className="text-xs font-medium text-tierra-600">
-            Precio (USD)
-          </label>
-          <input
-            id={`${idBase}-precio`}
-            type="number"
-            min={0}
-            step={100}
-            inputMode="numeric"
-            placeholder="A consultar"
-            value={borrador.precioUsd}
-            onChange={(evento) => actualizar('precioUsd', evento.target.value)}
-            className={claseCampo}
-          />
+          <span className="text-xs font-medium text-tierra-600">Categoría</span>
+          <div className={`${claseCampo} flex items-center gap-2`}>
+            {lote.categoria ? (
+              <>
+                <span
+                  className="size-3 shrink-0 rounded-full ring-1 ring-tierra-300"
+                  style={{ backgroundColor: lote.categoria.color }}
+                  aria-hidden
+                />
+                <span className="truncate">
+                  {lote.categoria.nombre} · {formatearPrecio(lote.categoria.precioUsd)}
+                </span>
+              </>
+            ) : (
+              <span className="text-tierra-600">Sin categoría</span>
+            )}
+          </div>
         </div>
 
         <div className="space-y-1">

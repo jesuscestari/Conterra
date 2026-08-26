@@ -6,6 +6,7 @@ export const unLote = (cambios: Partial<LoteDatos> = {}): LoteDatos => ({
   numero: 1,
   superficieM2: 800,
   precioUsd: 25_000,
+  categoria: { id: 'cat-1', nombre: 'CAT1', color: '#99e5c0', precioUsd: 25_000 },
   estado: 'DISPONIBLE',
   observacion: null,
   editadoEn: '2026-01-15T10:00:00.000Z',

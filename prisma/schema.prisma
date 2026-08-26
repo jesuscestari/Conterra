@@ -34,17 +34,28 @@ model Lote {
   /// lo impediria. Los duplicados se avisan en la interfaz.
   numero       Int
   superficieM2 Float
-  precioUsd    Int?
+  /// Si el lote esta a la venta, reservado, vendido o fuera de comercializacion.
   estado       String   @default("DISPONIBLE")
   observacion  String?
   creadoEn     DateTime @default(now())
   editadoEn    DateTime @updatedAt
+
+  /// Tramo comercial del lote, de donde sale su precio y su color en el mapa.
+  ///
+  /// Es independiente del estado a proposito: un lote que se vende conserva su
+  /// categoria, asi que si la operacion se cae y vuelve a estar disponible no
+  /// hay que acordarse de que tramo era.
+  ///
+  /// Puede quedar en null: un lote fuera de comercializacion no necesita tramo.
+  categoriaId  String?
+  categoria    Categoria? @relation(fields: [categoriaId], references: [id], onDelete: Restrict)
 
   editadoPorId String?
   editadoPor   AdminUser? @relation(fields: [editadoPorId], references: [id], onDelete: SetNull)
 
   @@index([estado])
   @@index([numero])
+  @@index([categoriaId])
 }
 
 /// Usuarios con permiso de edicion. La contrasena se guarda hasheada con bcrypt.
@@ -75,4 +86,28 @@ model IntentoAcceso {
 
   /// Las filas vencidas se borran al registrar el siguiente intento.
   @@index([reiniciaEn])
+}
+
+/// Tramo comercial: un precio y un color, compartidos por todos los lotes que
+/// lo tienen asignado.
+///
+/// El precio vive aca y no en cada lote para que actualizar la lista de precios
+/// sea tocar una fila y no doscientas. Los administradores las crean y las
+/// borran desde el panel, asi que la lista no esta en el codigo.
+model Categoria {
+  id        String   @id @default(cuid())
+  nombre    String   @unique
+  /// Relleno del lote en el mapa, en hexadecimal (#rrggbb).
+  color     String
+  /// En dolares. Puede faltar mientras la categoria se esta armando.
+  precioUsd Int?
+  /// Posicion en la leyenda y en los selectores. No tiene que ser unico: al
+  /// reordenar a mano es normal pasar por empates, y desempata el nombre.
+  orden     Int      @default(0)
+  creadoEn  DateTime @default(now())
+  editadoEn DateTime @updatedAt
+
+  lotes     Lote[]
+
+  @@index([orden])
 }

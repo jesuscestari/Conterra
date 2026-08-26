@@ -5,14 +5,21 @@ import { ESTADO_POR_DEFECTO, esEstadoLote } from '../plano/estado'
 import type { ActualizacionLote } from './esquemas'
 import type { LoteDatos } from './tipos'
 
+interface FilaCategoria {
+  id: string
+  nombre: string
+  color: string
+  precioUsd: number | null
+}
+
 interface FilaLote {
   id: string
   numero: number
   superficieM2: number
-  precioUsd: number | null
   estado: string
   observacion: string | null
   editadoEn: Date
+  categoria: FilaCategoria | null
 }
 
 /**
@@ -23,7 +30,11 @@ const aLoteDatos = (fila: FilaLote): LoteDatos => ({
   id: fila.id,
   numero: fila.numero,
   superficieM2: fila.superficieM2,
-  precioUsd: fila.precioUsd,
+  // El precio ya no vive en el lote sino en su tramo comercial. Se copia a la
+  // raiz para no romper a quien consumia `precioUsd`; un lote sin categoria
+  // asignada no tiene precio y se muestra como "a consultar".
+  precioUsd: fila.categoria?.precioUsd ?? null,
+  categoria: fila.categoria,
   estado: esEstadoLote(fila.estado) ? fila.estado : ESTADO_POR_DEFECTO,
   observacion: fila.observacion,
   editadoEn: fila.editadoEn.toISOString(),
@@ -33,10 +44,10 @@ const CAMPOS = {
   id: true,
   numero: true,
   superficieM2: true,
-  precioUsd: true,
   estado: true,
   observacion: true,
   editadoEn: true,
+  categoria: { select: { id: true, nombre: true, color: true, precioUsd: true } },
 } as const
 
 export const listarLotes = async (): Promise<readonly LoteDatos[]> => {

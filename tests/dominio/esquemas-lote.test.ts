@@ -29,7 +29,7 @@ describe('esquemaActualizacionLote', () => {
     const datos = {
       numero: 42,
       estado: 'DISPONIBLE',
-      precioUsd: 30_000,
+      categoriaId: 'cat-1',
       superficieM2: 812.5,
       observacion: 'Esquina',
     }
@@ -44,18 +44,31 @@ describe('esquemaActualizacionLote', () => {
     expect(resultado.error?.issues[0]?.message).toMatch(/ningún cambio/)
   })
 
-  it('acepta precio nulo, que es "a consultar"', () => {
-    expect(parsear({ precioUsd: null }).success).toBe(true)
+  /** Sin categoria el lote queda sin precio publicado: es "a consultar". */
+  it('acepta categoría nula', () => {
+    expect(parsear({ categoriaId: null }).success).toBe(true)
   })
 
-  it('rechaza precios negativos, decimales o absurdos', () => {
-    expect(parsear({ precioUsd: -1 }).success).toBe(false)
-    expect(parsear({ precioUsd: 1000.5 }).success).toBe(false)
-    expect(parsear({ precioUsd: 100_000_001 }).success).toBe(false)
+  it('rechaza una categoría vacía o en blanco', () => {
+    expect(parsear({ categoriaId: '' }).success).toBe(false)
+    expect(parsear({ categoriaId: '   ' }).success).toBe(false)
   })
 
-  it('acepta precio cero, que es válido en una promoción', () => {
-    expect(parsear({ precioUsd: 0 }).success).toBe(true)
+  /**
+   * El precio dejo de vivir en el lote: ahora sale de la categoria. Mandarlo
+   * tiene que rebotar en vez de aceptarse y perderse en silencio.
+   */
+  it('ya no acepta un precio por lote', () => {
+    expect(parsear({ precioUsd: 30_000 }).success).toBe(false)
+  })
+
+  /**
+   * Lo importante no es que rebote el precio solo —eso ya lo frenaba el "sin
+   * cambios"— sino que rebote tambien mezclado con campos validos, en vez de
+   * guardarse el estado y perder el precio sin decir nada.
+   */
+  it('rechaza un precio colado entre campos válidos', () => {
+    expect(parsear({ estado: 'VENDIDO', precioUsd: 30_000 }).success).toBe(false)
   })
 
   it('exige que la superficie sea positiva', () => {
@@ -73,8 +86,8 @@ describe('esquemaActualizacionLote', () => {
   })
 
   it('rechaza números mandados como texto', () => {
-    expect(parsear({ precioUsd: '30000' }).success).toBe(false)
     expect(parsear({ numero: '42' }).success).toBe(false)
+    expect(parsear({ superficieM2: '812.5' }).success).toBe(false)
   })
 
   it('recorta la observación y convierte la vacía en nula', () => {
