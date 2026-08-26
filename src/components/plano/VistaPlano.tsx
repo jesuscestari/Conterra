@@ -15,6 +15,7 @@ import type { EstadoLote } from '@/lib/plano/estado'
 import { BuscadorLote } from './BuscadorLote'
 import { ControlesZoom } from './ControlesZoom'
 import { Leyenda } from './Leyenda'
+import { LeyendaPrecios } from './LeyendaPrecios'
 import { LienzoPlano } from './LienzoPlano'
 
 interface Props {
@@ -26,7 +27,7 @@ interface Props {
 const ZOOM_AL_BUSCAR = 4
 
 export const VistaPlano = ({ rutaImagen }: Props) => {
-  const { geometria, lotes, cargando, error, guardarLote } = usePlano()
+  const { geometria, lotes, categorias, cargando, error, guardarLote } = usePlano()
   const { admin, cargando: cargandoSesion, salir } = useSesion()
 
   const [seleccionadoId, setSeleccionadoId] = useState<string | null>(null)
@@ -117,9 +118,11 @@ export const VistaPlano = ({ rutaImagen }: Props) => {
       </header>
 
       <div className="flex items-center gap-3 border-b border-tierra-200 bg-tierra-50/80 py-2 pl-3 pr-3 sm:px-4">
-        {/* Los chips no se apilan: se deslizan en horizontal, que ocupa una sola
-            línea y no le come alto al plano. */}
-        <div className="-ml-3 flex-1 overflow-x-auto pl-3 sm:ml-0 sm:pl-0">
+        {/* Los precios van antes que los estados: es lo primero que busca quien
+            entra a mirar lotes. Ambas listas se deslizan en horizontal para no
+            comerle alto al plano en pantallas chicas. */}
+        <div className="-ml-3 flex flex-1 flex-col gap-2 overflow-x-auto pl-3 sm:ml-0 sm:pl-0">
+          <LeyendaPrecios categorias={categorias} />
           <Leyenda conteos={conteos} filtro={filtro} onFiltrar={setFiltro} />
         </div>
         {admin && duplicados.length > 0 ? (

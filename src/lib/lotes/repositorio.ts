@@ -10,6 +10,7 @@ interface FilaCategoria {
   nombre: string
   color: string
   precioUsd: number | null
+  orden: number
 }
 
 interface FilaLote {
@@ -30,10 +31,6 @@ const aLoteDatos = (fila: FilaLote): LoteDatos => ({
   id: fila.id,
   numero: fila.numero,
   superficieM2: fila.superficieM2,
-  // El precio ya no vive en el lote sino en su tramo comercial. Se copia a la
-  // raiz para no romper a quien consumia `precioUsd`; un lote sin categoria
-  // asignada no tiene precio y se muestra como "a consultar".
-  precioUsd: fila.categoria?.precioUsd ?? null,
   categoria: fila.categoria,
   estado: esEstadoLote(fila.estado) ? fila.estado : ESTADO_POR_DEFECTO,
   observacion: fila.observacion,
@@ -47,7 +44,7 @@ const CAMPOS = {
   estado: true,
   observacion: true,
   editadoEn: true,
-  categoria: { select: { id: true, nombre: true, color: true, precioUsd: true } },
+  categoria: { select: { id: true, nombre: true, color: true, precioUsd: true, orden: true } },
 } as const
 
 export const listarLotes = async (): Promise<readonly LoteDatos[]> => {

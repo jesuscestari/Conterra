@@ -1,4 +1,4 @@
-import type { EstadoLote } from '../plano/estado'
+import { esDisponible, type EstadoLote } from '../plano/estado'
 
 /**
  * El precio solo se publica cuando el lote está a la venta. Un lote reservado,
@@ -9,4 +9,4 @@ import type { EstadoLote } from '../plano/estado'
  * cambiarla si mañana se decide, por ejemplo, seguir mostrando el precio de los
  * reservados.
  */
-export const precioEsPublico = (estado: EstadoLote): boolean => estado === 'DISPONIBLE'
+export const precioEsPublico = (estado: EstadoLote): boolean => esDisponible(estado)

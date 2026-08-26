@@ -1,6 +1,7 @@
 import { memo } from 'react'
 
 import type { LoteCompleto } from '@/lib/lotes/tipos'
+import { colorDeLote } from '@/lib/lotes/colorDeLote'
 import { PRESENTACION_ESTADO } from '@/lib/plano/estado'
 
 interface Props {
@@ -14,7 +15,7 @@ const aCadenaDePuntos = (puntos: LoteCompleto['puntos']): string =>
   puntos.map(([x, y]) => `${x},${y}`).join(' ')
 
 const PoligonoLoteBase = ({ lote, seleccionado, atenuado, onSeleccionar }: Props) => {
-  const presentacion = PRESENTACION_ESTADO[lote.estado]
+  const presentacion = colorDeLote(lote)
 
   return (
     <polygon
@@ -32,7 +33,7 @@ const PoligonoLoteBase = ({ lote, seleccionado, atenuado, onSeleccionar }: Props
       className="cursor-pointer outline-none transition-[fill,fill-opacity] duration-150 hover:brightness-115 focus-visible:[stroke-width:1.6] focus-visible:[stroke:#ffffff]"
       tabIndex={0}
       role="button"
-      aria-label={`Lote ${lote.numero}, ${presentacion.etiqueta}`}
+      aria-label={`Lote ${lote.numero}, ${PRESENTACION_ESTADO[lote.estado].etiqueta}`}
       onClick={(evento) => {
         evento.stopPropagation()
         onSeleccionar(lote)

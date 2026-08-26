@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import type { ActualizacionLote } from '@/lib/lotes/esquemas'
 import type { LoteCompleto } from '@/lib/lotes/tipos'
 import { formatearFecha, formatearPrecio, formatearSuperficie } from '@/lib/formato'
+import { colorDeLote } from '@/lib/lotes/colorDeLote'
 import { precioEsPublico } from '@/lib/lotes/reglas'
 import { PRESENTACION_ESTADO, type EstadoLote } from '@/lib/plano/estado'
 
@@ -46,7 +47,7 @@ export const PopupLote = ({ lote, esAdmin, anclaje, onGuardar, onCerrar }: Props
   // Quien lo monta le pasa el id del lote como `key`, asi que al saltar de un
   // lote a otro este estado se reinicia solo y vuelve la vista de lectura.
   const [editando, setEditando] = useState(false)
-  const presentacion = PRESENTACION_ESTADO[lote.estado]
+  const presentacion = { ...PRESENTACION_ESTADO[lote.estado], ...colorDeLote(lote) }
   const esHoja = anclaje === null
 
   // El precio no se publica si el lote no está a la venta, pero el admin lo
@@ -123,7 +124,12 @@ export const PopupLote = ({ lote, esAdmin, anclaje, onGuardar, onCerrar }: Props
         </div>
 
         <span
-          className={`mt-2 inline-block rounded-full px-2.5 py-0.5 text-xs font-medium ring-1 ring-inset ${presentacion.chip}`}
+          style={{
+            backgroundColor: presentacion.relleno,
+            color: presentacion.texto,
+            boxShadow: `inset 0 0 0 1px ${presentacion.rellenoActivo}`,
+          }}
+          className="mt-2 inline-block rounded-full px-2.5 py-0.5 text-xs font-medium"
         >
           {presentacion.etiqueta}
         </span>
@@ -144,7 +150,7 @@ export const PopupLote = ({ lote, esAdmin, anclaje, onGuardar, onCerrar }: Props
             <dl className={`mt-4 grid gap-3 ${mostrarPrecio ? 'grid-cols-2' : 'grid-cols-1'}`}>
               <Dato etiqueta="Superficie" valor={formatearSuperficie(lote.superficieM2)} />
               {mostrarPrecio ? (
-                <Dato etiqueta="Precio" valor={formatearPrecio(lote.precioUsd)} />
+                <Dato etiqueta="Precio" valor={formatearPrecio(lote.categoria?.precioUsd ?? null)} />
               ) : null}
             </dl>
 

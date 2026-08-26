@@ -71,7 +71,6 @@ describe('listarLotes', () => {
 
     expect(lote.estado).toBe('DISPONIBLE')
     expect(lote.categoria).toBeNull()
-    expect(lote.precioUsd).toBeNull()
     expect(lote.observacion).toBeNull()
   })
 
@@ -111,7 +110,7 @@ describe('actualizarLote', () => {
     const actualizado = await actualizarLote('a', { estado: 'RESERVADO' }, ADMIN.id)
 
     expect(actualizado.estado).toBe('RESERVADO')
-    expect(actualizado.precioUsd).toBe(25_000)
+    expect(actualizado.categoria?.precioUsd).toBe(25_000)
     expect(actualizado.observacion).toBe('Esquina')
   })
 
@@ -128,11 +127,11 @@ describe('actualizarLote', () => {
     expect(actualizado).toMatchObject({
       numero: 42,
       estado: 'VENDIDO',
-      precioUsd: 31_000,
       superficieM2: 905,
       observacion: 'Con arroyo',
     })
     expect(actualizado.categoria?.nombre).toBe('CAT2')
+    expect(actualizado.categoria?.precioUsd).toBe(31_000)
   })
 
   /** Sacarle la categoria a un lote lo deja sin precio publicado. */
@@ -143,7 +142,6 @@ describe('actualizarLote', () => {
     const actualizado = await actualizarLote('a', { categoriaId: null, observacion: null }, ADMIN.id)
 
     expect(actualizado.categoria).toBeNull()
-    expect(actualizado.precioUsd).toBeNull()
     expect(actualizado.observacion).toBeNull()
   })
 

@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 
 import { pedirJson } from '@/lib/api/cliente'
+import type { CategoriaDatos } from '@/lib/categorias/tipos'
 import type { ActualizacionLote } from '@/lib/lotes/esquemas'
 import type { LoteCompleto, LoteDatos } from '@/lib/lotes/tipos'
 import type { PlanoGeometria } from '@/lib/plano/tipos'
@@ -11,6 +12,10 @@ interface RespuestaLotes {
   readonly lotes: readonly LoteDatos[]
 }
 
+interface RespuestaCategorias {
+  readonly categorias: readonly CategoriaDatos[]
+}
+
 interface RespuestaLote {
   readonly lote: LoteDatos
 }
@@ -18,6 +23,8 @@ interface RespuestaLote {
 export interface EstadoPlano {
   readonly geometria: PlanoGeometria | null
   readonly lotes: readonly LoteCompleto[]
+  /** Tramos comerciales, para la leyenda de precios. */
+  readonly categorias: readonly CategoriaDatos[]
   readonly cargando: boolean
   readonly error: string | null
   readonly guardarLote: (id: string, cambios: ActualizacionLote) => Promise<void>
@@ -32,6 +39,7 @@ export interface EstadoPlano {
 export const usePlano = (): EstadoPlano => {
   const [geometria, setGeometria] = useState<PlanoGeometria | null>(null)
   const [datos, setDatos] = useState<readonly LoteDatos[]>([])
+  const [categorias, setCategorias] = useState<readonly CategoriaDatos[]>([])
   const [cargando, setCargando] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
@@ -40,15 +48,17 @@ export const usePlano = (): EstadoPlano => {
 
     const cargar = async (): Promise<void> => {
       try {
-        const [plano, { lotes }] = await Promise.all([
+        const [plano, { lotes }, { categorias: tramos }] = await Promise.all([
           pedirJson<PlanoGeometria>(RUTA_GEOMETRIA),
           pedirJson<RespuestaLotes>('/api/lotes'),
+          pedirJson<RespuestaCategorias>('/api/categorias'),
         ])
 
         if (!vigente) return
 
         setGeometria(plano)
         setDatos(lotes)
+        setCategorias(tramos)
         setError(null)
       } catch (causa) {
         if (!vigente) return
@@ -93,5 +103,5 @@ export const usePlano = (): EstadoPlano => {
     setDatos((previos) => previos.map((actual) => (actual.id === lote.id ? lote : actual)))
   }, [])
 
-  return { geometria, lotes, cargando, error, guardarLote }
+  return { geometria, lotes, categorias, cargando, error, guardarLote }
 }
